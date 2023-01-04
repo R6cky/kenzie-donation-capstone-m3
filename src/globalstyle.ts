@@ -18,17 +18,17 @@ export const GlobalStyles = createGlobalStyle`
 
     :root{
 
-        --color-primary:#F9CF6E;
-        --color-secondary:#5680A7;
-        --color-third:#75B487;
-        --color-green-hover:#A8C9B1;
-        --color-red:#C36161;
-        --color-red-hover:#DAA9A9;
+        --color-primary:#5690E7;
+        --color-secondary:#9858F0;
         --gray-600:#333333;
         --grey-300:#828282;
         --grey-100:#E0E0E0;
         --grey-0:#F5F5F5;
         --grey-default:#484545;
+        --Negative:#E60000;
+        --Warning:#FFCD07;
+        --Sucess:#168821;
+        --information:#155BCB;
 
     }
 
