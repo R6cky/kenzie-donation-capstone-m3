@@ -1,5 +1,12 @@
+import { RoutesMain } from "./routes/routsmain";
+
 function App() {
-  return;
+  return (
+    <div className="App">
+      <RoutesMain />
+      <h1>Kenzie Donation</h1>
+    </div>
+  );
 }
 
 export default App;
