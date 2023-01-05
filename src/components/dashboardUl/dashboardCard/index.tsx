@@ -2,7 +2,7 @@ import { StyledDashboardCard } from "./style"
 
 
 
-export const DashboardUl = () => {
+export const DashboardCard = () => {
     
 
 

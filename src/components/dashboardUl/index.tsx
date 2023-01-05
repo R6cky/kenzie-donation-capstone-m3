@@ -2,7 +2,7 @@ import { StyledDashboardList } from "./style"
 
 
 
-export const DashboardCard = () => {
+export const DashboardList = () => {
     
 
 
