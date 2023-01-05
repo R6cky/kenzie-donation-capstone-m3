@@ -16,7 +16,7 @@ export const StyledHeader = styled.header`
    .btn-filter {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-evenly;
       margin-bottom: 30px;
    }
 
@@ -63,7 +63,7 @@ export const StyledHeader = styled.header`
       z-index: 1;
 
       animation: modalAnimation 2s ease;
-      display: flex;
+      display: none;
       justify-content: center;
       align-items: center;
    }
@@ -76,6 +76,7 @@ export const StyledHeader = styled.header`
       background-color: var(--color-primary);
       margin: 0 10px;
       color: var(--grey-0);
+      text-decoration: none;
    }
 
    .login-home:hover, 
