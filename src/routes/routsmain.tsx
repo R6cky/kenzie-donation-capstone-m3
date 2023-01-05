@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { ModalCreatePost } from "../modais/createPost";
 import { Dashboard } from "../pages/dashboard";
 
 export const RoutesMain = () => {
@@ -10,6 +11,7 @@ export const RoutesMain = () => {
             <Route path="/login" element={''}/>    
             <Route path="/register" element={''}/>    
             <Route path="/dashboard" element={<Dashboard/>}/>    
+            <Route path="/modal" element={<ModalCreatePost/>}/>    
         </Routes>
     )
    

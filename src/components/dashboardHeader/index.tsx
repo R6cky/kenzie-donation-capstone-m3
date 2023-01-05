@@ -8,16 +8,43 @@ export const DashboardHeader: () => JSX.Element = () => {
 
    return(
         <StyledDashboardHeader>
+            <nav className="navbar">
+                  <div>
+                     <span className="buttons">Editar</span>
+                     <span className="buttons">Novo post</span>
+                     <span className="buttons">Seus itens</span>
+                  </div>
+            </nav>
             <div className="area-menu">
                <span><img src="" alt="logo" /></span>
                <div><img src="" alt="menu" /></div>
             </div>
-            <div className="product-category">
-               <div><img src="" alt="Roupas" /></div>
-               <div><img src="" alt="brinquedos" /></div>
-               <div><img src="" alt="Móveis" /></div>
-               <div><img src="" alt="Electro" /></div>
-            </div>
+            <ul className="category-list">
+                <li className="category-card">
+                  <div>
+                     <img src="" alt="Roupas" />
+                  </div>
+                  <span>roupas</span>
+               </li>
+               <li className="category-card">
+                  <div>
+                     <img src="" alt="Brinquedos" />
+                  </div>
+                  <span>Brinquedos</span>
+               </li>
+               <li className="category-card">
+                  <div>
+                     <img src="" alt="Móveis" />
+                  </div>
+                  <span>Móveis</span>
+               </li>
+               <li className="category-card">
+                  <div>
+                     <img src="" alt="Eléctro" />
+                  </div>
+                  <span>Eléctro</span>
+               </li>
+            </ul>
         </StyledDashboardHeader>
    )
 }
