@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { Dashboard } from "../pages/dashboard";
 
 export const RoutesMain = () => {
 
@@ -8,7 +9,7 @@ export const RoutesMain = () => {
             <Route path="/home" element={''}/>    
             <Route path="/login" element={''}/>    
             <Route path="/register" element={''}/>    
-            <Route path="/dashboard" element={''}/>    
+            <Route path="/dashboard" element={<Dashboard/>}/>    
         </Routes>
     )
    
