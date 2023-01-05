@@ -1,13 +1,8 @@
 
 import styled from "styled-components";
 
-export const StyledDashboard = styled.div`
+export const StyledDashboardList = styled.ul`
 
-    width: 100vw;
-    height: 100vh;
-    border: solid red;
-    
-    
 
 
 `

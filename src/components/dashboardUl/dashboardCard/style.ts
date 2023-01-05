@@ -1,11 +1,9 @@
 
 import styled from "styled-components";
 
-export const StyledDashboard = styled.div`
+export const StyledDashboardCard = styled.li`
 
-    width: 100vw;
-    height: 100vh;
-    border: solid red;
+ 
     
     
 
