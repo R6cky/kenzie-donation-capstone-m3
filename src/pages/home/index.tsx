@@ -1,6 +1,6 @@
 import { HeaderHome } from "../../components/header"
 
-export const TesteHome = () => {
+export const HomePage = () => {
     return (
         <>
             <HeaderHome/>

@@ -17,8 +17,8 @@ export const HeaderHome = () => {
             <div className='dropDown'>
                <img className='menu' src={Menu} alt='Menu' />
                <div className='dropDown-content'>
-                  <Link to={} className='login-home'>Entrar</Link>
-                  <Link to={} className='register-home'>Cadastrar-se</Link>
+                  <Link to={''} className='login-home'>Entrar</Link>
+                  <Link to={''} className='register-home'>Cadastrar-se</Link>
                </div>
             </div>
          </div>
