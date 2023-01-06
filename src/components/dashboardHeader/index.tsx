@@ -1,9 +1,10 @@
 import { StyledDashboardHeader } from "./style"
-
-
+import {useContext} from 'react'
+import { CreatePostContext } from "../../modais/createPost/contextCreatePost"
 
 export const DashboardHeader: () => JSX.Element = () => {
     
+   const {modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
 
 
    return(
@@ -11,7 +12,7 @@ export const DashboardHeader: () => JSX.Element = () => {
             <nav className="navbar">
                   <div>
                      <span className="buttons">Editar</span>
-                     <span className="buttons">Novo post</span>
+                     <span className="buttons" onClick={()=> setModalCreatepost(true)}>Novo post</span>
                      <span className="buttons">Seus itens</span>
                   </div>
             </nav>

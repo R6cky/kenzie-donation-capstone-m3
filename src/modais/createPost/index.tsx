@@ -3,7 +3,6 @@ import { StyledCreatePost } from "./style"
 import { useContext } from "react"
 import { CreatePostContext } from "./contextCreatePost"
 
-
 interface iCreatePosts{
      title: string,
      content: string,
@@ -17,10 +16,11 @@ interface iCreatePosts{
 
 
 export const ModalCreatePost = () => {
+
     
      const userId = 8
 
-     const {createPost,createRequest} = useContext(CreatePostContext)
+     const {createPost,createRequest, modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
 
      const { register, handleSubmit} = useForm()
 
@@ -78,7 +78,7 @@ export const ModalCreatePost = () => {
                </div>
                <div className="form-button">
                     <button>Publicar</button>
-                    <button>Cancelar</button>
+                    <button onClick={() => setModalCreatepost(false)}>Cancelar</button>
                </div>
           </form>
 

@@ -11,7 +11,6 @@ export const RoutesMain = () => {
             <Route path="/login" element={''}/>    
             <Route path="/register" element={''}/>    
             <Route path="/dashboard" element={<Dashboard/>}/>    
-            <Route path="/modal" element={<ModalCreatePost/>}/>    
         </Routes>
     )
    

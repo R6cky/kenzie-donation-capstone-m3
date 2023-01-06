@@ -1,5 +1,4 @@
-import exp from "constants";
-import { Children, createContext, useEffect } from "react";
+import { useState,createContext, useEffect } from "react";
 import { api } from "../../services/api";
 
 interface iChildren{
@@ -10,6 +9,8 @@ interface iChildren{
 interface iCreatePostContext{
     createPost: (data:any) => void
     createRequest: ((data:any) => void)
+    modalCreatepost:boolean
+    setModalCreatepost: ()=>void
 }
 
 
@@ -27,12 +28,13 @@ interface iCreatePosts{
 
 
 
-export const CreatePostContext = createContext({} as iCreatePostContext)
+export const CreatePostContext = createContext({} as iCreatePostContext | any)
+
 
 
 export const CreatePostProvider = ({children}:iChildren) => {
 
-
+        const [modalCreatepost, setModalCreatepost] = useState(false)
 
         const createPost =  async (data:iCreatePosts) => {
 
@@ -69,7 +71,7 @@ export const CreatePostProvider = ({children}:iChildren) => {
 
 
     return(
-        <CreatePostContext.Provider value={{createPost, createRequest}}>
+        <CreatePostContext.Provider value={{createPost, createRequest, modalCreatepost, setModalCreatepost}}>
             {children}
         </CreatePostContext.Provider>
     )

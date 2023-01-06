@@ -9,12 +9,6 @@ interface iChildren{
 
 
 
-interface iDashboardListContext{
-
-
-}
-
-
 interface iDashboardListPosts{
         title: string,
         content: string,
