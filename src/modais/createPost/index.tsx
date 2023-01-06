@@ -1,19 +1,42 @@
 import { useForm } from "react-hook-form"
-import * as yup from 'react-hook-form'
 import { StyledCreatePost } from "./style"
+import { useContext } from "react"
+import { CreatePostContext } from "./contextCreatePost"
 
 
+interface iCreatePosts{
+     title: string,
+     content: string,
+     category: string,
+     type: string,
+     image: string,
+     userId: number,
+     id: number
+ }
 
 
 
 export const ModalCreatePost = () => {
     
-     
+     const userId = 8
+
+     const {createPost,createRequest} = useContext(CreatePostContext)
 
      const { register, handleSubmit} = useForm()
 
-     const submit = (data:{}) => {
-          console.log(data)
+     const submit = (data:iCreatePosts) => {
+          data = {
+               ...data,
+               userId: userId
+          }
+
+          
+
+          if(data.type === 'Fazer doacao'){
+               createPost(data)
+          }else{
+               createRequest(data)
+          }
      }
 
 
