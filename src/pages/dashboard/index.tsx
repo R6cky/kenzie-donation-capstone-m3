@@ -2,7 +2,6 @@ import { StyledDashboard } from "./style"
 import { DashboardHeader } from "../../components/dashboardHeader"
 import { DashboardList } from "../../components/dashboardUl"
 
-
 export const Dashboard: () => JSX.Element = () => {
     
     

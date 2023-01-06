@@ -41,6 +41,7 @@ export const StyledDashboardHeader = styled.header`
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
             }
         }
     }
@@ -67,9 +68,12 @@ export const StyledDashboardHeader = styled.header`
 
 
     .category-card{
-        width: 62px;
-        height: 62px;
+        width: 65px;
+        height: 65px;
         border-radius: 50%;
+        border: solid var(--color-primary) 0.1px;
+        font-size: 12px;
+
     }
 
 

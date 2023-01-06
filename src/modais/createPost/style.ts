@@ -1,6 +1,8 @@
 
 import styled from "styled-components";
 
+
+
 export const StyledCreatePost = styled.div`
 
     width:100vw;
@@ -11,11 +13,22 @@ export const StyledCreatePost = styled.div`
     align-items: center;
     background: #00000058;
 
-    .header-modal{
+    .form-header{
         width: 100%;
         display: flex;
         justify-content: space-between;
         padding: 10px 20px;
+        
+        h4{
+            color: var(--color-primary);
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        span{
+            color: var(--color-primary);
+
+        }
 
     }
 
@@ -46,6 +59,7 @@ export const StyledCreatePost = styled.div`
             input{
                 width: 100%;
                 height: 50px;
+                font-size: 14px;
             }
         }
 
@@ -58,6 +72,8 @@ export const StyledCreatePost = styled.div`
             input{
                 width: 100%;
                 height: 50px;
+                font-size: 14px;
+
             }
         }
         
@@ -71,6 +87,8 @@ export const StyledCreatePost = styled.div`
             select{
                 width: 100%;
                 height: 50px;
+                font-size: 14px;
+
             }
 
             
@@ -87,6 +105,7 @@ export const StyledCreatePost = styled.div`
             select{
                 width: 100%;
                 height: 50px;
+                font-size: 14px;
             }
         }
         
@@ -100,6 +119,8 @@ export const StyledCreatePost = styled.div`
             input{
                 width: 100%;
                 height: 50px;
+                font-size: 14px;
+
             }
         }
 
@@ -114,6 +135,13 @@ export const StyledCreatePost = styled.div`
             button{
                 width: 100%;
                 height: 50px;
+                background: var(--color-primary);
+                color: var(--grey-0);
+                font-size: 18px;
+                font-weight: bold;
+                border: none;
+                border-radius: 8px;
+
             }
         }
  

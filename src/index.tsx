@@ -4,6 +4,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { GlobalStyles } from './globalstyle';
 import { BrowserRouter } from 'react-router-dom';
+import { DashboardListProvider } from './components/dashboardUl/contextList';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,9 +13,12 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <GlobalStyles/>
-      <App /> 
-      </BrowserRouter>
+    <DashboardListProvider>
+          <GlobalStyles/>
+          <App /> 
+    </DashboardListProvider>
+
+          </BrowserRouter>
   </React.StrictMode>
 );
 
