@@ -27,7 +27,7 @@ export const ModalCreatePost = () => {
      const { register, handleSubmit} = useForm()
 
 
-     const submit = (data:iCreatePosts) => {
+     const submit = (data:iCreatePosts | any) => {
           data = {
                ...data,
                userId: userId

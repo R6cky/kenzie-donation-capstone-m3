@@ -7,16 +7,15 @@ import { CreatePostContext } from "../../modais/createPost/contextCreatePost"
 
 export const Dashboard: () => JSX.Element = () => {
     
-    const {modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
+
+   const {modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
 
 
    return(
-      
+   
         <StyledDashboard> 
 
-            {modalCreatepost === true ? <ModalCreatePost/> : 
-            <>
-                
+                              
                 <DashboardHeader/>
                 <div className="list-post">
                     <DashboardList/>
@@ -24,8 +23,9 @@ export const Dashboard: () => JSX.Element = () => {
                 <div className="list-request">
                     <DashboardList/>
                 </div>
-            </>
-            } 
+                {modalCreatepost === true ? <ModalCreatePost/> : false}
+           
+               
             
         </StyledDashboard>
     

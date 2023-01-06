@@ -7,12 +7,17 @@ export const StyledCreatePost = styled.div`
 
     width:100vw;
     max-width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: #00000058;
-
+    position:fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    padding: 20px;
+    
     .form-header{
         width: 100%;
         display: flex;
@@ -34,7 +39,7 @@ export const StyledCreatePost = styled.div`
 
 
     form{
-        width: 90%;
+        width: 100%;
         max-width: 100%;
         height: 713px;
         margin: 0 auto;
@@ -146,6 +151,11 @@ export const StyledCreatePost = styled.div`
         }
  
     }
+
+
+
+
+
 
 
 `

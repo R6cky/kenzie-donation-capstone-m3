@@ -5,7 +5,6 @@ export const StyledDashboardList = styled.ul`
 
     width: 100%;
     height: 350px;
-    border: solid red;
     display: flex;
     gap: 20px;
     overflow-x: scroll;
