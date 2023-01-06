@@ -39,7 +39,7 @@ export const CreatePostProvider = ({children}:iChildren) => {
         const createPost =  async (data:iCreatePosts) => {
 
             // const token = localStorage.getItem('@UserToken') || ''
-            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbG9AbWFpbC5jb20iLCJpYXQiOjE2NzI5Nzc5ODcsImV4cCI6MTY3Mjk4MTU4Nywic3ViIjoiOCJ9.Kb0pB93LKBpH6g9UYjrssHD7v4uCZIZRCilLdXunQaY'
+            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbG9AbWFpbC5jb20iLCJpYXQiOjE2NzMwMjU4MDcsImV4cCI6MTY3MzAyOTQwNywic3ViIjoiOCJ9.IWqjIqrWrOxy-_Lg_Y-9l5agW482g-LlwTBsUFxWKXA'
 
             try {
                 const request = await api.post('/posts',data, {
@@ -49,6 +49,8 @@ export const CreatePostProvider = ({children}:iChildren) => {
                 })
             } catch (error) {
                 console.error(error)
+            }finally{
+
             }
         }
 
@@ -56,7 +58,7 @@ export const CreatePostProvider = ({children}:iChildren) => {
         const createRequest =  async (data:iCreatePosts) => {
 
             // const token = localStorage.getItem('@UserToken') || ''
-            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbG9AbWFpbC5jb20iLCJpYXQiOjE2NzI5Nzc5ODcsImV4cCI6MTY3Mjk4MTU4Nywic3ViIjoiOCJ9.Kb0pB93LKBpH6g9UYjrssHD7v4uCZIZRCilLdXunQaY'
+            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbG9AbWFpbC5jb20iLCJpYXQiOjE2NzMwMjU4MDcsImV4cCI6MTY3MzAyOTQwNywic3ViIjoiOCJ9.IWqjIqrWrOxy-_Lg_Y-9l5agW482g-LlwTBsUFxWKXA'
 
             try {
                 const request = await api.post('/request',data, {
@@ -64,8 +66,12 @@ export const CreatePostProvider = ({children}:iChildren) => {
                         authorization: `Bearer ${token}`
                     }
                 })
+
             } catch (error) {
                 console.error(error)
+
+            }finally{
+
             }
         }
 

@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form"
 import { StyledCreatePost } from "./style"
 import { useContext } from "react"
 import { CreatePostContext } from "./contextCreatePost"
+import { useNavigate } from "react-router-dom"
 
 interface iCreatePosts{
      title: string,
@@ -17,12 +18,14 @@ interface iCreatePosts{
 
 export const ModalCreatePost = () => {
 
-    
+     const navigate = useNavigate()
+     
+
      const userId = 8
 
      const {createPost,createRequest, modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
-
      const { register, handleSubmit} = useForm()
+
 
      const submit = (data:iCreatePosts) => {
           data = {
@@ -31,7 +34,6 @@ export const ModalCreatePost = () => {
           }
 
           
-
           if(data.type === 'Fazer doacao'){
                createPost(data)
           }else{
