@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form"
 import { StyledCreatePost } from "./style"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { CreatePostContext } from "./contextCreatePost"
 import { useNavigate } from "react-router-dom"
+import { api } from "../../services/api"
+import { DashboardListContext } from "../../components/dashboardUl/contextList"
 
 interface iCreatePosts{
      title: string,
@@ -11,21 +13,21 @@ interface iCreatePosts{
      type: string,
      image: string,
      userId: number,
-     id: number
+     id: number,
+     data:[]
  }
 
 
 
 export const ModalCreatePost = () => {
 
-     const navigate = useNavigate()
-     
 
-     const userId = 8
+     const userId = 1
 
      const {createPost,createRequest, modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
+     const {setDashboardListPost}:any = useContext(DashboardListContext)
      const { register, handleSubmit} = useForm()
-
+    
 
      const submit = (data:iCreatePosts | any) => {
           data = {
@@ -33,7 +35,8 @@ export const ModalCreatePost = () => {
                userId: userId
           }
 
-          
+        
+
           if(data.type === 'Fazer doacao'){
                createPost(data)
           }else{

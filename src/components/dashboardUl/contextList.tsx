@@ -27,7 +27,7 @@ export const DashboardListProvider = ({children}:iChildren) => {
 
 
 
-    const [dashboardListPosts, setDashboaedListPosts] = useState([])
+    const [dashboardListPosts, setDashboardListPosts] = useState([])
     const [dashboardListRequests, setDashboardListRequests] = useState([] as iDashboardListPosts[])
 
 
@@ -36,20 +36,15 @@ export const DashboardListProvider = ({children}:iChildren) => {
 
         const getPost =  async () => {
 
-            const token = localStorage.getItem('@UserToken') ||  ''
-
             try {
-                const request:iDashboardListPosts = await api.get('/posts')
-                console.log(request.data)
-                setDashboaedListPosts(request.data)
+                const request:iDashboardListPosts = await api.get('/donation')
+                setDashboardListPosts(request.data)
 
             } catch (error) {
                 console.error(error)
             }
-
-
-
         }
+
         getPost()
     },[])
 
@@ -79,7 +74,7 @@ export const DashboardListProvider = ({children}:iChildren) => {
     return(
         <DashboardListContext.Provider value={{
             dashboardListPosts,
-            setDashboaedListPosts,
+            setDashboardListPosts,
             dashboardListRequests,
             setDashboardListRequests}}>
             {children}

@@ -21,6 +21,7 @@ export const StyledDashboardCard = styled.li`
         max-width: 100%;
         height: 166px;
         border: solid;
+        
     }
 
 

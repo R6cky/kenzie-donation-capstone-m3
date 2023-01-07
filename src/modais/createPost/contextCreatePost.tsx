@@ -39,10 +39,10 @@ export const CreatePostProvider = ({children}:iChildren) => {
         const createPost =  async (data:iCreatePosts) => {
 
             // const token = localStorage.getItem('@UserToken') || ''
-            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbG9AbWFpbC5jb20iLCJpYXQiOjE2NzMwMjU4MDcsImV4cCI6MTY3MzAyOTQwNywic3ViIjoiOCJ9.IWqjIqrWrOxy-_Lg_Y-9l5agW482g-LlwTBsUFxWKXA'
+            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbG9AbWFpbC5jb20iLCJpYXQiOjE2NzMwOTQ1MjgsImV4cCI6MTY3MzA5ODEyOCwic3ViIjoiMSJ9.QlkZOTk0j-2q-WeP8ap-R-Z5MJI62IEkanSBYxamQNI'
 
             try {
-                const request = await api.post('/posts',data, {
+                const request = await api.post('/donation',data, {
                     headers: {
                         authorization: `Bearer ${token}`
                     }
