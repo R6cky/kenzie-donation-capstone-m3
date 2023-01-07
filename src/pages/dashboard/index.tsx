@@ -1,12 +1,11 @@
-<<<<<<< HEAD
-export const Teste = () => {}
-=======
+
 import { StyledDashboard } from "./style"
 import { DashboardHeader } from "../../components/dashboardHeader"
 import { DashboardList } from "../../components/dashboardUl"
 import { ModalCreatePost } from "../../modais/createPost"
 import {useContext} from 'react'
 import { CreatePostContext } from "../../modais/createPost/contextCreatePost"
+import { HeaderHome } from "../../components/header"
 
 export const Dashboard: () => JSX.Element = () => {
     
@@ -18,8 +17,7 @@ export const Dashboard: () => JSX.Element = () => {
    
         <StyledDashboard> 
 
-                              
-                <DashboardHeader/>
+                <HeaderHome/>
                 <div className="list-post">
                     <DashboardList/>
                 </div>
@@ -34,4 +32,4 @@ export const Dashboard: () => JSX.Element = () => {
     
    )
 }
->>>>>>> 8f6cef14d6010831f7c0d6390f0906f7a0b8a14b
+

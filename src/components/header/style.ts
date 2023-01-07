@@ -68,8 +68,34 @@ export const StyledHeader = styled.header`
       align-items: center;
    }
 
+
+   // Estilo do menu da dashboard -- adicionado
+   .dropDown-content-logged{
+
+      width: 347px;
+      height: 48px;
+      position: absolute;
+      top: 25px;
+      right: 0px;
+      border-radius: 5px;
+      border: 2px solid var(--color-primary);
+
+      background-color: var(--grey-0);
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+
+      animation: modalAnimation 2s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+   }
+
+
    .login-home,
-   .register-home {
+   .register-home,
+   .buttons-menu-dashboard {
       height: 30px;
       border-radius: 2px;
       border: 2px solid var(--color-primary);
@@ -77,6 +103,22 @@ export const StyledHeader = styled.header`
       margin: 0 10px;
       color: var(--grey-0);
       text-decoration: none;
+      font-weight: bold;
+   }
+
+
+
+   // Estilo do menu da dashboard -- adicionado
+   .buttons-menu-dashboard {
+      width: 90px;
+      height: 30px;
+      border-radius: 2px;
+      border: 2px solid var(--color-primary);
+      background-color: var(--color-primary);
+      margin: 0 10px;
+      color: var(--grey-0);
+      text-decoration: none;
+      font-weight: bold;
    }
 
    .login-home:hover, 
