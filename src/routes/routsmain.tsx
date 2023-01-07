@@ -1,5 +1,6 @@
-import { Route, Routes } from 'react-router-dom'
-import { HomePage } from '../pages/home'
+import { Route, Routes } from "react-router-dom";
+import { ModalCreatePost } from "../modais/createPost";
+import { Dashboard } from "../pages/dashboard";
 
 export const RoutesMain = () => {
    return (

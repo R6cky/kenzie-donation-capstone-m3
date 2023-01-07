@@ -63,7 +63,7 @@ export const StyledHeader = styled.header`
       z-index: 1;
 
       animation: modalAnimation 2s ease;
-      display: none;
+      display: flex;
       justify-content: center;
       align-items: center;
    }
