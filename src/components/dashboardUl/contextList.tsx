@@ -57,7 +57,7 @@ export const DashboardListProvider = ({children}:iChildren) => {
             try {
                 const request:iDashboardListPosts = await api.get('/request')
                 console.log(request.data)
-                // setDashboaedListPosts(request.data)
+                setDashboardListRequests(request.data)
 
             } catch (error) {
                 console.error(error)

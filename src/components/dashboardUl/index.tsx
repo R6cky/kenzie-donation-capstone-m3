@@ -9,7 +9,7 @@ import { ModalCreatePost } from "../../modais/createPost"
 export const DashboardList = () => {
     
 
-const {dashboardListPosts}:any = useContext(DashboardListContext)
+const {dashboardListPosts, dashboardListRequests}:any = useContext(DashboardListContext)
 // const {setModalCreatepost, modalCreatepost} = useContext(CreatePostContext)
 
 
@@ -64,7 +64,7 @@ interface iDashboardListPosts{
 
                <ul>
                          {
-                              dashboardListPosts.map((element:any)=>{
+                              dashboardListRequests.map((element:any)=>{
                                    return (
                                         
                                         <li key={element.id}>
