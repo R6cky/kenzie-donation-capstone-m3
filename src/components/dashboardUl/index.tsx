@@ -42,7 +42,7 @@ interface iDashboardListPosts{
                                         <img src={element.image} alt="img"/>
                                    </div>
                                    <div className="product-category">
-                                        <span>Descrição</span>
+                                        <span>{element.title}</span>
                                         <h4>{element.category}</h4>
                                    </div>
                                         <div className="product-description">

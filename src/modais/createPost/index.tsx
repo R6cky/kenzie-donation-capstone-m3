@@ -66,8 +66,8 @@ export const ModalCreatePost = () => {
                     <select id="" {...register('category')}>
                          <option value="Roupas">Roupas</option>
                          <option value="Brinquedos">Brinquedos</option>
-                         <option value="Moveis">Moveis</option>
-                         <option value="Eletro">Eletro</option>
+                         <option value="Móveis">Mveis</option>
+                         <option value="Eletro">Eletrônico</option>
                     </select>
                </div>
                <div className="form-post-type">
