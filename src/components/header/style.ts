@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledHeader = styled.header`
+
    height: 100%;
    padding: 15px 15px 0 15px;
    display: flex;
@@ -75,7 +76,7 @@ export const StyledHeader = styled.header`
       width: 347px;
       height: 48px;
       position: absolute;
-      top: 25px;
+      top: 30px;
       right: 0px;
       border-radius: 5px;
       border: 2px solid var(--color-primary);
@@ -110,7 +111,8 @@ export const StyledHeader = styled.header`
 
    // Estilo do menu da dashboard -- adicionado
    .buttons-menu-dashboard {
-      width: 90px;
+      width: 100px;
+      max-width: 100%;
       height: 30px;
       border-radius: 2px;
       border: 2px solid var(--color-primary);
@@ -125,6 +127,13 @@ export const StyledHeader = styled.header`
    .register-home:hover {
       background-color: rgba(86, 144, 231, 0.66);
       border: 2px solid rgba(86, 144, 231, 0.66);
+   }
+
+
+
+   // Estilo do menu da dashboard -- adicionado
+   .exit-btn{
+      margin-left: 10px;
    }
 
    @keyframes modalAnimation {

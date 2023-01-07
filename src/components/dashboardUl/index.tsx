@@ -15,7 +15,7 @@ const {dashboardListPosts}:any = useContext(DashboardListContext)
 
 interface iDashboardListPosts{
      title: string,
-     content: string,
+     description: string,
      category: string,
      type: string,
      image: string,
@@ -34,7 +34,7 @@ interface iDashboardListPosts{
                {
                   
               
-                    dashboardListPosts.map((element:any)=>{
+                    dashboardListPosts.map((element:iDashboardListPosts)=>{
                          return (
                               
                               <li key={element.id}>
