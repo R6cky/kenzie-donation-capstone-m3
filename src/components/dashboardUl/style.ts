@@ -12,6 +12,21 @@ export const StyledDashboardList = styled.div`
         overflow-x: scroll;
         padding: 20px;
         margin-bottom: 20px;
+
+        ::-webkit-scrollbar {
+            width: 8px;     
+            height:10px;          /* width of the entire scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+        background: var(--grey-0);        /* color of the tracking area */
+        }
+
+        ::-webkit-scrollbar-thumb {
+        background-color: var(--color-primary);    /* color of the scroll thumb */
+        border-radius: 20px;       /* roundness of the scroll thumb */
+        border: 2px solid var(--color-primary);  /* creates padding around scroll thumb */
+        }
     }
 
 
@@ -102,4 +117,12 @@ export const StyledDashboardList = styled.div`
 
         }
     }
+
+
+
+
+
+
+
+
 `
