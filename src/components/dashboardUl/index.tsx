@@ -30,38 +30,66 @@ interface iDashboardListPosts{
 
    return(
         <StyledDashboardList>
-
-               {
-                  
-              
-                    dashboardListPosts.map((element:any)=>{
-                         return (
+               <ul>
+                         {
                               
-                              <li key={element.id}>
-                                   <div className="product-image">
-                                        <img src={element.image} alt="img"/>
-                                   </div>
-                                   <div className="product-category">
-                                        <span>{element.title}</span>
-                                        <h4>{element.category}</h4>
-                                   </div>
-                                        <div className="product-description">
-                                             <p>{element.description}</p>
-                                        </div>
-                                        <div className="product-buttons">
-                                             <button>ver</button>
-                                             <button>doar</button>
-                                        </div>
-                              </li>
+                              dashboardListPosts.map((element:any)=>{
+                                   return (
+                                        
+                                        <li key={element.id}>
+                                             <div className="product-image">
+                                                  <img src={element.image} alt="img"/>
+                                             </div>
+                                             <div className="product-category">
+                                                  <span>{element.title}</span>
+                                                  <h4>{element.category}</h4>
+                                             </div>
+                                                  <div className="product-description">
+                                                       <p>{element.description}</p>
+                                                  </div>
+                                                  <div className="product-buttons">
+                                                       <button>ver</button>
+                                                       <button>doar</button>
+                                                  </div>
+                                        </li>
 
-                             // <DashboardCard element={element} key={element.id}/>
-                             
-                         )
-                    })
+                                   // <DashboardCard element={element} key={element.id}/>
+                                   
+                                   )
+                              })
+                         
+                              
+                         }
+               </ul>
 
+               <ul>
+                         {
+                              dashboardListPosts.map((element:any)=>{
+                                   return (
+                                        
+                                        <li key={element.id}>
+                                             <div className="product-image">
+                                                  <img src={element.image} alt="img"/>
+                                             </div>
+                                             <div className="product-category">
+                                                  <span>{element.title}</span>
+                                                  <h4>{element.category}</h4>
+                                             </div>
+                                                  <div className="product-description">
+                                                       <p>{element.description}</p>
+                                                  </div>
+                                                  <div className="product-buttons">
+                                                       <button>ver</button>
+                                                       <button>doar</button>
+                                                  </div>
+                                        </li>
 
-
-               }
+                                   // <DashboardCard element={element} key={element.id}/>
+                                   
+                                   )
+                              })
+                         }
+               </ul>
              
         </StyledDashboardList>
    )

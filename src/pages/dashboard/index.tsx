@@ -20,9 +20,6 @@ export const Dashboard: () => JSX.Element = () => {
                 <div className="list-post">
                     <DashboardList/>
                 </div>
-                <div className="list-request">
-                    <DashboardList/>
-                </div>
                 {modalCreatepost === true ? <ModalCreatePost/> : false}
            
                

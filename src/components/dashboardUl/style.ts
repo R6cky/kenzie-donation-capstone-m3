@@ -1,15 +1,18 @@
 
 import styled from "styled-components";
 
-export const StyledDashboardList = styled.ul`
+export const StyledDashboardList = styled.div`
 
-    width: 100%;
-    height: 350px;
-    display: flex;
-    gap: 20px;
-    overflow-x: scroll;
-    padding: 20px;
-    margin-bottom: 20px;
+    border: solid red;
+
+   ul{  width: 100%;
+        height: 350px;
+        display: flex;
+        gap: 20px;
+        overflow-x: scroll;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
 
 
     
