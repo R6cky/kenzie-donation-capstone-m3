@@ -1,0 +1,32 @@
+.container-modal-edit-post {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   position: relative;
+}
+.modal-overlay-edit-post {
+   width: 100%;
+   height: 100%;
+
+   position: fixed;
+   top: 0;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   background-color: rgba(18, 18, 20, 0.5);
+}
+.modal-content-edit-post {
+   position: absolute;
+   z-index: 1;
+
+   width: 90%;
+   max-width: 750px;
+   height: 700px;
+
+   border-radius: 10px;
+   border: 3px solid var(--white);
+   background-color: var(--white);
+}
