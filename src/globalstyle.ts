@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -15,7 +15,6 @@ export const GlobalStyles = createGlobalStyle`
         cursor: pointer;
     }
 
-
     :root{
 
         --color-primary:#5690E7;
@@ -24,15 +23,15 @@ export const GlobalStyles = createGlobalStyle`
         --grey-300:#828282;
         --grey-100:#E0E0E0;
         --grey-0:#F5F5F5;
+        --white: #FFFFFF;
         --grey-default:#484545;
         --Negative:#E60000;
         --Warning:#FFCD07;
         --Sucess:#168821;
         --information:#155BCB;
+        --button-red: #E75656;
+        --button-green: #66BB7E;
 
     }
-
-
-
 
 `
