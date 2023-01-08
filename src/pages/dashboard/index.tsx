@@ -2,8 +2,11 @@ import { StyledDashboard } from "./style"
 import { DashboardHeader } from "../../components/dashboardHeader"
 import { DashboardList } from "../../components/dashboardUl"
 import { ModalCreatePost } from "../../modais/createPost"
-import {useContext} from 'react'
 import { CreatePostContext } from "../../modais/createPost/contextCreatePost"
+import { useContext } from 'react'
+import { ModalDash } from '../../modais/modalSeusItens'
+import { ModalContext } from '../../modais/modalContext'
+
 
 export const Dashboard: () => JSX.Element = () => {
     
@@ -25,6 +28,16 @@ export const Dashboard: () => JSX.Element = () => {
                
             
         </StyledDashboard>
-    
+   )
+   }
+
+export const DashboardHome = () => {
+   const { modalIsOpen, handleModal } = useContext(ModalContext)
+
+   return (
+      <div>
+         <button onClick={() => handleModal()}>OPEN MODAL</button>
+         {modalIsOpen && <ModalDash />}
+      </div>
    )
 }
