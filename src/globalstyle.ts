@@ -15,9 +15,7 @@ export const GlobalStyles = createGlobalStyle`
         cursor: pointer;
     }
 
-
     :root{
-
         --color-primary:#5690E7;
         --color-secondary:#9858F0;
         --gray-600:#333333;
@@ -29,10 +27,5 @@ export const GlobalStyles = createGlobalStyle`
         --Warning:#FFCD07;
         --Sucess:#168821;
         --information:#155BCB;
-
     }
-
-
-
-
 `
