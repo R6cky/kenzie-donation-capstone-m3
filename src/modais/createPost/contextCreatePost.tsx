@@ -1,5 +1,7 @@
-import { useState,createContext, useEffect } from "react";
+import { useState,createContext, useContext, useEffect} from "react";
+import { DashboardListContext } from "../../components/dashboardUl/contextList";
 import { api } from "../../services/api";
+
 
 interface iChildren{
     children: React.ReactNode
@@ -32,33 +34,47 @@ export const CreatePostContext = createContext({} as iCreatePostContext | any)
 
 
 
+
+
 export const CreatePostProvider = ({children}:iChildren) => {
+
+    const {dashboardListPosts, setDashboardListPosts, dashboardListRequests, setDashboardListRequests}:any = useContext(DashboardListContext)
 
         const [modalCreatepost, setModalCreatepost] = useState(false)
 
-        const createPost =  async (data:iCreatePosts) => {
 
-            // const token = localStorage.getItem('@UserToken') || ''
-            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbG9AbWFpbC5jb20iLCJpYXQiOjE2NzMwOTQ1MjgsImV4cCI6MTY3MzA5ODEyOCwic3ViIjoiMSJ9.QlkZOTk0j-2q-WeP8ap-R-Z5MJI62IEkanSBYxamQNI'
-
-            try {
-                const request = await api.post('/donation',data, {
-                    headers: {
-                        authorization: `Bearer ${token}`
+                const createPost =  async (data:iCreatePosts) => {
+                
+                    // const token = localStorage.getItem('@UserToken') || ''
+                    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbG9AbWFpbC5jb20iLCJpYXQiOjE2NzMyMDE5NjEsImV4cCI6MTY3MzIwNTU2MSwic3ViIjoiMSJ9.guG4B4jKjYQkrj5_gI1x1w0_lXk0OgSWlGy8IqSf_bE'
+        
+                    try {
+                        const request = await api.post('/donation',data, {
+                            headers: {
+                                authorization: `Bearer ${token}`
+                            }
+                        })
+                        await  setDashboardListPosts([...dashboardListPosts, request.data])
+                        setModalCreatepost(false)
+                    } catch (error) {
+                        console.error(error)
+                    }finally{
+        
                     }
-                })
-            } catch (error) {
-                console.error(error)
-            }finally{
+                }
+            
 
-            }
-        }
+    
+
+
+      
+       
 
 
         const createRequest =  async (data:iCreatePosts) => {
 
             // const token = localStorage.getItem('@UserToken') || ''
-            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbG9AbWFpbC5jb20iLCJpYXQiOjE2NzMxMjE5MTAsImV4cCI6MTY3MzEyNTUxMCwic3ViIjoiMSJ9.TuO5OXQJXJ7hHEFIEahJXNMVG9Zq3_TWZ-N1TnAO1Lo'
+            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbG9AbWFpbC5jb20iLCJpYXQiOjE2NzMyMDE5NjEsImV4cCI6MTY3MzIwNTU2MSwic3ViIjoiMSJ9.guG4B4jKjYQkrj5_gI1x1w0_lXk0OgSWlGy8IqSf_bE'
 
             try {
                 const request = await api.post('/request',data, {
@@ -66,12 +82,14 @@ export const CreatePostProvider = ({children}:iChildren) => {
                         authorization: `Bearer ${token}`
                     }
                 })
-
+                
+               await setDashboardListRequests([...dashboardListRequests, request.data])
+               setModalCreatepost(false)
             } catch (error) {
                 console.error(error)
 
             }finally{
-
+                
             }
         }
 

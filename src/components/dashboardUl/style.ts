@@ -48,12 +48,14 @@ export const StyledDashboardList = styled.div`
             width: 219px;
             height: 166px;
             max-width: 100%;
-            
+
 
             img{
                 width: 219px;
                 height: 166px;
                 border-radius: 8px;
+                object-fit: cover;
+
             }
         }
 

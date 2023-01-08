@@ -3,8 +3,8 @@ import { StyledCreatePost } from "./style"
 import { useContext, useEffect } from "react"
 import { CreatePostContext } from "./contextCreatePost"
 import { useNavigate } from "react-router-dom"
-import { api } from "../../services/api"
 import { DashboardListContext } from "../../components/dashboardUl/contextList"
+import { async } from "q"
 
 interface iCreatePosts{
      title: string,
@@ -19,7 +19,7 @@ interface iCreatePosts{
 
 
 
-export const ModalCreatePost = () => {
+export const ModalCreatePost =  () => {
 
 
      const userId = 1
@@ -37,9 +37,9 @@ export const ModalCreatePost = () => {
 
         
 
-          if(data.type === 'Fazer doacao'){
+          if(data.type === 'donation'){
                createPost(data)
-          }else{
+          }else if(data.type === 'request'){
                createRequest(data)
           }
      }
@@ -66,15 +66,15 @@ export const ModalCreatePost = () => {
                     <select id="" {...register('category')}>
                          <option value="Roupas">Roupas</option>
                          <option value="Brinquedos">Brinquedos</option>
-                         <option value="Móveis">Mveis</option>
-                         <option value="Eletro">Eletrônico</option>
+                         <option value="Móveis">Móveis</option>
+                         <option value="Eletrônicos">Eletrônicos</option>
                     </select>
                </div>
                <div className="form-post-type">
                     <label htmlFor="">Escolha o nível da postagem</label>
                     <select id="" {...register('type')}>
-                         <option value="Fazer doacao">Fazer doacao</option>
-                         <option value="Solicitar doacao">Solicitar doação</option>
+                         <option value="donation">Fazer doacão</option>
+                         <option value="request">Solicitar doação</option>
                     </select>
                </div>
                <div className="form-post-image">
