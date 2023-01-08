@@ -27,6 +27,7 @@
    height: 700px;
 
    border-radius: 10px;
-   border: 3px solid var(--white);
-   background-color: var(--white);
+   border: 3px solid var(--grey-0);
+   background-color: var(--grey-0);
+
 }
