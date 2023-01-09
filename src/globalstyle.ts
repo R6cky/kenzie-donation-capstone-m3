@@ -2,12 +2,11 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
 
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
-
-    *{
+*{
         margin: 0px;
         box-sizing: border-box;
         font-family: 'Inter', sans-serif;
+        font-weight: 300;
         font-weight: normal;
         list-style: none;
     }
@@ -17,7 +16,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     :root{
-
         --color-primary:#5690E7;
         --color-secondary:#9858F0;
         --gray-600:#333333;
