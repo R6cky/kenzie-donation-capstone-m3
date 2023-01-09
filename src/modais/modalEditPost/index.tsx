@@ -7,12 +7,12 @@ import { StyledModalContentEditPost } from './styled'
 Modal.setAppElement('#root')
 
 const ModalEditPost = () => {
-   const { modalEditPostHandle, editPostIsOpenModal } = useContext(ModalContext)
+   const { modalEditPostHandle, editPostIsOpenModal, setEditPostIsOpenModal } = useContext(ModalContext)
    return (
       <div className='container-modal-edit-post'>
          <Modal
-            isOpen={editPostIsOpenModal}
-            onRequestClose={modalEditPostHandle}
+            isOpen={editPostIsOpenModal?true:false}
+            onRequestClose={() => setEditPostIsOpenModal(null)}
             contentLabel='Example Modal'
             overlayClassName='modal-overlay-edit-post'
             className='modal-content-edit-post'
@@ -20,7 +20,7 @@ const ModalEditPost = () => {
             <StyledModalContentEditPost>
                <div className='box-header'>
                   <h2>Editar Post</h2>
-                  <button onClick={() => modalEditPostHandle()}>X</button>
+                  <button onClick={() => modalEditPostHandle(editPostIsOpenModal as number)}>X</button>
                </div>
 
                <form className='create-post' action=''>
@@ -54,7 +54,7 @@ const ModalEditPost = () => {
                   </div>
                   <div className='form-button'>
                      <button className='btn-update'>Atualizar</button>
-                     <button onClick={() => modalEditPostHandle()}>
+                     <button onClick={() => modalEditPostHandle(editPostIsOpenModal as number)}>
                         Cancelar
                      </button>
                   </div>
