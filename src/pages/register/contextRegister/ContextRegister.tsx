@@ -1,6 +1,5 @@
 import { createContext } from "react";
 import { toast } from "react-toastify";
-
 import { api } from "../../../services/api";
 
 interface iUserContext {

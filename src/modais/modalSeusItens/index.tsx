@@ -16,6 +16,8 @@ export const ModalDash = () => {
       modalDeleteIsOpen,
       modalEditPostHandle,
       editPostIsOpenModal,
+      viewDonation,
+      viewRequest,
    } = useContext(ModalContext)
 
    return (
@@ -38,37 +40,58 @@ export const ModalDash = () => {
                   <div className='box-container-ul'>
                      <h2 className='title-card'>Itens para Doação</h2>
                      <ul className='scrollbar'>
-                        <li className='card-donations-list box-card'>
-                           <p>Blusa de Frio Infantil</p>
-                           <div className='box-btn-card'>
-                              <button
-                                 onClick={() => modalEditPostHandle()}
-                                 className='btn-edit'
-                              >
-                                 Editar
-                              </button>
-                              <button
-                                 onClick={() => handleModalDelete()}
-                                 className='btn-delete'
-                              >
-                                 Excluir
-                              </button>
-                              {modalDeleteIsOpen && <ModalConfirmDelete />}
-                              {editPostIsOpenModal && <ModalEditPost />}
-                           </div>
-                        </li>
+                        {viewDonation?.map((elem) => (
+                           <li
+                              key={elem.id}
+                              className='card-donations-list box-card'
+                           >
+                              <p>{elem.title}</p>
+                              <div className='box-btn-card'>
+                                 <button className='btn-edit'>
+                                    Visualizar
+                                 </button>
+                                 <button
+                                    onClick={() => modalEditPostHandle(elem.id)}
+                                    className='btn-edit'
+                                 >
+                                    Editar
+                                 </button>
+                                 <button
+                                    onClick={() => handleModalDelete(elem.id)}
+                                    className='btn-delete'
+                                 >
+                                    Excluir
+                                 </button>
+                              </div>
+                           </li>
+                        ))}
                      </ul>
                   </div>
                   <div className='box-container-ul'>
                      <h2 className='title-card'>Itens Solicitados</h2>
                      <ul className='scrollbar'>
-                        <li className='card-donations-list box-card'>
-                           <p>Blusa de Frio Infantil</p>
-                           <div className='box-btn-card'>
-                              <button className='btn-edit'>Editar</button>
-                              <button className='btn-delete'>Excluir</button>
-                           </div>
-                        </li>
+                        {viewRequest?.map((elem) => (
+                           <li
+                              key={elem.id}
+                              className='card-donations-list box-card'
+                           >
+                              <p>{elem.title}</p>
+                              <div className='box-btn-card'>
+                                 <button
+                                    onClick={() => modalEditPostHandle(elem.id)}
+                                    className='btn-edit'
+                                 >
+                                    Editar
+                                 </button>
+                                 <button
+                                    onClick={() => handleModalDelete(elem.id)}
+                                    className='btn-delete'
+                                 >
+                                    Excluir
+                                 </button>
+                              </div>
+                           </li>
+                        ))}
                      </ul>
                   </div>
                   <div className='box-container-ul'>
@@ -96,6 +119,8 @@ export const ModalDash = () => {
                </div>
             </StyleModalYourItems>
          </Modal>
+         {modalDeleteIsOpen && <ModalConfirmDelete />}
+         {editPostIsOpenModal && <ModalEditPost />}
       </div>
    )
 }

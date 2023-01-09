@@ -6,14 +6,16 @@ import { StyledModalConfirmDelete } from './styled'
 
 Modal.setAppElement('#root')
 
+
 export const ModalConfirmDelete = () => {
-   const { modalDeleteIsOpen, handleModalDelete } = useContext(ModalContext)
+   const { modalDeleteIsOpen, handleModalDelete, deletePostDonation, setDeleteIsOpen } =
+      useContext(ModalContext)
 
    return (
       <div className='container-delete'>
          <Modal
-            isOpen={modalDeleteIsOpen}
-            onRequestClose={handleModalDelete}
+            isOpen={modalDeleteIsOpen?true:false}
+            onRequestClose={() => setDeleteIsOpen(null)}
             overlayClassName='modal-overlay-delete'
             contentLabel='Example Modal'
             className='modal-content-delete'
@@ -26,11 +28,14 @@ export const ModalConfirmDelete = () => {
                   <div className='box-btn-modal-delete'>
                      <button
                         className='btn-cancel'
-                        onClick={() => handleModalDelete()}
+                        onClick={() => handleModalDelete(modalDeleteIsOpen as number)}
                      >
                         Cancelar
                      </button>
-                     <button className='btn-confirm-delete'>
+                     <button
+                        onClick={() => deletePostDonation(modalDeleteIsOpen as number)}
+                        className='btn-confirm-delete'
+                     >
                         Sim, excluir post!
                      </button>
                   </div>
