@@ -42,6 +42,20 @@ export const StyledDashboardList = styled.div`
         align-items: center;
         padding: 10px 20px;
         background: #F5f5f5;
+        -webkit-box-shadow: -1px 2px 12px -3px #000000; 
+        box-shadow: -1px 2px 12px -1px #00000045;
+
+        animation: myAnim 1s ease 0s 1 normal forwards;
+
+        @keyframes myAnim {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+}
 
 
         .product-image{
@@ -105,8 +119,8 @@ export const StyledDashboardList = styled.div`
             align-items: center;
 
             button{
-                width: 93px;
-                height: 22px;
+                width: 100px;
+                height: 24px;
                 background-color: var(--color-primary);
                 color: var(--grey-0);
                 font-weight: bold;

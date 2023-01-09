@@ -22,7 +22,7 @@ interface iCreatePosts{
 export const ModalCreatePost =  () => {
 
 
-     const userId = 1
+     const userId = 3
 
      const {createPost,createRequest, modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
      const {setDashboardListPost}:any = useContext(DashboardListContext)

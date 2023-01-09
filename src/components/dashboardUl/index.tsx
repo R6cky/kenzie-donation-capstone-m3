@@ -49,7 +49,7 @@ interface iDashboardListPosts{
                                                   </div>
                                                   <div className="product-buttons">
                                                        <button>ver</button>
-                                                       <button>doar</button>
+                                                       <button>Pegar doação</button>
                                                   </div>
                                         </li>
 

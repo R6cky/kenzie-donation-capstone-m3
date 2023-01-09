@@ -50,6 +50,21 @@ export const StyledCreatePost = styled.div`
         background:var(--grey-0);
         border-radius: 10px;
 
+        animation: myAnim 1s ease 0s 1 normal forwards;
+
+        @keyframes myAnim {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+        
+
         label{
             font-size: 14px;
         }
