@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react"
 import { CreatePostContext } from "./contextCreatePost"
 import { useNavigate } from "react-router-dom"
 import { DashboardListContext } from "../../components/dashboardUl/contextList"
-import { async } from "q"
+import CloseModalCreatePost from '../../assets/closeModalCreatePost.png'
 
 interface iCreatePosts{
      title: string,
@@ -25,7 +25,6 @@ export const ModalCreatePost =  () => {
      const userId = 3
 
      const {createPost,createRequest, modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
-     const {setDashboardListPost}:any = useContext(DashboardListContext)
      const { register, handleSubmit} = useForm()
     
 
@@ -51,7 +50,7 @@ export const ModalCreatePost =  () => {
           <form onSubmit={handleSubmit(submit)} className="createPost" action="">
                <div className="form-header">
                     <h4>Novo post</h4>
-                    <span><img src="" alt="closeModal" /></span>
+                    <span className="btn-close-modal" onClick={() => setModalCreatepost(false)}><img src={CloseModalCreatePost} alt="closeModal" /></span>
                </div>
                <div className="form-title">
                     <label htmlFor="">Título</label>

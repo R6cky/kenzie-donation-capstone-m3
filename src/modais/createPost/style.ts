@@ -65,6 +65,22 @@ export const StyledCreatePost = styled.div`
         }
         
 
+        .form-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+
+        .btn-close-modal{
+            
+            img{
+                width: 27px;
+                height: 27px;
+            }
+        }
+
         label{
             font-size: 14px;
         }
@@ -75,7 +91,6 @@ export const StyledCreatePost = styled.div`
             display: flex;
             gap: 5px;
             flex-direction: column;
-
             input{
                 width: 100%;
                 height: 50px;

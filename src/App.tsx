@@ -1,12 +1,14 @@
-import React from 'react'
-import { RoutesMain } from './routes/routsmain'
+import { UserProvider } from "./pages/register/contextRegister/ContextRegister";
+import { RoutesMain } from "./routes/routsmain";
 
 function App() {
-   return (
-      <div className='App'>
-         <RoutesMain />
-      </div>
-   )
+  return (
+    <div className="App">
+      <UserProvider>
+        <RoutesMain />
+      </UserProvider>
+    </div>
+  );
 }
 
 export default App
