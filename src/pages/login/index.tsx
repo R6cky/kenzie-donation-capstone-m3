@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 export const Login = () => {
   return (
-    <LoginStyled>
-      <div className="desktop">
+    <LoginStyled >
+      <div className="desktop animate__animated animate__fadeInDown">
         <figure className="donation">
           <img src={Logo} alt="Logo" />
         </figure>
