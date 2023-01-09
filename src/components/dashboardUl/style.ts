@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const StyledDashboardList = styled.div`
 
-    border: solid red;
 
    ul{  width: 100%;
         height: 350px;

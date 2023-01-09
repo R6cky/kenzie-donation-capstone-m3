@@ -7,7 +7,7 @@ import { useContext } from 'react'
 import { ModalDash } from '../../modais/modalSeusItens'
 import { ModalContext } from '../../modais/modalContext'
 import { HeaderHome } from "../../components/header"
-
+import ImageAfterHeader from '../../assets/image-top-before-donations.png'
 
 export const Dashboard: () => JSX.Element = () => {
     
@@ -21,6 +21,8 @@ export const Dashboard: () => JSX.Element = () => {
 
                               
                   <HeaderHome/>
+                <div className="image-after-header">
+                  <img src={ImageAfterHeader} alt="" /></div>  
                 <div className="list-post">
                     <DashboardList/>
                 </div>

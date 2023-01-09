@@ -4,12 +4,18 @@ import Clothes from '../../assets/clothes.svg'
 import Rocket from '../../assets/rocket.svg'
 import Poltrona from '../../assets/poltrona.svg'
 import Smartphone from '../../assets/smartphone.svg'
+import ExitBtn from '../../assets/btn-exit-dashboard.png'
 import Book from '../../assets/book.png'
 import { StyledHeader } from './style'
 import { Link } from 'react-router-dom'
-
+import { useContext } from 'react'
+import { CreatePostContext } from '../../modais/createPost/contextCreatePost'
 
 export const HeaderHome = () => {
+
+   const {modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
+
+
    return (
       <StyledHeader>
          <div className='img-header'>
@@ -30,7 +36,7 @@ export const HeaderHome = () => {
 
             <div className='dropDown-content-logged'>
                <button className='buttons-menu-dashboard'>Editar perfil</button>
-               <button className='buttons-menu-dashboard'>Novo post</button>
+               <button className='buttons-menu-dashboard' onClick={() => setModalCreatepost(true)}>Novo post</button>
                <button className='buttons-menu-dashboard'>Seus itens</button>
             </div> 
             

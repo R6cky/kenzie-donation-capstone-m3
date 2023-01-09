@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-
 export const StyledHeader = styled.header`
+
    height: 100%;
    padding: 15px 15px 0 15px;
    display: flex;
@@ -63,13 +63,39 @@ export const StyledHeader = styled.header`
       z-index: 1;
 
       animation: modalAnimation 2s ease;
-      display: none;
+      display: flex;
       justify-content: center;
       align-items: center;
    }
 
+
+   // Estilo do menu da dashboard -- adicionado
+   .dropDown-content-logged{
+
+      width: 347px;
+      height: 48px;
+      position: absolute;
+      top: 30px;
+      right: 0px;
+      border-radius: 5px;
+      border: 2px solid var(--color-primary);
+
+      background-color: var(--grey-0);
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+
+      animation: modalAnimation 2s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+   }
+
+
    .login-home,
-   .register-home {
+   .register-home,
+   .buttons-menu-dashboard {
       height: 30px;
       border-radius: 2px;
       border: 2px solid var(--color-primary);
@@ -77,12 +103,36 @@ export const StyledHeader = styled.header`
       margin: 0 10px;
       color: var(--grey-0);
       text-decoration: none;
+      font-weight: bold;
+   }
+
+
+
+   // Estilo do menu da dashboard -- adicionado
+   .buttons-menu-dashboard {
+      width: 100px;
+      max-width: 100%;
+      height: 30px;
+      border-radius: 2px;
+      border: 2px solid var(--color-primary);
+      background-color: var(--color-primary);
+      margin: 0 10px;
+      color: var(--grey-0);
+      text-decoration: none;
+      font-weight: bold;
    }
 
    .login-home:hover, 
    .register-home:hover {
       background-color: rgba(86, 144, 231, 0.66);
       border: 2px solid rgba(86, 144, 231, 0.66);
+   }
+
+
+
+   // Estilo do menu da dashboard -- adicionado
+   .exit-btn{
+      margin-left: 10px;
    }
 
    @keyframes modalAnimation {
