@@ -15,12 +15,31 @@ export const HeaderHome = () => {
          <div className='img-header'>
             <img src={Logo} alt='Logo' />
             <div className='dropDown'>
-               <img className='menu' src={Menu} alt='Menu' />
-               <div className='dropDown-content'>
-                  <Link to={'/'} className='login-home'>Entrar</Link>
-                  <Link to={''} className='register-home'>Cadastrar-se</Link>
-               </div>
+            <img className='menu' src={Menu} alt='Menu' />
+            <img className='exit-btn' src={ExitBtn} alt='Menu' />
+
+
+            
+
+            {1 !==1 ? 
+            <div className='dropDown-content'>
+               <Link to={'/'} className='login-home'>Entrar</Link>
+               <Link to={''} className='register-home'>Cadastrar-se</Link>
+            </div>  : 
+            
+
+            <div className='dropDown-content-logged'>
+               <button className='buttons-menu-dashboard'>Editar perfil</button>
+               <button className='buttons-menu-dashboard'>Novo post</button>
+               <button className='buttons-menu-dashboard'>Seus itens</button>
+            </div> 
+            
+            }
+
+
             </div>
+         
+            
          </div>
          <div className='btn-filter'>
             <div className='box-icon-filter'>
