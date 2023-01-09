@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import Modal from 'react-modal'
 import { ModalContext } from '../modalContext'
-import '../../modais/modalConfirmDelete/styles.css'
-import { StyledModalConfirmDelete } from './styled'
+import '../../modais/modalConfirmDeleteDonation/styles.css'
+import {  StyledModalConfirmDeleteDonation } from './styled'
 
 Modal.setAppElement('#root')
 
 
-export const ModalConfirmDelete = () => {
+export const ModalConfirmDeleteDonation = () => {
    const { modalDeleteIsOpen, handleModalDelete, deletePostDonation, setDeleteIsOpen } =
       useContext(ModalContext)
 
@@ -20,7 +20,7 @@ export const ModalConfirmDelete = () => {
             contentLabel='Example Modal'
             className='modal-content-delete'
          >
-            <StyledModalConfirmDelete>
+            <StyledModalConfirmDeleteDonation>
                <div className='modal-header-delete'>
                   <h2 className='title-modal-delete'>
                      Tem certeza que deseja excluir este post?
@@ -40,7 +40,7 @@ export const ModalConfirmDelete = () => {
                      </button>
                   </div>
                </div>
-            </StyledModalConfirmDelete>
+            </StyledModalConfirmDeleteDonation>
          </Modal>
       </div>
    )

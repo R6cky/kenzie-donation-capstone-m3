@@ -129,13 +129,37 @@ export const StyleModalYourItems = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
    }
 
-   .box-card > p {
+   .header-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+   }
+
+   .header-card-view {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--color-primary);
+   }
+
+   .header-card > p {
+      width: 151px;
+      height: 18px;
+
       color: var(--grey-300);
       font-weight: 400;
       font-size: 16px;
+   }
+
+   .edit-icon {
+      color: var(--color-primary);
+   }
+
+   .box-btn-card {
+      margin-top: 10px;
    }
 
    .box-btn-card > button {

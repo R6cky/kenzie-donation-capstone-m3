@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledModalConfirmDelete = styled.div`
+export const StyledModalConfirmDeleteDonation = styled.div`
    display: flex;
    flex-direction: column;
    justify-content: center;

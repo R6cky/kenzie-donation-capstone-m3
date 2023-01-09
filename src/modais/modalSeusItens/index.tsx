@@ -3,8 +3,9 @@ import Modal from 'react-modal'
 import { ModalContext } from '../modalContext'
 import '../../modais/modalSeusItens/styles.css'
 import { StyleModalYourItems } from './styled'
-import { ModalConfirmDelete } from '../modalConfirmDelete'
 import ModalEditPost from '../modalEditPost'
+import { AiOutlineEye } from 'react-icons/ai'
+import { ModalConfirmDeleteDonation } from '../modalConfirmDeleteDonation'
 
 Modal.setAppElement('#root')
 
@@ -15,6 +16,7 @@ export const ModalDash = () => {
       handleModalDelete,
       modalDeleteIsOpen,
       modalEditPostHandle,
+      handleModalDeleteRequest,
       editPostIsOpenModal,
       viewDonation,
       viewRequest,
@@ -45,11 +47,11 @@ export const ModalDash = () => {
                               key={elem.id}
                               className='card-donations-list box-card'
                            >
-                              <p>{elem.title}</p>
+                              <div className='header-card'>
+                                 <p>{elem.title}</p>
+                                 <AiOutlineEye className='edit-icon' />
+                              </div>
                               <div className='box-btn-card'>
-                                 <button className='btn-edit'>
-                                    Visualizar
-                                 </button>
                                  <button
                                     onClick={() => modalEditPostHandle(elem.id)}
                                     className='btn-edit'
@@ -75,7 +77,10 @@ export const ModalDash = () => {
                               key={elem.id}
                               className='card-donations-list box-card'
                            >
-                              <p>{elem.title}</p>
+                              <div className='header-card'>
+                                 <p>{elem.title}</p>
+                                 <AiOutlineEye className='edit-icon' />
+                              </div>
                               <div className='box-btn-card'>
                                  <button
                                     onClick={() => modalEditPostHandle(elem.id)}
@@ -84,7 +89,7 @@ export const ModalDash = () => {
                                     Editar
                                  </button>
                                  <button
-                                    onClick={() => handleModalDelete(elem.id)}
+                                    onClick={() => handleModalDeleteRequest(elem.id)}
                                     className='btn-delete'
                                  >
                                     Excluir
@@ -98,7 +103,9 @@ export const ModalDash = () => {
                      <h2 className='title-card'>Doações Feitas</h2>
                      <ul className='scrollbar'>
                         <li className='card-donations-list box-card'>
-                           <p>Blusa de Frio Infantil</p>
+                           <div className='header-card'>
+                              <p>Title</p>
+                           </div>
                            <div className='box-btn-card'>
                               <button className='btn-view'>Ver</button>
                            </div>
@@ -109,7 +116,9 @@ export const ModalDash = () => {
                      <h2 className='title-card'>Solicitações Atendidas</h2>
                      <ul className='scrollbar'>
                         <li className='card-donations-list box-card'>
-                           <p>Blusa de Frio Infantil</p>
+                           <div className='header-card'>
+                              <p>Title</p>
+                           </div>
                            <div className='box-btn-card'>
                               <button className='btn-view'>Ver</button>
                            </div>
@@ -119,7 +128,7 @@ export const ModalDash = () => {
                </div>
             </StyleModalYourItems>
          </Modal>
-         {modalDeleteIsOpen && <ModalConfirmDelete />}
+         {modalDeleteIsOpen && <ModalConfirmDeleteDonation />}
          {editPostIsOpenModal && <ModalEditPost />}
       </div>
    )
