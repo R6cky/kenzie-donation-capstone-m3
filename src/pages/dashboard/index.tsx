@@ -6,6 +6,7 @@ import { CreatePostContext } from "../../modais/createPost/contextCreatePost"
 import { useContext } from 'react'
 import { ModalDash } from '../../modais/modalSeusItens'
 import { ModalContext } from '../../modais/modalContext'
+import { HeaderHome } from "../../components/header"
 
 
 export const Dashboard: () => JSX.Element = () => {
@@ -19,7 +20,7 @@ export const Dashboard: () => JSX.Element = () => {
         <StyledDashboard> 
 
                               
-                <DashboardHeader/>
+                  <HeaderHome/>
                 <div className="list-post">
                     <DashboardList/>
                 </div>
