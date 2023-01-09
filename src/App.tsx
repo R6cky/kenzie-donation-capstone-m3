@@ -1,9 +1,12 @@
+import { UserProvider } from "./pages/register/contextRegister/ContextRegister";
 import { RoutesMain } from "./routes/routsmain";
 
 function App() {
   return (
     <div className="App">
-      <RoutesMain />
+      <UserProvider>
+        <RoutesMain />
+      </UserProvider>
     </div>
   );
 }
