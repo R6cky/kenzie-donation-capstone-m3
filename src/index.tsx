@@ -7,17 +7,16 @@ import { BrowserRouter } from 'react-router-dom';
 import { DashboardListProvider } from './components/dashboardUl/contextList';
 import { CreatePostProvider } from './modais/createPost/contextCreatePost';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <DashboardListProvider>
-      <CreatePostProvider>
-          <GlobalStyles/>
-          <App /> 
-      </CreatePostProvider>
-    </DashboardListProvider>
+      <DashboardListProvider>
+         <CreatePostProvider>
+               <GlobalStyles/>
+               <App /> 
+         </CreatePostProvider>
+      </DashboardListProvider>
           </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,13 +1,12 @@
-import React from 'react';
-import { RoutesMain } from './routes/routsmain';
-
+import React from 'react'
+import { RoutesMain } from './routes/routsmain'
 
 function App() {
-  return (
-    <div className="App">
-      <RoutesMain/>
-    </div>
-  );
+   return (
+      <div className='App'>
+         <RoutesMain />
+      </div>
+   )
 }
 
-export default App;
+export default App
