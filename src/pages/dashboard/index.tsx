@@ -8,6 +8,7 @@ import { ModalDash } from '../../modais/modalSeusItens'
 import { ModalContext } from '../../modais/modalContext'
 import { HeaderHome } from "../../components/header"
 import ImageAfterHeader from '../../assets/image-top-before-donations.png'
+import { FooterDashboard } from "../../components/footerDashboard"
 
 export const Dashboard: () => JSX.Element = () => {
     
@@ -27,9 +28,7 @@ export const Dashboard: () => JSX.Element = () => {
                     <DashboardList/>
                 </div>
                 {modalCreatepost === true ? <ModalCreatePost/> : false}
-           
-               
-            
+               <FooterDashboard/>
         </StyledDashboard>
    )
    }

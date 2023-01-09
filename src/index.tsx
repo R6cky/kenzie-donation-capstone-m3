@@ -17,7 +17,7 @@ root.render(
                <App /> 
          </CreatePostProvider>
       </DashboardListProvider>
-          </BrowserRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
