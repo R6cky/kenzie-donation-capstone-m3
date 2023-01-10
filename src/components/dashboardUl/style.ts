@@ -142,8 +142,8 @@ export const StyledDashboardList = styled.div`
     }
 
 
-    @media(min-width: 600px) {
-        background-color: rgba(86, 144, 231, 0.12);
+        @media(min-width: 780px) {
+            background-color: rgba(86, 144, 231, 0.12);
         }
 
         @media(min-width: 1200px) {
