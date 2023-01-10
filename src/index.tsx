@@ -7,18 +7,21 @@ import { BrowserRouter } from 'react-router-dom'
 import { DashboardListProvider } from './components/dashboardUl/contextList'
 import { CreatePostProvider } from './modais/createPost/contextCreatePost'
 import { ModalProvider } from './modais/modalContext'
+import { ModalRequestProvider } from './modais/modalContextRequest'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
    <React.StrictMode>
       <BrowserRouter>
          <ModalProvider>
-            <DashboardListProvider>
-               <CreatePostProvider>
-                  <GlobalStyles />
-                  <App />
-               </CreatePostProvider>
-            </DashboardListProvider>
+            <ModalRequestProvider>
+               <DashboardListProvider>
+                  <CreatePostProvider>
+                     <GlobalStyles />
+                     <App />
+                  </CreatePostProvider>
+               </DashboardListProvider>
+            </ModalRequestProvider>
          </ModalProvider>
       </BrowserRouter>
    </React.StrictMode>

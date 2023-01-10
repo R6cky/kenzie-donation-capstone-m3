@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import Modal from 'react-modal'
 import { ModalContext } from '../modalContext'
 import './styles.css'
 import { StyleModalYourItems } from './styled'
@@ -8,28 +7,23 @@ import { ModalConfirmDeleteDonation } from '../modalConfirmDeleteDonation'
 import { UlDonation } from '../componentsModal/ulDonation'
 import { UlRequest } from '../componentsModal/ulRequest'
 import { ModalConfirmDeleteRequest } from '../modalDeleteRequest'
-
-Modal.setAppElement('#root')
+import { ModalRequestContext } from '../modalContextRequest'
+import { DefaultModal } from '../../components/modalDafault'
 
 export const ModalDash = () => {
-   const { modalIsOpen, handleModal, modalDeleteIsOpen, editPostIsOpenModal, modalDeleteRequestIsOpen } =
+   const { handleModal, modalDeleteIsOpen, editPostIsOpenModal } =
       useContext(ModalContext)
+   const { modalDeleteRequestIsOpen } = useContext(ModalRequestContext)
 
    return (
       <div className='container'>
-         <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={handleModal}
-            overlayClassName='modal-overlay'
-            contentLabel='Example Modal'
-            className='modal-content'
-         >
+         <DefaultModal callback={() => handleModal}>
             <StyleModalYourItems className='modal-container-your-items'>
                <div className='modal-header'>
                   <h2 className='title-modal'>Seus Itens</h2>
-                  <button className='btn-close' onClick={() => handleModal()}>
+                  {/* <button className='btn-close' onClick={() => handleModal()}>
                      X
-                  </button>
+                  </button> */}
                </div>
                <div className='modal-body scrollbar'>
                   <div className='box-container-ul'>
@@ -68,7 +62,7 @@ export const ModalDash = () => {
                   </div>
                </div>
             </StyleModalYourItems>
-         </Modal>
+         </DefaultModal>
          {modalDeleteIsOpen && <ModalConfirmDeleteDonation />}
          {modalDeleteRequestIsOpen && <ModalConfirmDeleteRequest />}
          {editPostIsOpenModal && <ModalEditPost />}

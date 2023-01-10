@@ -1,26 +1,26 @@
 import React, { useContext } from 'react'
-import Modal from 'react-modal'
 import { ModalContext } from '../modalContext'
 import '../../modais/modalEditPost/styles.css'
 import { StyledModalContentEditPost } from './styled'
+import { DefaultModal } from '../../components/modalDafault'
 
-Modal.setAppElement('#root')
 
 const ModalEditPost = () => {
-   const { modalEditPostHandle, editPostIsOpenModal, setEditPostIsOpenModal } = useContext(ModalContext)
+   const { modalEditPostHandle, editPostIsOpenModal, setEditPostIsOpenModal } =
+      useContext(ModalContext)
    return (
       <div className='container-modal-edit-post'>
-         <Modal
-            isOpen={editPostIsOpenModal?true:false}
-            onRequestClose={() => setEditPostIsOpenModal(null)}
-            contentLabel='Example Modal'
-            overlayClassName='modal-overlay-edit-post'
-            className='modal-content-edit-post'
-         >
+         <DefaultModal callback={() => setEditPostIsOpenModal(null)}>
             <StyledModalContentEditPost>
                <div className='box-header'>
                   <h2>Editar Post</h2>
-                  <button onClick={() => modalEditPostHandle(editPostIsOpenModal as number)}>X</button>
+                  {/* <button
+                     onClick={() =>
+                        modalEditPostHandle(editPostIsOpenModal as number)
+                     }
+                  >
+                     X
+                  </button> */}
                </div>
 
                <form className='create-post' action=''>
@@ -54,13 +54,17 @@ const ModalEditPost = () => {
                   </div>
                   <div className='form-button'>
                      <button className='btn-update'>Atualizar</button>
-                     <button onClick={() => modalEditPostHandle(editPostIsOpenModal as number)}>
+                     <button
+                        onClick={() =>
+                           modalEditPostHandle(editPostIsOpenModal as number)
+                        }
+                     >
                         Cancelar
                      </button>
                   </div>
                </form>
             </StyledModalContentEditPost>
-         </Modal>
+         </DefaultModal>
       </div>
    )
 }
