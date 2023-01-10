@@ -1,27 +1,27 @@
 import { HeaderHome } from "../../components/header"
-import { StyledDivDonations, StyledDivRequests, StyledFigureBanner, StyledFigureCampaign, StyledFigureRegister, StyledFooter, StyledSectionAboutUs, StyledSectionDonationsFilter, StyledSectionProductLists } from "./style"
-import banner from "../../assets/campanha.png"
-import DonationProducts from "../../components/DonationProducts"
-import RequestProducts from "../../components/RequestProducts"
-import registerIMG from "../../assets/cadastro.png"
-import campaing from "../../assets/hands-campaign.png"
+import { StyledFigureBanner} from "./style"
 import { DashboardList } from "../../components/dashboardUl"
 import { FooterDashboard } from "../../components/footerDashboard"
+import ImageAfterHeader from '../../assets/image-top-before-donations.png'
+import ImageAfterHeaderLarge from '../../assets/image-top-before-donations-large.png'
+
+
+
+
 export const HomePage = () => {
     return (
         <>
             <HeaderHome/>
-
-            <StyledSectionProductLists>
                 <StyledFigureBanner>
-                    <img src={banner} alt="Campanha do Agasalho Junho/2023" />
+                <div className="image-after-header">
+                        <img src={ImageAfterHeader} alt="" />
+                  </div>  
+
+                  <div className="image-after-header-large">
+                        <img src={ImageAfterHeaderLarge} alt="" />
+                    </div> 
                 </StyledFigureBanner>
                 <DashboardList/>
-                <StyledDivRequests>
-                    <button>Solicitações</button>
-                    <h2>Itens <strong>solicitados</strong></h2>
-                </StyledDivRequests>
-            </StyledSectionProductLists>
 
             <FooterDashboard/>
         </>

@@ -6,6 +6,14 @@ export const StyledHeader = styled.header`
    flex-direction: column;
    border-bottom: 4px solid var(--color-primary);
 
+   .btn-menu{
+      cursor: pointer;
+   }
+
+   .exit-btn{
+      cursor: pointer;
+   }
+
    .img-header {
       display: flex;
       align-items: center;

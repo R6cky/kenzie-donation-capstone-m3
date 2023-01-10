@@ -13,7 +13,7 @@ import { CreatePostContext } from '../../modais/createPost/contextCreatePost'
 
 export const HeaderHome = () => {
 
-   const {modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
+   const {setModalCreatepost} = useContext(CreatePostContext)
 
 
    return (
@@ -21,7 +21,7 @@ export const HeaderHome = () => {
          <div className='img-header'>
             <img src={Logo} alt='Logo' />
             <div className='dropDown'>
-            <img className='menu' src={Menu} alt='Menu' />
+            <img className='btn-menu' src={Menu} alt='Menu' />
             <img className='exit-btn' src={ExitBtn} alt='Menu' />
 
 

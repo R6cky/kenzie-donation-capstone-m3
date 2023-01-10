@@ -2,8 +2,9 @@
 import styled from "styled-components";
 
 export const StyledDashboardList = styled.div`
-
-
+       
+        padding-top: 30px;
+        margin-top: 10px;
    ul{  
         width: 100%;
         height: 350px;
@@ -11,8 +12,8 @@ export const StyledDashboardList = styled.div`
         overflow-x: scroll;
         overflow-y: hidden;
         gap: 20px;
-        padding: 20px;
-        margin-bottom: 20px;
+        padding: 20px 0;
+        margin-bottom: 30px;
 
         ::-webkit-scrollbar {
             width: 8px;     
@@ -29,6 +30,9 @@ export const StyledDashboardList = styled.div`
             border-radius: 10px;       /* roundness of the scroll thumb */
             border: 2px solid var(--color-primary);  /* creates padding around scroll thumb */
         }
+
+        
+       
     }
 
 
@@ -57,7 +61,7 @@ export const StyledDashboardList = styled.div`
         100% {
             opacity: 1;
         }
-}
+    }
 
 
         .product-image{
@@ -136,6 +140,15 @@ export const StyledDashboardList = styled.div`
 
         }
     }
+
+
+    @media(min-width: 600px) {
+        background-color: rgba(86, 144, 231, 0.12);
+        }
+
+        @media(min-width: 1200px) {
+            background-color: rgba(86, 144, 231, 0.12);
+        }
 
 
 
