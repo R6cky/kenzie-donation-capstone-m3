@@ -58,8 +58,6 @@ export const StyledHeader = styled.header`
    .dropDown {
       position: relative;
       display: inline-block;
-      border: solid;
-      
    }
 
    .dropDown-content {
@@ -101,7 +99,7 @@ export const StyledHeader = styled.header`
       display: flex;
       justify-content: center;
       align-items: center;
-      display: none;
+    
 
    }
 
@@ -170,7 +168,7 @@ export const StyledHeader = styled.header`
       .dropDown-content-larger{
 
       display: none;
-
+         
       }
 
 
