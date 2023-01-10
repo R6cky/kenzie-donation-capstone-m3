@@ -11,43 +11,55 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { CreatePostContext } from '../../modais/createPost/contextCreatePost'
 import { ModalEditContext } from '../../modalProfile/contexts'
+import { ModalContext } from '../../modais/modalContext'
+import { ModalDash } from '../../modais/modalYourItems'
 
 export const HeaderHome = () => {
-
-   const {modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
+   const { modalCreatepost, setModalCreatepost } = useContext(CreatePostContext)
    const { setIsOpen } = useContext(ModalEditContext)
-
+   const { modalIsOpen, handleModal } = useContext(ModalContext)
 
    return (
       <StyledHeader>
          <div className='img-header'>
             <img src={Logo} alt='Logo' />
             <div className='dropDown'>
-            <img className='btn-menu' src={Menu} alt='Menu' />
-            <img className='exit-btn' src={ExitBtn} alt='Menu' />
+               <img className='btn-menu' src={Menu} alt='Menu' />
+               <img className='exit-btn' src={ExitBtn} alt='Menu' />
 
-
-            
-
-            {1 !==1 ? 
-            <div className='dropDown-content'>
-               <Link to={'/'} className='login-home'>Entrar</Link>
-               <Link to={''} className='register-home'>Cadastrar-se</Link>
-            </div>  : 
-            
-
-            <div className='dropDown-content-logged'>
-               <button className='buttons-menu-dashboard' onClick={() => setIsOpen(true)}>Editar perfil</button>
-               <button className='buttons-menu-dashboard' onClick={() => setModalCreatepost(true)}>Novo post</button>
-               <button className='buttons-menu-dashboard'>Seus itens</button>
-            </div> 
-            
-            }
-
-
+               {1 !== 1 ? (
+                  <div className='dropDown-content'>
+                     <Link to={'/'} className='login-home'>
+                        Entrar
+                     </Link>
+                     <Link to={''} className='register-home'>
+                        Cadastrar-se
+                     </Link>
+                  </div>
+               ) : (
+                  <div className='dropDown-content-logged'>
+                     <button
+                        className='buttons-menu-dashboard'
+                        onClick={() => setIsOpen(true)}
+                     >
+                        Editar perfil
+                     </button>
+                     <button
+                        className='buttons-menu-dashboard'
+                        onClick={() => setModalCreatepost(true)}
+                     >
+                        Novo post
+                     </button>
+                     <button
+                        onClick={() => handleModal()}
+                        className='buttons-menu-dashboard'
+                     >
+                        Seus itens
+                     </button>
+                     {modalIsOpen && <ModalDash />}
+                  </div>
+               )}
             </div>
-         
-            
          </div>
          <div className='btn-filter'>
             <div className='box-icon-filter'>
