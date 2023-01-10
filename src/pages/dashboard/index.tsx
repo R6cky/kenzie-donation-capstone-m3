@@ -31,6 +31,20 @@ export const Dashboard: () => JSX.Element = () => {
       <div className="image-after-header-large">
         <img src={ImageAfterHeaderLarge} alt="" />
       </div>
+      <div className='menu-large'>
+          <div className='all-donations'>
+              <h3>Todas as doações</h3>
+          </div>
+          <div className='filter-menu-container'>
+              <h4 className='filter-menu-title'>Procurando por ?</h4>
+              <ul className='list-filter-menu'>
+                  <li>Roupas</li>
+                  <li>Brinquedos</li>
+                  <li>Eletro</li>
+                  <li>Móveis</li>
+              </ul>
+          </div>
+      </div>
       <div className="list-post">
         <DashboardList />
       </div>
