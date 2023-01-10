@@ -1,53 +1,46 @@
 import { useContext } from 'react'
 import Modal from 'react-modal'
+import '../../modais/modalDeleteRequest/styles.css'
 import { ModalContext } from '../modalContext'
 import { StyledModalConfirmDeleteRequest } from './styled'
 
 Modal.setAppElement('#root')
 
 export const ModalConfirmDeleteRequest = () => {
-   const {
-      modalDeleteRequestIsOpen,
-      setModalDeleteRequestIsOpen,
-      // handleModalDelete,
-      // deletePostRequest,
-   } = useContext(ModalContext)
-
+    const { modalDeleteRequestIsOpen, setModalDeleteRequestIsOpen, handleModalDeleteRequest, deletePostRequest } = useContext(ModalContext)
    return (
-      <div className='container-delete'>
+      <div className='container-delete-request'>
          <Modal
             isOpen={modalDeleteRequestIsOpen ? true : false}
             onRequestClose={() => setModalDeleteRequestIsOpen(null)}
-            overlayClassName='modal-overlay-delete'
+            overlayClassName='modal-overlay-delete-request'
             contentLabel='Example Modal'
-            className='modal-content-delete'
+            className='modal-content-delete-request'
          >
             <StyledModalConfirmDeleteRequest>
-
-               <div className='modal-request'>MODAL REQUEST</div>
-               {/* <div className='modal-header-delete'>
-                  <h2 className='title-modal-delete'>
+               <div className='modal-header-delete-request'>
+                  <h2 className='title-modal-delete-request'>
                      Tem certeza que deseja excluir este post?
                   </h2>
-                  <div className='box-btn-modal-delete'>
+                  <div className='box-btn-modal-delete-request'>
                      <button
-                        className='btn-cancel'
+                        className='btn-cancel-request'
                         onClick={() =>
-                           handleModalDelete(modalDeleteRequestIsOpen as number)
+                            handleModalDeleteRequest(modalDeleteRequestIsOpen as number)
                         }
                      >
                         Cancelar
                      </button>
                      <button
                         onClick={() =>
-                           deletePostRequest(modalDeleteRequestIsOpen as number)
+                            deletePostRequest(modalDeleteRequestIsOpen as number)
                         }
-                        className='btn-confirm-delete'
+                        className='btn-confirm-delete-request'
                      >
                         Sim, excluir post!
                      </button>
                   </div>
-               </div> */}
+               </div>
             </StyledModalConfirmDeleteRequest>
          </Modal>
       </div>

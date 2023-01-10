@@ -22,10 +22,14 @@ interface iModalContextProps {
    editPostIsOpenModal: number | null
    viewDonation: iPosts[]
    viewRequest: iPosts[]
+
    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
    setDeleteIsOpen: React.Dispatch<React.SetStateAction<number | null>>
-   setModalDeleteRequestIsOpen: React.Dispatch<React.SetStateAction<number | null>>
+   setModalDeleteRequestIsOpen: React.Dispatch<
+      React.SetStateAction<number | null>
+   >
    setEditPostIsOpenModal: React.Dispatch<React.SetStateAction<number | null>>
+
    handleModal: () => void
    handleModalDelete: (id: number) => void
    handleModalDeleteRequest: (id: number) => void
@@ -37,12 +41,16 @@ interface iModalContextProps {
 export const ModalContext = createContext({} as iModalContextProps)
 
 export const ModalProvider = ({ children }: iProviderProps) => {
-   const [modalIsOpen, setIsOpen] = useState(false)
-   const [modalDeleteIsOpen, setDeleteIsOpen] = useState<number | null>(null)
-   const [modalDeleteRequestIsOpen, setModalDeleteRequestIsOpen] = useState<number | null>(null)
-   const [editPostIsOpenModal, setEditPostIsOpenModal] = useState<number | null>(null)
-   const [viewDonation, setViewDonation] = useState([] as iPosts[])
-   const [viewRequest, setViewRequest] = useState([] as iPosts[])
+   const [modalIsOpen, setIsOpen] = useState(false) //modal seus itens
+   const [modalDeleteIsOpen, setDeleteIsOpen] = useState<number | null>(null) //modal delete ul donation
+   const [modalDeleteRequestIsOpen, setModalDeleteRequestIsOpen] = useState<
+      number | null
+   >(null) //modal delete ul request
+   const [editPostIsOpenModal, setEditPostIsOpenModal] = useState<
+      number | null
+   >(null) //modal editar donation
+   const [viewDonation, setViewDonation] = useState([] as iPosts[]) //array donation
+   const [viewRequest, setViewRequest] = useState([] as iPosts[]) //array request
 
    useEffect(() => {
       const getAllDonations = async () => {
@@ -68,23 +76,17 @@ export const ModalProvider = ({ children }: iProviderProps) => {
       getAllRequests()
    }, [])
 
-   const deletePostDonation = (id: number) => {
-      console.log(id)
-      const deletePostDonation = viewDonation.filter((elem) => elem.id !== id)
-      setViewDonation(deletePostDonation)
-      setDeleteIsOpen(null)
+   const modalEditPostHandle = (id: number) => {
+      // abrir e fechar modal edit donation
+      if (!editPostIsOpenModal) {
+         setEditPostIsOpenModal(id)
+      } else {
+         setEditPostIsOpenModal(null)
+      }
    }
-
-   const deletePostRequest = (id: number) => {
-      console.log(id)
-      const deletePostRequestFiltered = viewRequest.filter((elem) => elem.id !== id)
-      console.log(deletePostRequestFiltered)
-      setViewRequest(deletePostRequestFiltered)
-      setModalDeleteRequestIsOpen(null)
-   }
-   
 
    const handleModal = () => {
+      //abrir e fechar modal seus itens
       if (!modalIsOpen) {
          setIsOpen(true)
       } else {
@@ -93,6 +95,7 @@ export const ModalProvider = ({ children }: iProviderProps) => {
    }
 
    const handleModalDelete = (id: number) => {
+      //abrir e fechar modal delete donation
       if (!modalDeleteIsOpen) {
          setDeleteIsOpen(id)
       } else {
@@ -101,7 +104,7 @@ export const ModalProvider = ({ children }: iProviderProps) => {
    }
 
    const handleModalDeleteRequest = (id: number) => {
-      console.log(id)
+      //abrir e fechar modal delete request
       if (!modalDeleteRequestIsOpen) {
          setModalDeleteRequestIsOpen(id)
       } else {
@@ -109,12 +112,22 @@ export const ModalProvider = ({ children }: iProviderProps) => {
       }
    }
 
-   const modalEditPostHandle = (id: number) => {
-      if (!editPostIsOpenModal) {
-         setEditPostIsOpenModal(id)
-      } else {
-         setEditPostIsOpenModal(null)
-      }
+   const deletePostDonation = (id: number) => {
+      //modal deletar donation
+      console.log(id)
+      const deletePostDonation = viewDonation.filter((elem) => elem.id !== id)
+      setViewDonation(deletePostDonation)
+      setDeleteIsOpen(null)
+   }
+
+   const deletePostRequest = (id: number) => {
+      //modal deletar donation
+      console.log(id)
+      const deletePostRequest = viewRequest.filter((elem) => elem.id !== id)
+      console.log(deletePostRequest)
+
+      setViewRequest(deletePostRequest)
+      setModalDeleteRequestIsOpen(null)
    }
 
    return (
@@ -129,10 +142,10 @@ export const ModalProvider = ({ children }: iProviderProps) => {
             handleModal,
             setIsOpen,
             setEditPostIsOpenModal,
-            handleModalDeleteRequest,
-            setModalDeleteRequestIsOpen,
             setDeleteIsOpen,
+            setModalDeleteRequestIsOpen,
             handleModalDelete,
+            handleModalDeleteRequest,
             modalEditPostHandle,
             deletePostDonation,
             deletePostRequest
