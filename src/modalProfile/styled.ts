@@ -31,6 +31,7 @@ export const StyledModalWrapper = styled.div `
             border: none;
             background-color: #5690E7;
             border-radius: 5px;
+            padding: 6px 10px;
             cursor:pointer;
 
             display:flex;
