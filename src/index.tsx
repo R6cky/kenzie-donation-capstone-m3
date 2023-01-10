@@ -8,11 +8,12 @@ import { DashboardListProvider } from './components/dashboardUl/contextList'
 import { CreatePostProvider } from './modais/createPost/contextCreatePost'
 import { ModalProvider } from './modais/modalContext'
 import { ModalRequestProvider } from './modais/modalContextRequest'
-
+import { ToastContainer } from 'react-toastify'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
    <React.StrictMode>
       <BrowserRouter>
+      <ToastContainer/>
          <ModalProvider>
             <ModalRequestProvider>
                <DashboardListProvider>

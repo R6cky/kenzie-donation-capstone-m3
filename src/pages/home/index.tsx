@@ -14,13 +14,6 @@ export const HomePage = () => {
                <img src={ImageAfterHeader} alt='' />
             </div>
 
-<<<<<<< HEAD
-            <div className='image-after-header-large'>
-               <img src={ImageAfterHeaderLarge} alt='' />
-            </div>
-         </StyledFigureBanner>
-         <DashboardList />
-=======
                   <div className="image-after-header-large">
                         <img src={ImageAfterHeaderLarge} alt="" />
                   </div> 
@@ -42,7 +35,6 @@ export const HomePage = () => {
 
                 </StyledFigureBanner>
                 <DashboardList/>
->>>>>>> 558303cdfd469b26af015efb7a3a5419f7fc3156
 
          <FooterDashboard />
       </>

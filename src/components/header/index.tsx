@@ -108,15 +108,15 @@ export const HeaderHome = () => {
                   <p className='saudation-to-logged'>
                      <span>Seja bem vindo</span>, usuário...
                   </p>
-                  <Link to={''} className='options-menu-button'>
+                  <button onClick={() => setIsOpen(true)} className='options-menu-button'>
                         Editar perfil
-                  </Link>
-                  <Link to={''} className='options-menu-button'>
+                  </button>
+                  <button onClick={() => setModalCreatepost(true)} className='options-menu-button'>
                         Novo post
-                  </Link>
-                  <Link to={''} className='options-menu-button'>
+                  </button>
+                  <button onClick={() => handleModal()} className='options-menu-button'>
                         Seus itens
-                  </Link>
+                  </button>
                   <Link to={''} className='options-menu-button'>
                         Sair
                   </Link>
