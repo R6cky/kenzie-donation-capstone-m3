@@ -27,6 +27,10 @@ export const StyledHeader = styled.header`
       margin-bottom: 30px;
    }
 
+   .btn-filter-large{
+      display: none;
+   }
+
    .box-icon-filter {
       display: flex;
       flex-direction: column;
@@ -54,6 +58,7 @@ export const StyledHeader = styled.header`
    .dropDown {
       position: relative;
       display: inline-block;
+      
    }
 
    .dropDown-content {
@@ -153,4 +158,104 @@ export const StyledHeader = styled.header`
          transform: translateY(0);
       }
    }
+
+
+   .dropDown-content{
+      display: none;
+         
+   
+      }
+
+      .dropDown-content-larger{
+
+      display: none;
+   
+
+      }
+
+
+   
+
+   @media(min-width: 1200px) {
+
+
+      .dropDown {
+      position: relative;
+      display: inline-block;
+      display: none;
+   }
+
+      .btn-filter {
+         display: flex;
+         align-items: center;
+         justify-content: space-evenly;
+         margin-bottom: 30px;
+         display: none;
+      }
+
+      .btn-filter-large{
+         display: flex;
+         justify-content: flex-end;
+         width: 85%;
+         height: 40px;
+         position: absolute;
+         top: 35px;
+         left: 200px;
+         display: flex;
+         align-items: center;
+      }
+
+      .options-menu{
+         display: flex;
+         justify-content: space-around;
+         width: 400px;
+
+
+         
+
+         .options-menu-button{
+            color: var(--grey-300);
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+         }
+
+
+      }
+
+      .options-menu-logged{
+         display: flex;
+         justify-content: space-around;
+         width: 1200px;
+         max-width: 100%;
+
+         .saudation-to-logged{
+            width: 400px;
+            color: var(--color-primary);
+            span{
+               color: var(--color-primary);
+               font-weight: bold;
+               font-size: 18px;
+            }
+         }
+
+
+         .options-menu-button{
+            color: var(--grey-300);
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+         }
+         }
+ 
+ 
+ 
+   }
+
+
+
+   
+
+
+
 `

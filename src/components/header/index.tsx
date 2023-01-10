@@ -32,7 +32,7 @@ export const HeaderHome = () => {
                      <Link to={'/'} className='login-home'>
                         Entrar
                      </Link>
-                     <Link to={''} className='register-home'>
+                     <Link to={'/register'} className='register-home'>
                         Cadastrar-se
                      </Link>
                   </div>
@@ -92,6 +92,34 @@ export const HeaderHome = () => {
                </div>
                <p className='icon-name'>Livros</p>
             </div>
+         </div>
+         <div className='btn-filter-large'>
+
+              {/* <div className='options-menu'>
+                  <Link to={'/login'} className='options-menu-button'>
+                        Login
+                  </Link>
+                  <Link to={'/register'} className='options-menu-button'>
+                        Cadastre-se
+                  </Link>
+               </div>     */}
+
+               <div className='options-menu-logged'>
+                  <p className='saudation-to-logged'>
+                     <span>Seja bem vindo</span>, usuário...
+                  </p>
+                  <Link to={''} className='options-menu-button'>
+                        Editar perfil 
+                  </Link>
+                  <Link to={''} className='options-menu-button'>
+                        Novo post
+                  </Link>
+                  <Link to={''} className='options-menu-button'>
+                        Seus itens
+                  </Link>
+               </div>     
+
+
          </div>
       </StyledHeader>
    )
