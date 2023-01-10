@@ -2083,6 +2083,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-icons@^3.0.0":
+  "integrity" "sha512-Vefs6LkLqF61vfV7AiAqls+vpR94q67gunhMueDznG+msAkrYgRxl7gYjNem/kZ+as2l2mNChmF1jRZzzQQtMg=="
+  "resolved" "https://registry.npmjs.org/@types/react-icons/-/react-icons-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "react-icons" "*"
+
 "@types/react-modal@^3.13.1":
   "integrity" "sha512-iY/gPvTDIy6Z+37l+ibmrY+GTV4KQTHcCyR5FIytm182RQS69G5ps4PH2FxtC7bAQ2QRHXMevsBgck7IQruHNg=="
   "resolved" "https://registry.npmjs.org/@types/react-modal/-/react-modal-3.13.1.tgz"
@@ -7653,7 +7660,7 @@
   "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.41.5.tgz"
   "version" "7.41.5"
 
-"react-icons@^4.7.1":
+"react-icons@*", "react-icons@^4.7.1":
   "integrity" "sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw=="
   "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.7.1.tgz"
   "version" "4.7.1"

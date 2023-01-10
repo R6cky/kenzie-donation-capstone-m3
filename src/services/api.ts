@@ -2,5 +2,5 @@ import axios from "axios";
 
 export const api = axios.create({
     baseURL:'https://kenzie-donation-api.onrender.com',
-    timeout:15000
+    timeout:25000
 })

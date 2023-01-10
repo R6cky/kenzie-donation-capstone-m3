@@ -8,6 +8,7 @@ import { ModalDash } from '../../modais/modalSeusItens'
 import { ModalContext } from '../../modais/modalContext'
 import { HeaderHome } from "../../components/header"
 import ImageAfterHeader from '../../assets/image-top-before-donations.png'
+import ImageAfterHeaderLarge from '../../assets/image-top-before-donations-large.png'
 import { FooterDashboard } from "../../components/footerDashboard"
 
 export const Dashboard: () => JSX.Element = () => {
@@ -19,11 +20,15 @@ export const Dashboard: () => JSX.Element = () => {
    return(
    
         <StyledDashboard> 
-
-                              
                   <HeaderHome/>
+
                 <div className="image-after-header">
-                  <img src={ImageAfterHeader} alt="" /></div>  
+                     <img src={ImageAfterHeader} alt="" />
+                </div>  
+
+                <div className="image-after-header-large">
+                     <img src={ImageAfterHeaderLarge} alt="" />
+                </div>  
                 <div className="list-post">
                     <DashboardList/>
                 </div>
