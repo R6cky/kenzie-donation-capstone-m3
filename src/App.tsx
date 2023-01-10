@@ -1,11 +1,13 @@
-import React from 'react';
-
-import { RoutesMain } from './routes/routsmain';
+import React from "react";
+import { UserProvider } from "./contexts/UserContext";
+import { RoutesMain } from "./routes/routsmain";
 
 function App() {
   return (
     <div className="App">
-      <RoutesMain/>
+      <UserProvider>
+        <RoutesMain />
+      </UserProvider>
     </div>
   );
 }

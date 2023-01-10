@@ -9,7 +9,7 @@ export const LoginStyled = styled.main`
     @media screen and (min-width: 320px) {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: flex-start;
         align-items: center;
         width: 100vw;
         height: 100vh;
@@ -55,6 +55,14 @@ export const LoginStyled = styled.main`
             color: #5690E7;
         }
 
+        .error {
+            font-weight: 400;
+            font-size: 12px;
+            color: #e83f5b;
+            text-align: start;
+            padding-top: 4px;
+        }
+
         form {
             width: 100%;
             display: flex;
@@ -67,6 +75,7 @@ export const LoginStyled = styled.main`
             font-size: 15px;
             color: #5690E7;
             padding-bottom: 10px;
+            padding-top: 10px;
         }
 
         input {
@@ -75,7 +84,6 @@ export const LoginStyled = styled.main`
             background: #FFFFFF;
             border: 1px solid #5690E7;
             border-radius: 8px;
-            margin-bottom: 25px;
             padding-left: 14px;
             font-weight: 500;
             font-size: 15px;
@@ -95,7 +103,7 @@ export const LoginStyled = styled.main`
             font-weight: 700;
             font-size: 20px;
             color: #FFFFFF;
-            margin-top: 8px;
+            margin-top: 38px;
         }
 
         span{
