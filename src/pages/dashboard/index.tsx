@@ -49,4 +49,3 @@ export const DashboardHome = () => {
    )
 }
 
-export default DashboardPage
