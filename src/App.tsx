@@ -1,11 +1,15 @@
-import { UserProvider } from "./pages/register/contextRegister/ContextRegister";
-import { RoutesMain } from "./routes/routsmain";
+import React from 'react';
+import ModalEditProvider from './modalProfile/contexts';
+import { UserProvider } from './pages/register/contextRegister/ContextRegister';
+import { RoutesMain } from './routes/routsmain';
 
 function App() {
   return (
     <div className="App">
       <UserProvider>
-        <RoutesMain />
+        <ModalEditProvider>
+          <RoutesMain />
+        </ModalEditProvider>
       </UserProvider>
     </div>
   );

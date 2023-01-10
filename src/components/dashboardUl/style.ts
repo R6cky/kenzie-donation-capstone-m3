@@ -2,37 +2,44 @@
 import styled from "styled-components";
 
 export const StyledDashboardList = styled.div`
-
-
-   ul{  width: 100%;
+       
+        padding-top: 30px;
+        margin-top: 10px;
+   ul{  
+        width: 100%;
         height: 350px;
         display: flex;
-        gap: 20px;
         overflow-x: scroll;
-        padding: 20px;
-        margin-bottom: 20px;
+        overflow-y: hidden;
+        gap: 20px;
+        padding: 20px 0;
+        margin-bottom: 30px;
 
         ::-webkit-scrollbar {
             width: 8px;     
-            height:10px;          /* width of the entire scrollbar */
+            height: 10px; 
+            
         }
 
         ::-webkit-scrollbar-track {
-        background: var(--grey-0);        /* color of the tracking area */
+            background: var(--grey-0);        /* color of the tracking area */
         }
 
         ::-webkit-scrollbar-thumb {
-        background-color: var(--color-primary);    /* color of the scroll thumb */
-        border-radius: 20px;       /* roundness of the scroll thumb */
-        border: 2px solid var(--color-primary);  /* creates padding around scroll thumb */
+            background-color: var(--color-primary);    /* color of the scroll thumb */
+            border-radius: 10px;       /* roundness of the scroll thumb */
+            border: 2px solid var(--color-primary);  /* creates padding around scroll thumb */
         }
+
+        
+       
     }
 
 
     
     li{
-        width: 263px;
-        height: 284px;
+        width: 300px;
+        height: 320px;
         border-radius: 8px;
         max-width: 100%;
         display: flex;
@@ -54,7 +61,7 @@ export const StyledDashboardList = styled.div`
         100% {
             opacity: 1;
         }
-}
+    }
 
 
         .product-image{
@@ -101,6 +108,7 @@ export const StyledDashboardList = styled.div`
 
         .product-description{
             width: 100%;
+            max-width: 100%;
             height: 80px;
             padding-top: 5px;
 
@@ -118,7 +126,7 @@ export const StyledDashboardList = styled.div`
             align-items: center;
 
             button{
-                width: 100px;
+                width: 105px;
                 height: 24px;
                 background-color: var(--color-primary);
                 color: var(--grey-0);
@@ -134,9 +142,13 @@ export const StyledDashboardList = styled.div`
     }
 
 
+        @media(min-width: 780px) {
+            background-color: rgba(86, 144, 231, 0.12);
+        }
 
-
-
+        @media(min-width: 1200px) {
+            background-color: rgba(86, 144, 231, 0.12);
+        }
 
 
 

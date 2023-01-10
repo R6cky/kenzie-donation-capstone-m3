@@ -10,10 +10,12 @@ import { StyledHeader } from './style'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { CreatePostContext } from '../../modais/createPost/contextCreatePost'
+import { ModalEditContext } from '../../modalProfile/contexts'
 
 export const HeaderHome = () => {
 
    const {modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
+   const { setIsOpen } = useContext(ModalEditContext)
 
 
    return (
@@ -21,7 +23,7 @@ export const HeaderHome = () => {
          <div className='img-header'>
             <img src={Logo} alt='Logo' />
             <div className='dropDown'>
-            <img className='menu' src={Menu} alt='Menu' />
+            <img className='btn-menu' src={Menu} alt='Menu' />
             <img className='exit-btn' src={ExitBtn} alt='Menu' />
 
 
@@ -35,7 +37,7 @@ export const HeaderHome = () => {
             
 
             <div className='dropDown-content-logged'>
-               <button className='buttons-menu-dashboard'>Editar perfil</button>
+               <button className='buttons-menu-dashboard' onClick={() => setIsOpen(true)}>Editar perfil</button>
                <button className='buttons-menu-dashboard' onClick={() => setModalCreatepost(true)}>Novo post</button>
                <button className='buttons-menu-dashboard'>Seus itens</button>
             </div> 

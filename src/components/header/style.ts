@@ -1,11 +1,18 @@
 import styled from 'styled-components'
 export const StyledHeader = styled.header`
-
-   height: 100%;
+   
    padding: 15px 15px 0 15px;
    display: flex;
    flex-direction: column;
    border-bottom: 4px solid var(--color-primary);
+
+   .btn-menu{
+      cursor: pointer;
+   }
+
+   .exit-btn{
+      cursor: pointer;
+   }
 
    .img-header {
       display: flex;

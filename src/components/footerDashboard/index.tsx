@@ -1,7 +1,9 @@
 import { StyledFooterDashboard } from "./style";
-import FirstImageFooter from '../../assets/first-image-footer.png'
-import SecondImageFooter from '../../assets/second-image-footer.png'
-
+import FirstImageFooterTablet from '../../assets/first-image-footer-tablet.png'
+import SecondImageFooterTablet from '../../assets/second-image-footer-tablet.png'
+import FirstImageFooterDesktop from '../../assets/first-image-footer-desktop.png'
+import SecondImageFooterDesktop from '../../assets/second-image-footer-desktop.png'
+import Logo from '../../assets/logo.svg'
 
 
 export const FooterDashboard = () => {
@@ -17,11 +19,16 @@ export const FooterDashboard = () => {
                    quibusdam At iure rerum ea corporis omnis et vero quisquam ut dolor repellendus. </p>
             </div>
             <div className="image-area">
-                <div><img src={FirstImageFooter} alt="" /></div>
-                <div><img src={SecondImageFooter} alt="" /></div>
+                <div><img src={FirstImageFooterTablet} alt="" /></div>
+                <div><img src={SecondImageFooterTablet} alt="" /></div>
+            </div>
+            <div className="image-area-desktop">
+                <div><img src={FirstImageFooterDesktop} alt="" /></div>
+                <div><img src={SecondImageFooterDesktop} alt="" /></div>
             </div>
             <div className="area-info-bottom">
                 <p>Fortalecendo a cultura de doações através de estratégia.</p>
+                <img src={Logo} alt="" />
             </div>
         </StyledFooterDashboard>
     )
