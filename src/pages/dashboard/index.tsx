@@ -22,16 +22,16 @@ export const Dashboard: () => JSX.Element = () => {
         <StyledDashboard> 
                   <HeaderHome/>
 
-                <div className="image-after-header">
-                     <img src={ImageAfterHeader} alt="" />
-                </div>  
+                  <div className="image-after-header">
+                        <img src={ImageAfterHeader} alt="" />
+                  </div>  
 
-                <div className="image-after-header-large">
-                     <img src={ImageAfterHeaderLarge} alt="" />
-                </div>  
-                <div className="list-post">
-                    <DashboardList/>
-                </div>
+                  <div className="image-after-header-large">
+                        <img src={ImageAfterHeaderLarge} alt="" />
+                  </div>  
+                  <div className="list-post">
+                     <DashboardList/>
+                  </div>
                 {modalCreatepost === true ? <ModalCreatePost/> : false}
                <FooterDashboard/>
         </StyledDashboard>
