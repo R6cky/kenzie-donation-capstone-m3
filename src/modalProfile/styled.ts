@@ -9,6 +9,7 @@ export const StyledModalWrapper = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 
     .modalBox{
         width: 90%;
