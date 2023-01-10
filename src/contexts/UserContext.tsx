@@ -16,10 +16,11 @@ export const UserProvider = ({ children }: iDefaultProviderProps) => {
     try {
       const response = await api.post<iUserLoginResponse>("login", data);
       const { accessToken, user: userResponse } = response.data;
+      console.log("Teste de funcao login")
       localStorage.setItem("@TOKEN", accessToken);
       localStorage.setItem("@USERID", JSON.stringify(userResponse.id))
 
-      console.log(response)
+      
       setUser(userResponse)
       toast.success("Logado com sucesso!");
       navigate("/dashboard");

@@ -179,13 +179,324 @@ export const StyledCreatePost = styled.div`
 
             }
         }
+
+    }
+
+        @media(min-width: 780px){
+
+
+        form{
+        width: 600px;
+        max-width: 100%;
+        height: 844px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center ;
+        background:var(--grey-0);
+        border-radius: 10px;
+
+        animation: myAnim 1s ease 0s 1 normal forwards;
+
+        @keyframes myAnim {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+        
+
+        .form-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+
+        .btn-close-modal{
+            
+            img{
+                width: 27px;
+                height: 27px;
+            }
+        }
+
+        label{
+            font-size: 14px;
+        }
  
+        
+        .form-title{
+            width: 90%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            input{
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+            }
+        }
+
+        .form-description{
+            width: 90%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+
+            input{
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+
+            }
+        }
+        
+
+        .form-post-category{
+            width: 90%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+
+            select{
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+
+            }
+
+            
+        }
+
+
+
+        .form-post-type{
+            width: 90%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+
+            select{
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+            }
+        }
+        
+
+        .form-post-image{
+            width: 90%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+
+            input{
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+
+            }
+        }
+
+
+        .form-button{
+            width: 90%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            gap: 10px;
+
+            button{
+                width: 100%;
+                height: 50px;
+                background: var(--color-primary);
+                color: var(--grey-0);
+                font-size: 18px;
+                font-weight: bold;
+                border: none;
+                border-radius: 8px;
+
+            }
+        }
+
+
+
+        }
     }
 
 
 
 
 
+
+    @media(min-width: 1200px){
+
+
+        form{
+        width: 600px;
+        max-width: 100%;
+        height: 844px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center ;
+        background:var(--grey-0);
+        border-radius: 10px;
+
+        animation: myAnim 1s ease 0s 1 normal forwards;
+
+        @keyframes myAnim {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+
+        .form-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+
+        .btn-close-modal{
+            cursor: pointer;
+            img{
+                width: 27px;
+                height: 27px;
+            }
+        }
+
+        label{
+            font-size: 14px;
+            color: var(--color-primary);
+        }
+
+
+        .form-title{
+            width: 90%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            input{
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+                padding: 5px;
+
+            }
+        }
+
+        .form-description{
+            width: 90%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+
+            input{
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+                padding: 5px;
+
+            }
+        }
+
+
+        .form-post-category{
+            width: 90%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+
+            select{
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+
+            }
+
+            
+        }
+
+
+
+        .form-post-type{
+            width: 90%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+
+            select{
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+
+            }
+        }
+
+
+        .form-post-image{
+            width: 90%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+
+            input{
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+                padding: 5px;
+
+
+            }
+        }
+
+
+        .form-button{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            flex-direction: row;
+            gap: 10px;
+
+            button{
+                width: 250px;
+                height: 50px;
+                background: var(--color-primary);
+                color: var(--grey-0);
+                font-size: 18px;
+                font-weight: bold;
+                border: none;
+                border-radius: 8px;
+                border: solid ;
+
+
+            }
+        }
+
+
+
+        }
+        }
+        
 
 
 `
