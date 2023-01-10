@@ -58,6 +58,7 @@ export const StyledHeader = styled.header`
    .dropDown {
       position: relative;
       display: inline-block;
+      border: solid;
       
    }
 
@@ -69,13 +70,13 @@ export const StyledHeader = styled.header`
       right: 0px;
       border-radius: 5px;
       border: 2px solid var(--color-primary);
+    
 
       background-color: var(--grey-0);
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
 
       animation: modalAnimation 2s ease;
-      display: flex;
       justify-content: center;
       align-items: center;
    }
@@ -100,7 +101,7 @@ export const StyledHeader = styled.header`
       display: flex;
       justify-content: center;
       align-items: center;
-
+      display: none;
 
    }
 
@@ -169,7 +170,6 @@ export const StyledHeader = styled.header`
       .dropDown-content-larger{
 
       display: none;
-   
 
       }
 
@@ -218,6 +218,10 @@ export const StyledHeader = styled.header`
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
+            
+            :hover{
+               text-decoration: underline;
+            }
          }
 
 
@@ -228,6 +232,20 @@ export const StyledHeader = styled.header`
          justify-content: space-around;
          width: 1200px;
          max-width: 100%;
+
+
+         .options-menu-button{
+            color: var(--grey-300);
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            
+            :hover{
+               text-decoration: underline;
+            }
+         }
+
+
 
          .saudation-to-logged{
             width: 400px;

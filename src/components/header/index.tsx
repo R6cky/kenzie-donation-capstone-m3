@@ -109,13 +109,16 @@ export const HeaderHome = () => {
                      <span>Seja bem vindo</span>, usuário...
                   </p>
                   <Link to={''} className='options-menu-button'>
-                        Editar perfil 
+                        Editar perfil
                   </Link>
                   <Link to={''} className='options-menu-button'>
                         Novo post
                   </Link>
                   <Link to={''} className='options-menu-button'>
                         Seus itens
+                  </Link>
+                  <Link to={''} className='options-menu-button'>
+                        Sair
                   </Link>
                </div>     
 
