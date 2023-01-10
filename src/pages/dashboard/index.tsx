@@ -48,3 +48,5 @@ export const DashboardHome = () => {
       </div>
    )
 }
+
+export default DashboardPage
