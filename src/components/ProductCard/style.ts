@@ -33,7 +33,7 @@ export const StyledDivCardInfo = styled.div`
         border-radius: 2px;
 
         font-weight: 400;
-        font-size: 9px;
+        font-size: 0.563rem;
         color: var(--white-default);
     }
 `
@@ -46,14 +46,14 @@ export const StyledDivDescription = styled.div`
 
     h3 {
         font-weight: 700;
-        font-size: 10px;
+        font-size: 0.625rem;
 
         color: var(--grey-300);
     }
 
     span {
         font-weight: 500;
-        font-size: 10px;
+        font-size: 0.625rem;
 
         color: var(--color-primary);
     }
@@ -72,7 +72,7 @@ export const StyledDivCardButtons = styled.div`
         border-radius: 5px;
 
         font-weight: 500;
-        font-size: 10px;
+        font-size: 0.625rem;
 
         color: var(--white-default);
     }

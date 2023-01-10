@@ -35,7 +35,7 @@ export const StyledDivDonations = styled.div`
     h2 {
         padding: 0 0 10px 19px;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 1.25rem;
 
         color: var(--color-primary);
         border-bottom: 4px solid var(--gray-500);
@@ -69,8 +69,7 @@ export const StyledSectionDonationsFilter = styled.section`
         justify-content: center;
 
         font-weight: 700;
-        font-size: 25px;
-        line-height: 42px;
+        font-size: 1.5rem;
         color: var(--white-default);
 
     }
@@ -79,13 +78,13 @@ export const StyledSectionDonationsFilter = styled.section`
         width: 70%;
         display: flex;
         align-items: center;
-        padding: 0 5% 0 10%;
+        padding: 0 2% 0 10%;
         gap: 20px;
 
         ul {
             max-width: 100%;
             width: 570px;
-            border: 1px solid red;
+            
             overflow: scroll;
             display: flex;
             gap: 15px;
@@ -101,7 +100,7 @@ export const StyledSectionDonationsFilter = styled.section`
                 border-radius: 4px;
 
                 font-weight: 700;
-                font-size: 12px;
+                font-size: 0.75rem;
                 color: var(--white-default);
             }
         }
@@ -120,7 +119,7 @@ export const StyledDivRequests = styled.div`
     h2 {
         padding: 0 0 10px 19px;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 1.25rem;
 
         color: var(--color-primary);
         border-bottom: 4px solid var(--gray-500);
@@ -130,11 +129,42 @@ export const StyledDivRequests = styled.div`
         }
     }
 
+    
+
     @media(min-width: 600px) {
         h2 {
             display: none;
         }
+        button {
+            display: flex;
+        }
     }
+`
+
+export const StyledButtonRequestsFilter = styled.button`
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+    width: 356px;
+    height: 79px;
+
+    background-color: var(--white-default);
+    border: 1px solid #1E6CE0;
+    border-radius: 10px;
+
+    font-weight: 700;
+    font-size: 2.188rem;
+
+    color: var(--blue-100);
+
+    @media(min-width: 600px) {
+        
+        button {
+            display: flex;
+        }
+    }
+
 `
 
 export const StyledSectionAboutUs = styled.section`
@@ -145,7 +175,7 @@ export const StyledSectionAboutUs = styled.section`
     padding: 30px 0;
     background-color: var(--color-primary);
     font-weight: 400;
-    font-size: 12px;
+    font-size: 0.75rem;
     color: var(--white-default);
 
     h2 {
@@ -155,7 +185,7 @@ export const StyledSectionAboutUs = styled.section`
         height: 37px;
         background-color: var(--blue-100);
         font-weight: 700;
-        font-size: 15px;
+        font-size: 0.938rem;
 
         color: var(--white-default);
     }
@@ -197,7 +227,7 @@ export const StyledFooter = styled.footer`
     background-color: var(--color-primary);
 
     p {
-        font-size: 11px;
+        font-size: 0.688rem;
         font-weight: 500;
         color: var(--white-default);
     }

@@ -1,5 +1,5 @@
 import { HeaderHome } from "../../components/header"
-import { StyledDivDonations, StyledDivRequests, StyledFigureBanner, StyledFigureCampaign, StyledFigureRegister, StyledFooter, StyledSectionAboutUs, StyledSectionDonationsFilter, StyledSectionProductLists } from "./style"
+import { StyledButtonRequestsFilter, StyledDivDonations, StyledDivRequests, StyledFigureBanner, StyledFigureCampaign, StyledFigureRegister, StyledFooter, StyledSectionAboutUs, StyledSectionDonationsFilter, StyledSectionProductLists } from "./style"
 import banner from "../../assets/campanha.png"
 import DonationProducts from "../../components/DonationProducts"
 import RequestProducts from "../../components/RequestProducts"
@@ -33,7 +33,7 @@ export const HomePage = () => {
                     <DonationProducts/>
                 </StyledDivDonations>
                 <StyledDivRequests>
-                    <button>Solicitações</button>
+                    <StyledButtonRequestsFilter>Solicitações</StyledButtonRequestsFilter>
                     <h2>Itens <strong>solicitados</strong></h2>
                     <RequestProducts/>
                 </StyledDivRequests>
@@ -44,9 +44,9 @@ export const HomePage = () => {
                 
             </StyledSectionAboutUs>
 
-            <StyledFigureCampaign>
+            {/* <StyledFigureCampaign>
                     <img src={campaing} alt="" />
-            </StyledFigureCampaign>
+            </StyledFigureCampaign> */}
             <StyledFigureRegister>
                 <img src={registerIMG} alt="Cadastro da Campanha" />
             </StyledFigureRegister>
