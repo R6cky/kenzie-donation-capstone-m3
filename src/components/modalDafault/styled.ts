@@ -25,6 +25,8 @@ export const StyledModal = styled.div`
       padding: 20px;
 
       background-color: var(--grey-0);
+      border-radius: 15px;
+      border: 1px solid var(--color-primary);
    }
 
    .modal-close {

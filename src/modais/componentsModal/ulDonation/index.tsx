@@ -1,9 +1,10 @@
 import { useContext } from "react"
 import { AiOutlineEye } from "react-icons/ai"
 import { ModalContext } from "../../modalContext"
+import ModalEditPost from "../../modalEditPost"
 
 export const UlDonation = () => {
-   const { handleModalDelete, modalEditPostHandle, viewDonation } =
+   const { handleModalDelete, modalEditPostHandle, viewDonation , editPostIsOpenModal} =
       useContext(ModalContext)
    return (
       <>
@@ -31,6 +32,8 @@ export const UlDonation = () => {
                </li>
             ))}
          </ul>
+{editPostIsOpenModal && <ModalEditPost/>}
+
       </>
    )
 }
