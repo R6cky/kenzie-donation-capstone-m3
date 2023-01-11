@@ -13,13 +13,16 @@ import { UserContextLogin } from '../../contexts/UserContext'
 import { Navigate } from 'react-router-dom'
 import { Loading } from '../../components/loading'
 
-export const Dashboard: () => JSX.Element = () => {
 
+export const Dashboard: () => JSX.Element = () => {
 
   const { modalCreatepost, setModalCreatepost } = useContext(CreatePostContext)
   const { open } = useContext(ModalEditContext)
   const {user, loading} = useContext(UserContextLogin)
-  
+ 
+
+
+
     if(loading){
       return <Loading/>
     }

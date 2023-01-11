@@ -6,6 +6,7 @@ export interface iUserContext {
     login: (data: iUserLogin) => void
     user: iUser
     loading: boolean
+    setUser: any
 }
 
 export interface iUser {
@@ -16,6 +17,7 @@ export interface iUser {
     state: string;
     id: number;
     length: number;
+    data: {name: string}
 }
 
 export interface iUserRegister {

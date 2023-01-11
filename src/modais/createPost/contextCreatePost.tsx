@@ -1,7 +1,7 @@
 import { useState,createContext, useContext} from "react";
 import { DashboardListContext } from "../../components/dashboardUl/contextList";
 import { api } from "../../services/api";
-
+import {toast} from 'react-toastify'
 
 interface iChildren{
     children: React.ReactNode
@@ -55,10 +55,10 @@ export const CreatePostProvider = ({children}:iChildren) => {
                         })
                         await  setDashboardListPosts([...dashboardListPosts, request.data])
                         setModalCreatepost(false)
+                        toast.success("Criado com sucesso!");
                     } catch (error) {
                         console.error(error)
-                    }finally{
-        
+                        toast.error("Ops, algo deu errado!");
                     }
                 }
             

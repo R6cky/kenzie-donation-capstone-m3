@@ -14,25 +14,35 @@ import { ModalEditContext } from '../../modalProfile/contexts'
 import { ModalContext } from '../../modais/modalContext'
 import { ModalDash } from '../../modais/modalYourItems'
 import { UserContextLogin } from '../../contexts/UserContext'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 
 export const HeaderHome = () => {
-   const { modalCreatepost, setModalCreatepost } = useContext(CreatePostContext)
+   const { setModalCreatepost } = useContext(CreatePostContext)
    const { setIsOpen } = useContext(ModalEditContext)
    const { modalIsOpen, handleModal } = useContext(ModalContext)
-   const {user} = useContext(UserContextLogin)
+   const {user, setUser} = useContext(UserContextLogin)
 
-   console.log(user)
+   const navigate = useNavigate()
+
+   const logout = () => {
+       localStorage.clear()
+       setUser([])
+       navigate('/')
+   }
+  
    return (
       <StyledHeader>
+
          <div className='img-header'>
             <img src={Logo} alt='Logo' />
             <div className='dropDown'>
+            {!user.data? 
+               <>
                <img className='btn-menu' src={Menu} alt='Menu' />
-               <img className='exit-btn' src={ExitBtn} alt='Menu' />
 
-               {1 !== 1 ? (
-                  <div className='dropDown-content'>
+               <div className='dropDown-content'>
                      <Link to={'/'} className='login-home'>
                         Entrar
                      </Link>
@@ -40,29 +50,37 @@ export const HeaderHome = () => {
                         Cadastrar-se
                      </Link>
                   </div>
-               ) : (
-                  <div className='dropDown-content-logged'>
-                     <button
-                        className='buttons-menu-dashboard'
-                        onClick={() => setIsOpen(true)}
-                     >
-                        Editar perfil
-                     </button>
-                     <button
-                        className='buttons-menu-dashboard'
-                        onClick={() => setModalCreatepost(true)}
-                     >
-                        Novo post
-                     </button>
-                     <button
-                        onClick={() => handleModal()}
-                        className='buttons-menu-dashboard'
-                     >
-                        Seus itens
-                     </button>
-                     {modalIsOpen && <ModalDash />}
-                  </div>
-               )}
+                  </>
+            : 
+            <>
+            <img className='btn-menu' src={Menu} alt='Menu' />
+            <img className='exit-btn' onClick={() =>  logout()} src={ExitBtn} alt='Menu' />
+
+            <div className='dropDown-content-logged'>
+               <button
+                  className='buttons-menu-dashboard'
+                  onClick={() => setIsOpen(true)}
+               >
+                  Editar perfil
+               </button>
+               <button
+                  className='buttons-menu-dashboard'
+                  onClick={() => setModalCreatepost(true)}
+               >
+                  Novo post
+               </button>
+               <button
+                  onClick={() => handleModal()}
+                  className='buttons-menu-dashboard'
+               >
+                  Seus itens
+               </button>
+               {modalIsOpen && <ModalDash />}
+            </div> 
+            </>
+            }
+              
+             
             </div>
          </div>
          <div className='btn-filter'>
@@ -97,21 +115,17 @@ export const HeaderHome = () => {
                <p className='icon-name'>Livros</p>
             </div>
          </div>
+
          <div className='btn-filter-large'>
+         
+         {user.data? 
+           
+            <div className='options-menu-logged'>
 
-              {/* <div className='options-menu'>
-                  <Link to={'/login'} className='options-menu-button'>
-                        Login
-                  </Link>
-                  <Link to={'/register'} className='options-menu-button'>
-                        Cadastre-se
-                  </Link>
-               </div>     */}
-
-               <div className='options-menu-logged'>
                   <p className='saudation-to-logged'>
-                     <span>Seja bem vindo</span>, {user.name}!
-                  </p>
+                     <span>Seja bem vindo</span>, {user.data.name}!
+                  </p> 
+
                   <button onClick={() => setIsOpen(true)} className='options-menu-button'>
                         Editar perfil
                   </button>
@@ -121,13 +135,39 @@ export const HeaderHome = () => {
                   <button onClick={() => handleModal()} className='options-menu-button'>
                         Seus itens
                   </button>
-                  <Link to={''} className='options-menu-button'>
+                  <button onClick={()=> logout()} className='options-menu-button'>
                         Sair
-                  </Link>
-               </div>     
+                  </button>
+            </div>  
+            : false}
 
 
-         </div>
-      </StyledHeader>
+             {!user.data?  
+               
+            <div className='options-menu'>
+                     <Link to={'/login'} className='options-menu-button'>
+                           Login
+                     </Link>
+                     <Link to={'/register'} className='options-menu-button'>
+                           Cadastre-se
+                     </Link>
+            </div>
+            
+            : false}
+
+               </div>
+            </StyledHeader>
+
+
+
+
+
+              
+
+                 
+
+
+    
+      
    )
 }

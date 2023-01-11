@@ -34,7 +34,7 @@ export const UserProviderLogin = ({ children }: iDefaultProviderProps) => {
                   authorization: `Bearer ${token}` 
                 }
               })
-
+              
               setUser(data)
               
 
@@ -68,7 +68,7 @@ export const UserProviderLogin = ({ children }: iDefaultProviderProps) => {
   };
 
   return (
-    <UserContextLogin.Provider value={{ login, user, loading }}>
+    <UserContextLogin.Provider value={{ login, user, loading, setUser }}>
       {children}
     </UserContextLogin.Provider>
   );
