@@ -17,7 +17,7 @@ export const ModalDash = () => {
 
    return (
       <div className='container'>
-         <DefaultModal callback={() => handleModal}>
+         <DefaultModal callback={() => handleModal()}>
             <StyleModalYourItems className='modal-container-your-items'>
                <div className='modal-header'>
                   <h2 className='title-modal'>Seus Itens</h2>

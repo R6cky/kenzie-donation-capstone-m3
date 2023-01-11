@@ -125,8 +125,11 @@ export const StyledDashboardList = styled.div`
             }
 
             h4{
-                width: 80px;
-                max-width: 100%;
+                /* width: 80px;
+                max-width: 100%; */
+                font-size: 14px;
+                font-weight: 500;
+                padding: 10px;
                 height: 25px;
                 display: flex;
                 align-items: center;
@@ -162,7 +165,8 @@ export const StyledDashboardList = styled.div`
                 height: 24px;
                 background-color: var(--color-primary);
                 color: var(--grey-0);
-                font-weight: bold;
+                font-weight: 500;
+                font-size: 12px;
                 border: none;
                 display: flex;
                 justify-content: center;
