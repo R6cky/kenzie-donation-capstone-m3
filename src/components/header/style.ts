@@ -61,21 +61,21 @@ export const StyledHeader = styled.header`
    }
 
    .dropDown-content {
-      width: 200px;
+      width: 240px;
       height: 48px;
       position: absolute;
-      top: 22px;
+      top: 28px;
       right: 0px;
       border-radius: 5px;
       border: 2px solid var(--color-primary);
-    
+      display: flex;
+      justify-content: space-between;
 
       background-color: var(--grey-0);
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
 
       animation: modalAnimation 2s ease;
-      justify-content: center;
       align-items: center;
    }
 
@@ -115,6 +115,10 @@ export const StyledHeader = styled.header`
       color: var(--grey-0);
       text-decoration: none;
       font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
    }
 
 
@@ -160,7 +164,7 @@ export const StyledHeader = styled.header`
 
 
    .dropDown-content{
-      display: none;
+     
          
    
       }
@@ -216,9 +220,9 @@ export const StyledHeader = styled.header`
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
-            
+
             :hover{
-               text-decoration: underline;
+               text-decoration: underline;   
             }
          }
 
@@ -237,7 +241,8 @@ export const StyledHeader = styled.header`
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
-            
+            background: white;
+            font-size: 16px;
             :hover{
                text-decoration: underline;
             }

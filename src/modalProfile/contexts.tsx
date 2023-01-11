@@ -1,6 +1,9 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react'
+import { toast } from 'react-toastify'
 import { iDataEdit } from '.'
+import { UserContextLogin } from '../contexts/UserContext'
 import { api } from '../services/api'
+
 
 export interface iDefaultProviderProps {
     children: React.ReactNode
@@ -16,11 +19,12 @@ export const ModalEditContext = createContext({} as iModalEditContext)
 
 const ModalEditProvider = ({ children }: iDefaultProviderProps) => {
     
+    const {setUser} = useContext(UserContextLogin)
     const [open, setIsOpen] = useState(false)
   
    async function editProfile(data:iDataEdit) {
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlZHJvYXZmYkBnbWFpbC5jb20iLCJpYXQiOjE2NzMzNjM1NTcsImV4cCI6MTY3MzM2NzE1Nywic3ViIjoiNCJ9.dB-n5bHZjXcmri32h4gyJybznQJ37jjyClAiyfoYK9k" 
-    const userId = '4'
+    const token = localStorage.getItem('@USERTOKEN')
+    const userId = localStorage.getItem('@USERID')
     
     if (token) {
         try {
@@ -29,10 +33,15 @@ const ModalEditProvider = ({ children }: iDefaultProviderProps) => {
                     Authorization: `Bearer ${token}`
                 }
             });
+            console.log(response)
+            await setUser(response)
+            toast.success('Usuário atualizado com sucesso!')
+            setIsOpen(false)
+
         } catch (error) {
             console.log(error)
-        } finally {
-            window.location.reload()
+            toast.error('Ops, algum erro aconteceu!')
+            setIsOpen(false)
         }
     }
 

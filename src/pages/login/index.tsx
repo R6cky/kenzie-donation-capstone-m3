@@ -3,11 +3,14 @@ import Box from "../../assets/img/box.png";
 import Donation from "../../assets/img/donation.PNG";
 import { LoginStyled } from "./style";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { loginSchema } from "../../components/schemas/LoginSchemas";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UserContextLogin } from "../../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
+
+
 
 export const Login = () => {
   const {
@@ -23,7 +26,10 @@ export const Login = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const { login } = useContext(UserContextLogin);
+  const { login} = useContext(UserContextLogin);
+  
+
+
 
   return (
     <LoginStyled>

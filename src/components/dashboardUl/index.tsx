@@ -4,6 +4,7 @@ import { useContext } from "react"
 import { DashboardListContext } from "./contextList"
 import { CreatePostContext } from "../../modais/createPost/contextCreatePost"
 import { ModalCreatePost } from "../../modais/createPost"
+import  ImageNotFount  from "../../assets/image-not-found.jpg"
 
 
 export const DashboardList = () => {
@@ -38,7 +39,8 @@ interface iDashboardListPosts{
                                         
                                         <li key={element.id}>
                                              <div className="product-image">
-                                                  <img src={element.image} alt="img"/>
+                                                  {element.image !== ''    ? <img src={element.image} alt="img"/> 
+                                                  : <img src={ImageNotFount} alt="img"/>}
                                              </div>
                                              <div className="product-category">
                                                   <span>{element.title}</span>
@@ -61,7 +63,9 @@ interface iDashboardListPosts{
                               
                          }
                </ul>
-
+                 <div className="requests-title">
+                    <h3> Solicitações</h3>        
+                 </div>             
                <ul>
                          {
                               dashboardListRequests.map((element:iDashboardListPosts)=>{
@@ -69,7 +73,8 @@ interface iDashboardListPosts{
                                         
                                         <li key={element.id}>
                                              <div className="product-image">
-                                                  <img src={element.image} alt="img"/>
+                                                  {element.image !== '' ? <img src={element.image} alt="img"/> 
+                                                  : <img src={ImageNotFount} alt="img"/>}
                                              </div>
                                              <div className="product-category">
                                                   <span>{element.title}</span>

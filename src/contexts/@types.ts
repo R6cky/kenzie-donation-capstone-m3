@@ -4,15 +4,20 @@ export interface iDefaultProviderProps {
 
 export interface iUserContext {
     login: (data: iUserLogin) => void
+    user: iUser
+    loading: boolean
+    setUser: any
 }
 
 export interface iUser {
     email: string;
-    nome: string;
-    avatar: string;
-    tel: string;
-    Estado: string;
+    name: string;
+    photo: string;
+    phone: string;
+    state: string;
     id: number;
+    length: number;
+    data: {name: string, phone:string, state: string}
 }
 
 export interface iUserRegister {

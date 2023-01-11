@@ -2,8 +2,6 @@ import { useForm } from "react-hook-form"
 import { StyledCreatePost } from "./style"
 import { useContext, useEffect } from "react"
 import { CreatePostContext } from "./contextCreatePost"
-import { useNavigate } from "react-router-dom"
-import { DashboardListContext } from "../../components/dashboardUl/contextList"
 import CloseModalCreatePost from '../../assets/closeModalCreatePost.png'
 
 interface iCreatePosts{
@@ -22,9 +20,9 @@ interface iCreatePosts{
 export const ModalCreatePost =  () => {
 
 
-     const userId = 3
+     const userId = localStorage.getItem('@USERID')
 
-     const {createPost,createRequest, modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
+     const {createPost,createRequest, setModalCreatepost} = useContext(CreatePostContext)
      const { register, handleSubmit} = useForm()
     
 
@@ -34,13 +32,18 @@ export const ModalCreatePost =  () => {
                userId: userId
           }
 
-        
+          
+          if(data.name !== '' && data.description !== ''){
 
-          if(data.type === 'donation'){
-               createPost(data)
-          }else if(data.type === 'request'){
-               createRequest(data)
+               if(data.type === 'donation'){
+                    createPost(data)
+               }else if(data.type === 'request'){
+                    createRequest(data)
+               }
+
           }
+
+         
      }
 
 
