@@ -5,7 +5,39 @@ export const StyledDashboardList = styled.div`
        
         padding-top: 30px;
         margin-top: 10px;
-   ul{  
+
+
+        .requests-title{
+
+            width: 90%;
+            max-width: 100%;
+            height: 80px;
+            margin: 0 auto;
+            display: flex;
+            border-radius: 8px;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+
+            h3{
+                width: 250px;
+                height: 80px;
+                padding: 10px;
+                background: var(--grey-0    );
+                color: var(--information);
+                font-weight: bold;
+                border: none;
+                border-radius: 8px ;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: solid var(--information) 0.1px;
+            }
+
+        }
+
+
+    ul{  
         width: 100%;
         height: 350px;
         display: flex;

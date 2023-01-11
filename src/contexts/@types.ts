@@ -17,7 +17,7 @@ export interface iUser {
     state: string;
     id: number;
     length: number;
-    data: {name: string}
+    data: {name: string, phone:string, state: string}
 }
 
 export interface iUserRegister {

@@ -63,7 +63,9 @@ interface iDashboardListPosts{
                               
                          }
                </ul>
-
+                 <div className="requests-title">
+                    <h3> Solicitações</h3>        
+                 </div>             
                <ul>
                          {
                               dashboardListRequests.map((element:iDashboardListPosts)=>{

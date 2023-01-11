@@ -20,6 +20,24 @@ export const StyledModalWrapper = styled.div `
         flex-direction: column;
         max-height: 730px;
         border-radius: 10px;
+
+
+        animation: myAnim 1s ease 0s 1 normal forwards;
+
+        @keyframes myAnim {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+
+
     }
 
     .modalHeader{
