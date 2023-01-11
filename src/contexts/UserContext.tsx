@@ -14,10 +14,11 @@ export const UserProviderLogin = ({ children }: iDefaultProviderProps) => {
 
   const login = async (data: iUserLogin) => {
     try {
+
       const response = await api.post<iUserLoginResponse>("login", data);
       const { accessToken, user: userResponse } = response.data;
 
-      localStorage.setItem("@TOKEN", accessToken);
+      localStorage.setItem("@USERTOKEN", accessToken);
       localStorage.setItem("@USERID", JSON.stringify(userResponse.id))
 
       setUser(userResponse)

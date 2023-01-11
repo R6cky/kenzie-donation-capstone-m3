@@ -1,4 +1,4 @@
-import { useState,createContext, useContext, useEffect} from "react";
+import { useState,createContext, useContext} from "react";
 import { DashboardListContext } from "../../components/dashboardUl/contextList";
 import { api } from "../../services/api";
 
@@ -45,7 +45,7 @@ export const CreatePostProvider = ({children}:iChildren) => {
 
                 const createPost =  async (data:iCreatePosts) => {
                 
-                     const token = localStorage.getItem('@TOKEN')
+                     const token = localStorage.getItem('@USERTOKEN')
 
                     try {
                         const request = await api.post('/donation',data, {

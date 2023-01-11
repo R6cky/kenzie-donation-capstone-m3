@@ -55,12 +55,4 @@ export const Dashboard: () => JSX.Element = () => {
   )
 }
 
-// export const DashboardHome = () => {
-//   const { modalIsOpen, handleModal } = useContext(ModalContext)
 
-//   return (
-//     <div>
-//       <button>OPEN MODAL</button>
-//     </div>
-//   )
-// }
