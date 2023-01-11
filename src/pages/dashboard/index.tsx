@@ -9,6 +9,7 @@ import ImageAfterHeaderLarge from '../../assets/image-top-before-donations-large
 import { FooterDashboard } from "../../components/footerDashboard"
 import ModalEditProfile from "../../modalProfile"
 import { ModalEditContext } from "../../modalProfile/contexts"
+import { UserContextLogin } from '../../contexts/UserContext'
 
 export const Dashboard: () => JSX.Element = () => {
 

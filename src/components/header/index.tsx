@@ -13,12 +13,16 @@ import { CreatePostContext } from '../../modais/createPost/contextCreatePost'
 import { ModalEditContext } from '../../modalProfile/contexts'
 import { ModalContext } from '../../modais/modalContext'
 import { ModalDash } from '../../modais/modalYourItems'
+import { UserContextLogin } from '../../contexts/UserContext'
+
 
 export const HeaderHome = () => {
    const { modalCreatepost, setModalCreatepost } = useContext(CreatePostContext)
    const { setIsOpen } = useContext(ModalEditContext)
    const { modalIsOpen, handleModal } = useContext(ModalContext)
+   const {user} = useContext(UserContextLogin)
 
+   console.log(user)
    return (
       <StyledHeader>
          <div className='img-header'>
@@ -106,7 +110,7 @@ export const HeaderHome = () => {
 
                <div className='options-menu-logged'>
                   <p className='saudation-to-logged'>
-                     <span>Seja bem vindo</span>, usuário...
+                     <span>Seja bem vindo</span>, {user.name}!
                   </p>
                   <button onClick={() => setIsOpen(true)} className='options-menu-button'>
                         Editar perfil

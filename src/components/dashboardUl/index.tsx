@@ -39,10 +39,8 @@ interface iDashboardListPosts{
                                         
                                         <li key={element.id}>
                                              <div className="product-image">
-                                                  {1!==1? <img src={element.image} alt="img"/> 
+                                                  {element.image !== ''    ? <img src={element.image} alt="img"/> 
                                                   : <img src={ImageNotFount} alt="img"/>}
-                                                  
-                                                  
                                              </div>
                                              <div className="product-category">
                                                   <span>{element.title}</span>
@@ -73,7 +71,8 @@ interface iDashboardListPosts{
                                         
                                         <li key={element.id}>
                                              <div className="product-image">
-                                                  <img src={element.image} alt="img"/>
+                                                  {element.image !== '' ? <img src={element.image} alt="img"/> 
+                                                  : <img src={ImageNotFount} alt="img"/>}
                                              </div>
                                              <div className="product-category">
                                                   <span>{element.title}</span>

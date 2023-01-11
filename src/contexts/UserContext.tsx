@@ -30,7 +30,7 @@ export const UserProviderLogin = ({ children }: iDefaultProviderProps) => {
   };
 
   return (
-    <UserContextLogin.Provider value={{ login }}>
+    <UserContextLogin.Provider value={{ login, user }}>
       {children}
     </UserContextLogin.Provider>
   );
