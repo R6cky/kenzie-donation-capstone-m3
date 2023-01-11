@@ -27,6 +27,10 @@ export const StyledHeader = styled.header`
       margin-bottom: 30px;
    }
 
+   .btn-filter-large{
+      display: none;
+   }
+
    .box-icon-filter {
       display: flex;
       flex-direction: column;
@@ -64,13 +68,13 @@ export const StyledHeader = styled.header`
       right: 0px;
       border-radius: 5px;
       border: 2px solid var(--color-primary);
+    
 
       background-color: var(--grey-0);
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
 
       animation: modalAnimation 2s ease;
-      display: flex;
       justify-content: center;
       align-items: center;
    }
@@ -95,7 +99,7 @@ export const StyledHeader = styled.header`
       display: flex;
       justify-content: center;
       align-items: center;
-
+    
 
    }
 
@@ -153,4 +157,121 @@ export const StyledHeader = styled.header`
          transform: translateY(0);
       }
    }
+
+
+   .dropDown-content{
+      display: none;
+         
+   
+      }
+
+      .dropDown-content-larger{
+
+      display: none;
+         
+      }
+
+
+   
+
+   @media(min-width: 1200px) {
+
+
+      .dropDown {
+      position: relative;
+      display: inline-block;
+      display: none;
+   }
+
+      .btn-filter {
+         display: flex;
+         align-items: center;
+         justify-content: space-evenly;
+         margin-bottom: 30px;
+         display: none;
+      }
+
+      .btn-filter-large{
+         display: flex;
+         justify-content: flex-end;
+         width: 85%;
+         height: 40px;
+         position: absolute;
+         top: 35px;
+         left: 200px;
+         display: flex;
+         align-items: center;
+      }
+
+      .options-menu{
+         display: flex;
+         justify-content: space-around;
+         width: 400px;
+
+
+         
+
+         .options-menu-button{
+            color: var(--grey-300);
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            
+            :hover{
+               text-decoration: underline;
+            }
+         }
+
+
+      }
+
+      .options-menu-logged{
+         display: flex;
+         justify-content: space-around;
+         width: 1200px;
+         max-width: 100%;
+
+
+         .options-menu-button{
+            color: var(--grey-300);
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            
+            :hover{
+               text-decoration: underline;
+            }
+         }
+
+
+
+         .saudation-to-logged{
+            width: 400px;
+            color: var(--color-primary);
+            span{
+               color: var(--color-primary);
+               font-weight: bold;
+               font-size: 18px;
+            }
+         }
+
+
+         .options-menu-button{
+            color: var(--grey-300);
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+         }
+         }
+ 
+ 
+ 
+   }
+
+
+
+   
+
+
+
 `

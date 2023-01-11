@@ -31,8 +31,7 @@ export const GlobalStyles = createGlobalStyle`
 
 
     :root{
-        --blue-100: #1E6CE0;
-        --white-default: #FFFFFF;
+
         --color-primary:#5690E7;
         --color-secondary:#9858F0;
         --gray-600:#333333;

@@ -58,10 +58,10 @@ export const ModalCreatePost =  () => {
                </div>
                <div className="form-description">
                     <label htmlFor="">Descrição</label>
-                    <input type="text" placeholder="Digite aqui o título" {...register('description')} />
+                    <input type="text" placeholder="Digite aqui a descrição" {...register('description')} />
                </div>
                <div className="form-post-category">
-                    <label htmlFor="">Categoria</label>
+                    <label htmlFor="">Informe uma Categoria</label>
                     <select id="" {...register('category')}>
                          <option value="Roupas">Roupas</option>
                          <option value="Brinquedos">Brinquedos</option>

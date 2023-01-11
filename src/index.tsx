@@ -9,11 +9,14 @@ import { CreatePostProvider } from './modais/createPost/contextCreatePost'
 import { ModalProvider } from './modais/modalContext'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { UserProviderLogin } from './contexts/UserContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
    <React.StrictMode>
       <BrowserRouter>
+      <ToastContainer/>
+         <UserProviderLogin>
          <ModalProvider>
             <DashboardListProvider>
                <CreatePostProvider>
@@ -23,6 +26,7 @@ root.render(
                </CreatePostProvider>
             </DashboardListProvider>
          </ModalProvider>
+         </UserProviderLogin>
       </BrowserRouter>
    </React.StrictMode>
 )

@@ -1,10 +1,13 @@
 import { useContext } from 'react'
 import { AiOutlineEye } from 'react-icons/ai'
 import { ModalContext } from '../../modalContext'
+import { ModalRequestContext } from '../../modalContextRequest'
 
 export const UlRequest = () => {
-   const { modalEditPostHandle, viewRequest, handleModalDelete } =
+   const { modalEditPostHandle } =
       useContext(ModalContext)
+   const { viewRequest, modalDeleteRequest } =
+      useContext(ModalRequestContext)
    return (
       <>
          <ul className='scrollbar'>
@@ -22,7 +25,7 @@ export const UlRequest = () => {
                         Editar
                      </button>
                      <button
-                        onClick={() => handleModalDelete(elem.id)}
+                        onClick={() => modalDeleteRequest(elem.id)}
                         className='btn-delete'
                      >
                         Excluir
