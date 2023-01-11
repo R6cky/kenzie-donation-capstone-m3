@@ -4,12 +4,15 @@ import { useContext } from "react"
 import { DashboardListContext } from "./contextList"
 import { CreatePostContext } from "../../modais/createPost/contextCreatePost"
 import  ImageNotFount  from "../../assets/image-not-found.jpg"
+import { ModalContext } from "../../modais/modalContext"
+import { ModalViewItems } from "../../modais/modalViewItem"
 
 
 export const DashboardList = () => {
     
 
 const {dashboardListPosts, dashboardListRequests}:any = useContext(DashboardListContext)
+const { viewItemModal, setViewItemModal }= useContext(ModalContext)
 // const {setModalCreatepost, modalCreatepost} = useContext(CreatePostContext)
 
 
@@ -49,7 +52,7 @@ interface iDashboardListPosts{
                                                        <p>{element.description}</p>
                                                   </div>
                                                   <div className="product-buttons">
-                                                       <button>Ver</button>
+                                                       <button onClick={() => setViewItemModal(element.id as number)}>Ver</button>
                                                        <button>Pegar doação</button>
                                                   </div>
                                         </li>
@@ -94,7 +97,7 @@ interface iDashboardListPosts{
                               })
                          }
                </ul>
-             
+               {viewItemModal && <ModalViewItems />}
         </StyledDashboardList>
    )
 }
