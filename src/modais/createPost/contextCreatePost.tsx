@@ -59,6 +59,7 @@ export const CreatePostProvider = ({children}:iChildren) => {
                     } catch (error) {
                         console.error(error)
                         toast.error("Ops, algo deu errado!");
+                        setModalCreatepost(false)
                     }
                 }
             
