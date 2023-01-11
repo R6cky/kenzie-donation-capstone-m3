@@ -13,7 +13,7 @@ export const StyledDashboardList = styled.div`
             max-width: 100%;
             height: 80px;
             margin: 0 auto;
-            display: flex;
+            display: none;
             border-radius: 8px;
             justify-content: space-between;
             align-items: center;
@@ -184,6 +184,33 @@ export const StyledDashboardList = styled.div`
 
         @media(min-width: 1200px) {
             background-color: rgba(86, 144, 231, 0.12);
+
+            .requests-title{
+
+            width: 90%;
+            max-width: 100%;
+            height: 80px;
+            margin: 0 auto;
+            display: flex;
+            border-radius: 8px;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+
+            h3{
+                width: 250px;
+                height: 80px;
+                padding: 10px;
+                background: var(--grey-0    );
+                color: var(--information);
+                font-weight: bold;
+                border: none;
+                border-radius: 8px ;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: solid var(--information) 0.1px;
+            }
         }
 
 

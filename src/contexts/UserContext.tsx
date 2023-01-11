@@ -34,6 +34,7 @@ export const UserProviderLogin = ({ children }: iDefaultProviderProps) => {
                   authorization: `Bearer ${token}` 
                 }
               })
+
               
               setUser(data)
               

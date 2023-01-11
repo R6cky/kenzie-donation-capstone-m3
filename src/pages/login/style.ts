@@ -9,7 +9,7 @@ export const LoginStyled = styled.main`
     @media screen and (min-width: 320px) {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
         width: 100vw;
         height: 100vh;
