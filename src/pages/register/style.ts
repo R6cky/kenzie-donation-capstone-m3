@@ -240,6 +240,7 @@ export const RegisterStyled = styled.main`
             max-width: 468px;
             justify-content: center;
             margin-bottom: 0px;
+            margin-top: 20px;
         }
 
         .span {
