@@ -9,7 +9,7 @@ export const UserContextLogin = createContext({} as iUserContext);
 
 
 export const UserProviderLogin = ({ children }: iDefaultProviderProps) => {
-  const [ user, setUser ] = useState<any>([])
+  const [ user, setUser ] = useState<any>(null)
   const [ loading, setLoading ] = useState<boolean>(true)
 
   const navigate = useNavigate();

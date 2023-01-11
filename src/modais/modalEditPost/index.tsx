@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { ModalContext } from '../modalContext'
-import '../../modais/modalEditPost/styles.css'
 import { StyledModalContentEditPost } from './styled'
 import { DefaultModal } from '../../components/modalDafault'
 
