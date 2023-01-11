@@ -8,17 +8,12 @@ import { UlRequest } from '../componentsModal/ulRequest';
 import { ModalConfirmDeleteRequest } from '../modalDeleteRequest';
 import { ModalRequestContext } from '../modalContextRequest';
 import { DefaultModal } from '../../components/modalDafault';
-import { ModalViewItems } from './modalview';
+import { ModalViewItems } from '../modalViewItem';
 
 export const ModalDash = () => {
-  const { handleModal, modalDeleteIsOpen, editPostIsOpenModal } =
+  const { handleModal, modalDeleteIsOpen, editPostIsOpenModal, viewItemModal, setViewItemModal } =
     useContext(ModalContext);
   const { modalDeleteRequestIsOpen } = useContext(ModalRequestContext);
-  const [showItem, setShowItem] = useState(false);
-
-  const ShowModalItem = () => {
-    setShowItem(true);
-  };
 
   return (
     <div className="container">
@@ -57,7 +52,7 @@ export const ModalDash = () => {
                     <p>Title</p>
                   </div>
                   <div className="box-btn-card">
-                    <button onClick={ShowModalItem} className="btn-view">
+                    <button onClick={() => setViewItemModal(null)} className="btn-view">
                       Ver
                     </button>
                   </div>
@@ -70,9 +65,7 @@ export const ModalDash = () => {
       {modalDeleteIsOpen && <ModalConfirmDeleteDonation />}
       {modalDeleteRequestIsOpen && <ModalConfirmDeleteRequest />}
       {editPostIsOpenModal && <ModalEditPost />}
-      {showItem && (
-        <ModalViewItems showItem={showItem} setShowItem={setShowItem} />
-      )}
+      {viewItemModal && <ModalViewItems />}
     </div>
   );
 };

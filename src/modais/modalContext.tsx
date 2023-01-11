@@ -20,10 +20,12 @@ interface iModalContextProps {
    modalDeleteIsOpen: number | null
    editPostIsOpenModal: number | null
    viewDonation: iPosts[]
+   viewItemModal: number | null
 
    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
    setDeleteIsOpen: React.Dispatch<React.SetStateAction<number | null>>
    setEditPostIsOpenModal: React.Dispatch<React.SetStateAction<number | null>>
+   setViewItemModal: React.Dispatch<React.SetStateAction<number | null>>
 
    handleModal: () => void
    handleModalDelete: (id: number) => void
@@ -40,6 +42,7 @@ export const ModalProvider = ({ children }: iProviderProps) => {
       number | null
    >(null) //modal editar donation
    const [viewDonation, setViewDonation] = useState([] as iPosts[]) //array donation
+   const [viewItemModal, setViewItemModal] = useState<number | null>(null)
 
    useEffect(() => {
       const getAllDonations = async () => {
@@ -111,10 +114,12 @@ export const ModalProvider = ({ children }: iProviderProps) => {
             modalDeleteIsOpen,
             editPostIsOpenModal,
             viewDonation,
+            viewItemModal,
             handleModal,
             setIsOpen,
             setEditPostIsOpenModal,
             setDeleteIsOpen,
+            setViewItemModal,
             handleModalDelete,
             modalEditPostHandle,
             deletePostDonation,
