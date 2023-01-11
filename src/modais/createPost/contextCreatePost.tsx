@@ -73,7 +73,7 @@ export const CreatePostProvider = ({children}:iChildren) => {
 
         const createRequest =  async (data:iCreatePosts) => {
 
-            const token = localStorage.getItem('@TOKEN')
+            const token = localStorage.getItem('@USERTOKEN')
 
             try {
                 const request = await api.post('/request',data, {
