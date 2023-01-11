@@ -1,4 +1,4 @@
-/* .container-modal-edit-post {
+.container-modal-edit-post {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -30,4 +30,4 @@
    border: 3px solid var(--grey-0);
    background-color: var(--grey-0);
 
-} */
+}
