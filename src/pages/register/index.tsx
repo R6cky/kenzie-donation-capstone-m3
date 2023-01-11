@@ -21,8 +21,9 @@ const FormRegister = () => {
     email: string;
     password: string;
   }
-  const { submitFormRegister } = useContext(UserContext);
+  const { submitFormRegister, loading } = useContext(UserContext);
   const [user, setUser] = useState<Iuser>();
+  console.log(loading)
 
   const formSchema = yup.object().shape({
     name: yup
@@ -74,7 +75,7 @@ const FormRegister = () => {
 
   return (
     <RegisterStyled>
-      <div className="desktop animate__animated animate__fadeInDown">
+      <div className="desktop">
         <figure className="donation">
           <img src={Logo} alt="Logo" />
           <p>
@@ -83,13 +84,13 @@ const FormRegister = () => {
             </Link>
           </p>
         </figure>
-        <figure className="donationDesktop">
+        <figure className="donationDesktop animate__animated animate__fadeInRight">
           <img src={Register} alt="Doação" />
         </figure>
         <div className="boxLogin">
-          <div className="login">
+          <div className="login animate__animated animate__fadeInDown">
             <h1>Cadastro</h1>
-            <form onSubmit={handleSubmit(SubmitForm)} noValidate>
+            <form  onSubmit={handleSubmit(SubmitForm)} noValidate>
               <label htmlFor="name">Nome</label>
               <input
                 type="text"
@@ -147,7 +148,7 @@ const FormRegister = () => {
               {errors.state?.message && (
                 <p className="error">{errors.state.message}</p>
               )}
-              <button>Cadastrar</button>
+              <button>{loading ? "Cadastrando..." : "Cadastrar"}</button>
               <span className="spanDesktop">
                 Já possui um Login? logue
                 <Link to="/login">aqui</Link>!

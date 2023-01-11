@@ -203,6 +203,7 @@ export const RegisterStyled = styled.main`
 
     @media screen and (min-width: 1200px) {
         justify-content: space-between;
+        overflow-x: hidden;
       
       .desktop {
             display: flex;
@@ -229,16 +230,16 @@ export const RegisterStyled = styled.main`
 
         .boxLogin {
             width: 50%;
+            height: 100%;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: flex-start;
         }
 
         .login {
             max-width: 468px;
-            margin-left: 44px;
-            margin-bottom: 50px;
-            margin-top: 60px;
+            justify-content: center;
+            margin-bottom: 0px;
         }
 
         .span {
@@ -264,9 +265,6 @@ export const RegisterStyled = styled.main`
             align-items: flex-end;
         }
 
-        footer {
-            height: 0;
-        }
 
         a{
             padding-left: 3px;
@@ -289,6 +287,10 @@ export const RegisterStyled = styled.main`
             text-align: center;
             color: #FFFFFF;   
             padding: 4px
+        }
+
+        label {
+            padding-top: 4px;
         }
     }
 

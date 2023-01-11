@@ -1,11 +1,12 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { api } from "../../../services/api";
 
 
 interface iUserContext {
-  submitFormRegister: (data: iData) => Promise<void>;
+  submitFormRegister: (data: iData) => Promise<void>
+  loading: any;
 }
 interface iData {
   name?: string;
@@ -18,13 +19,14 @@ interface iUserContextProps {
 }
 export const UserContext = createContext({} as iUserContext);
 export const UserProvider = ({ children }: iUserContextProps) => {
+  const [loading, setLoading] = useState<boolean>(false)
   const navigate = useNavigate();
 
   async function submitFormRegister(data: iData) {
 
     try {
       const response = await api.post("/register", data);
-      
+      setLoading(true)
       toast.success("Conta criada com sucesso!");
       navigate("/login");
     } catch (error) {
@@ -36,6 +38,7 @@ export const UserProvider = ({ children }: iUserContextProps) => {
     <UserContext.Provider
       value={{
         submitFormRegister,
+        loading,
       }}
     >
       {children}

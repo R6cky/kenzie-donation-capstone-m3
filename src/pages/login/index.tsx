@@ -8,9 +8,6 @@ import { useForm } from "react-hook-form";
 import { loginSchema } from "../../components/schemas/LoginSchemas";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UserContextLogin } from "../../contexts/UserContext";
-import { useNavigate } from "react-router-dom";
-
-
 
 export const Login = () => {
   const {
@@ -26,10 +23,8 @@ export const Login = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const { login} = useContext(UserContextLogin);
+  const { login, loading } = useContext(UserContextLogin);
   
-
-
 
   return (
     <LoginStyled>
@@ -64,7 +59,7 @@ export const Login = () => {
               {errors.password?.message && (
                 <p className="error">{errors.password.message}</p>
               )}
-              <button type="submit">Entrar</button>
+              <button type="submit">{loading ? "Entrando..." : "Entrar"}</button>
               <span className="spanDesktop">
                 Não possui uma conta? cadastre-se
                 <Link to="/register">aqui</Link>!
