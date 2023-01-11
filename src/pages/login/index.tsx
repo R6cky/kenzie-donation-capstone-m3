@@ -27,14 +27,6 @@ export const Login = () => {
   });
 
   const { login} = useContext(UserContextLogin);
-  const navigate = useNavigate()
-  const token = localStorage.getItem('@USERTOKEN')
-
-  useEffect(()=>{
-    if(token){
-    navigate('/dashboard')
-  }
-  },[])
   
 
 

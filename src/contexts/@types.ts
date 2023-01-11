@@ -5,6 +5,7 @@ export interface iDefaultProviderProps {
 export interface iUserContext {
     login: (data: iUserLogin) => void
     user: iUser
+    loading: boolean
 }
 
 export interface iUser {
@@ -14,6 +15,7 @@ export interface iUser {
     phone: string;
     state: string;
     id: number;
+    length: number;
 }
 
 export interface iUserRegister {

@@ -10,48 +10,62 @@ import { FooterDashboard } from "../../components/footerDashboard"
 import ModalEditProfile from "../../modalProfile"
 import { ModalEditContext } from "../../modalProfile/contexts"
 import { UserContextLogin } from '../../contexts/UserContext'
+import { Navigate } from 'react-router-dom'
+import { Loading } from '../../components/loading'
 
 export const Dashboard: () => JSX.Element = () => {
 
 
   const { modalCreatepost, setModalCreatepost } = useContext(CreatePostContext)
   const { open } = useContext(ModalEditContext)
+  const {user, loading} = useContext(UserContextLogin)
+  
+    if(loading){
+      return <Loading/>
+    }
 
 
   return (
+    <>
 
-    <StyledDashboard>
-      <HeaderHome />
-      {open ? <ModalEditProfile /> : false}
+    {user.length !== 0? 
+    
+      <StyledDashboard>
+        <HeaderHome />
+        {open ? <ModalEditProfile /> : false}
+        
+
+        <div className="image-after-header">
+          <img src={ImageAfterHeader} alt="" />
+        </div>
+
+        <div className="image-after-header-large">
+          <img src={ImageAfterHeaderLarge} alt="" />
+        </div>
+        <div className='menu-large'>
+            <div className='all-donations'>
+                <h3>Todas as doações</h3>
+            </div>
+            <div className='filter-menu-container'>
+                <h4 className='filter-menu-title'>Procurando por ?</h4>
+                <ul className='list-filter-menu'>
+                    <li>Roupas</li>
+                    <li>Brinquedos</li>
+                    <li>Eletro</li>
+                    <li>Móveis</li>
+                </ul>
+            </div>
+        </div>
+        <div className="list-post">
+          <DashboardList />
+        </div>
+        {modalCreatepost === true ? <ModalCreatePost /> : false}
+        <FooterDashboard />
+      </StyledDashboard>
       
+      : <Navigate to={'/'}/>}
 
-      <div className="image-after-header">
-        <img src={ImageAfterHeader} alt="" />
-      </div>
-
-      <div className="image-after-header-large">
-        <img src={ImageAfterHeaderLarge} alt="" />
-      </div>
-      <div className='menu-large'>
-          <div className='all-donations'>
-              <h3>Todas as doações</h3>
-          </div>
-          <div className='filter-menu-container'>
-              <h4 className='filter-menu-title'>Procurando por ?</h4>
-              <ul className='list-filter-menu'>
-                  <li>Roupas</li>
-                  <li>Brinquedos</li>
-                  <li>Eletro</li>
-                  <li>Móveis</li>
-              </ul>
-          </div>
-      </div>
-      <div className="list-post">
-        <DashboardList />
-      </div>
-      {modalCreatepost === true ? <ModalCreatePost /> : false}
-      <FooterDashboard />
-    </StyledDashboard>
+    </>
   )
 }
 

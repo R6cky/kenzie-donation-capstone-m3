@@ -10,14 +10,7 @@ import { useNavigate } from 'react-router-dom'
 
 export const HomePage = () => {
 
-   const navigate = useNavigate()
-   const token = localStorage.getItem('@USERTOKEN')
- 
-   useEffect(()=>{
-     if(token){
-     navigate('/dashboard')
-   }
-   },[])
+  
 
 
    return (
