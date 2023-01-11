@@ -8,14 +8,13 @@ import ExitBtn from '../../assets/btn-exit-dashboard.png'
 import Book from '../../assets/book.png'
 import { StyledHeader } from './style'
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { CreatePostContext } from '../../modais/createPost/contextCreatePost'
 import { ModalEditContext } from '../../modalProfile/contexts'
 import { ModalContext } from '../../modais/modalContext'
 import { ModalDash } from '../../modais/modalYourItems'
 import { UserContextLogin } from '../../contexts/UserContext'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
 
 
 export const HeaderHome = () => {
@@ -32,51 +31,62 @@ export const HeaderHome = () => {
        navigate('/')
    }
   
+   const [menu, setMenu] = useState(false)
+
+
    return (
       <StyledHeader>
 
          <div className='img-header'>
             <img src={Logo} alt='Logo' />
             <div className='dropDown'>
+
             {!user.data? 
                <>
-               <img className='btn-menu' src={Menu} alt='Menu' />
+               
+               <img className='btn-menu' onClick={()=> setMenu(true)} src={Menu} alt='Menu' />
 
-               <div className='dropDown-content'>
-                     <Link to={'/'} className='login-home'>
+               {menu?
+
+                  <div className='dropDown-content'>
+                     <Link to={'/login'} className='login-home'>
                         Entrar
                      </Link>
                      <Link to={'/register'} className='register-home'>
                         Cadastrar-se
                      </Link>
-                  </div>
+                  </div> 
+               : false }
                   </>
             : 
             <>
-            <img className='btn-menu' src={Menu} alt='Menu' />
+            <img className='btn-menu' onClick={()=> setMenu(true) } src={Menu} alt='Menu' />
             <img className='exit-btn' onClick={() =>  logout()} src={ExitBtn} alt='Menu' />
 
+            {menu ? 
+            
             <div className='dropDown-content-logged'>
-               <button
-                  className='buttons-menu-dashboard'
-                  onClick={() => setIsOpen(true)}
-               >
-                  Editar perfil
-               </button>
-               <button
-                  className='buttons-menu-dashboard'
-                  onClick={() => setModalCreatepost(true)}
-               >
-                  Novo post
-               </button>
-               <button
-                  onClick={() => handleModal()}
-                  className='buttons-menu-dashboard'
-               >
-                  Seus itens
-               </button>
-               {modalIsOpen && <ModalDash />}
-            </div> 
+            <button
+               className='buttons-menu-dashboard'
+               onClick={() => setIsOpen(true)}
+            >
+               Editar perfil
+            </button>
+            <button
+               className='buttons-menu-dashboard'
+               onClick={() => setModalCreatepost(true)}
+            >
+               Novo post
+            </button>
+            <button
+               onClick={() => handleModal()}
+               className='buttons-menu-dashboard'
+            >
+               Seus itens
+            </button>
+            {modalIsOpen && <ModalDash />}
+            </div> : false
+            }
             </>
             }
               
