@@ -7,6 +7,8 @@ import { BrowserRouter } from 'react-router-dom'
 import { DashboardListProvider } from './components/dashboardUl/contextList'
 import { CreatePostProvider } from './modais/createPost/contextCreatePost'
 import { ModalProvider } from './modais/modalContext'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
@@ -17,6 +19,7 @@ root.render(
                <CreatePostProvider>
                   <GlobalStyles />
                   <App />
+                  <ToastContainer />
                </CreatePostProvider>
             </DashboardListProvider>
          </ModalProvider>

@@ -48,7 +48,7 @@ export const GlobalStyles = createGlobalStyle`
         --information:#155BCB;
         --button-red: #E75656;
         --button-green: #66BB7E;
-
     }
+
 
 `

@@ -1,185 +1,298 @@
+
 import styled from "styled-components";
 
-export const DivPrimari = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  padding: 2vw;
-  @media (max-width: 600px) {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // width: 100vw;
-    // height: 100vh;
-    // padding: 2vw;
-  }
-`;
+export const RegisterStyled = styled.main`
+    @media screen and (min-width: 0px) {
+        display: none;
+    }
 
-export const SectionSecundary = styled.section`
-  display: flex;
-  width: 100vw;
-  height: 95vh;
-  align-items: center;
-  justify-content: center;
-  gap: 1vw;
-  @media (max-width: 600px) {
-    display: flex;
-    width: 36rem;
-    height: 68rem;
-    align-items: center;
-    justify-content: center;
-  }
-`;
-export const FormStyle = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 38%;
-  height: 100%;
-  gap: 0.5vw;
-  padding: 3vw;
-  box-shadow: 0px 4px 4px 4px rgb(0 0 0 / 22%);
-  border-radius: 15px;
-  /* background-color: antiquewhite; */
-  background-color: #f5f5f5;
-  @media (max-width: 600px) {
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    height: 100%;
-    padding: 3vw;
-    box-shadow: 0px 4px 4px 4px rgb(0 0 0 / 22%);
-    border-radius: 15px;
-    background-color: #f5f5f5;
-    background: linear-gradient(to bottom, #f5f5f5f5, #5690e7), #f5f5f5f5;
-  }
-`;
-export const TitleForm = styled.p`
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  color: var(--color-primary);
-  @media (max-width: 600px) {
-    font-family: "Inter", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-    color: var(--color-primary);
-  }
-`;
-export const LabelForAll = styled.label`
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 0.9vw;
-  line-height: 1vw;
-  color: var(--color-primary);
-  @media (max-width: 600px) {
-    font-family: "Inter", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 24px;
-    color: var(--color-primary);
-  }
-`;
-export const InputForAll = styled.input`
-  width: 29vw;
-  height: 3vw;
-  background: #ffffff;
-  border: 1px solid var(--color-primary);
-  border-radius: 1vw;
-  @media (max-width: 600px) {
-    width: 22rem;
-    height: 3rem;
-    background: #ffffff;
-    border: 1px solid var(--color-primary);
-    border-radius: 4vw;
-  }
-`;
-export const ErrorP = styled.p`
-  font-family: "Inter", sans-serif;
-  font-size: 0.8vw;
-  font-weight: 700;
-  color: var(--Negative);
-  @media (max-width: 600px) {
-    font-family: "Inter", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--Negative);
-  }
-`;
-export const ButtonCad = styled.button`
-  width: 29vw;
-  height: 3vw;
-  background-color: var(--color-primary);
-  font-family: "Inter", sans-serif;
-  font-size: 1.2vw;
-  font-weight: 700;
-  line-height: 1.2vw;
-  text-align: center;
-  color: #ffffff;
-  border: none;
-  border-radius: 1vw;
-  @media (max-width: 600px) {
-    width: 22rem;
-    height: 3rem;
-    background-color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    border-radius: 4vw;
-    font-family: "Inter", sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    line-height: 1.2vw;
-    text-align: center;
-    color: #ffffff;
-    border: none;
-    margin-top: 1rem;
-    border: solid 1px;
-  }
-`;
-export const PictureRe = styled.img`
-  width: 44vw;
-  height: 50vw;
-  @media (max-width: 600px) {
-  }
-`;
-export const FooterText = styled.footer`
-  font-family: "Inter", sans-serif;
-  background-color: var(--color-primary);
-  width: 100vw;
-  text-align: center;
-  font-weight: 500;
-  color: var(--grey-0);
-  font-size: 1vw;
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
-export const DivTest = styled.div`
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
-export const SpanLogo = styled.span`
-  display: none;
-  @media (max-width: 600px) {
-    display: flex;
-    gap: 1rem;
-  }
-`;
-export const BtnBack = styled.button`
-  width: 4rem;
-  height: 2rem;
-  margin: 2rem 0rem 0rem 0rem;
-  border: none;
-  font-family: "Inter", sans-serif;
-  color: var(--color-primary);
-  font-weight: 500;
-  font-size: 15px;
-`;
+    @media screen and (min-width: 320px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+
+        .donation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px 19px;
+            max-width: 500px;
+        }
+
+        .donationDesktop {
+            display: none;
+        }
+
+        .donation img {
+            width: 100%;
+            max-width: 170px;
+        }
+
+        .back {
+          font-weight: 700;
+          font-size: 15px;
+          color: #5690E7;
+          cursor: pointer;
+        }
+
+        .boxLogin {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 0 19px 0px 19px;
+        }
+
+        .login {
+            width: 100%;
+            background: #F5F5F5;
+            box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            padding: 17px 25px 25px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: -20px;
+        }
+
+        .login h1 {
+            font-weight: 700;
+            font-size: 20px;
+            color: #5690E7;
+            margin-bottom: -40px;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+        }
+
+        label {
+            font-weight: 500;
+            font-size: 15px;
+            color: #5690E7;
+            padding-bottom: 10px;
+            padding-top: 15px;
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            background: #FFFFFF;
+            border: 1px solid #5690E7;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            padding-left: 14px;
+            font-weight: 400;
+            font-size: 13px;
+            color: #828282;
+            
+        }
+
+        input::placeholder {
+            color: #E0E0E0;
+        }
+
+        button {
+            height: 50px;
+            background: #5690E7;
+            border-radius: 8px;
+            border-style: none;
+            font-weight: 700;
+            font-size: 20px;
+            color: #FFFFFF;
+            margin-top: 8px;
+        }
+
+        .span{
+          font-weight: 500;
+          font-size: 15px;
+          color: #FFFFFF;
+          padding-top: 33px;
+        }
+
+        a {
+            text-decoration: none;  
+            color: #8B63EE;
+            cursor: pointer;
+            font-weight: 500;
+            padding-left: 3px;
+        }
+
+        footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            background-color: #5690E7;
+        }
+
+        .desktop {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .textFooter {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          height: 86px;
+        }
+
+        .textFooter p {
+            font-weight: 500;
+            font-size: 11px;
+            text-align: center;
+            color: #FFFFFF;   
+            padding: 25px
+        }
+
+        .box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 12px solid #5690E7;
+        }
+
+        .box img {
+            margin-bottom: -77px;
+        }
+
+        .spanDesktop {
+            display: none;
+        }
+
+        .textFooterDesktop {
+            display: none;
+        }
+
+        .error {
+            font-weight: 400;
+            font-size: 12px;
+            color: #e83f5b;
+            text-align: start;
+
+            padding: 0;
+        }
+    }
+    @media screen and (min-width: 391px) {
+        .login {
+            max-width: 500px;
+        }
+        .spanDesktop {
+            display: none;
+        }
+
+        input {
+          font-size: 15px;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        justify-content: space-between;
+      
+      .desktop {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            align-items: start;
+            width: 100%;
+        }
+        .donation {
+            display: none;
+        }
+        
+        .donationDesktop {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            width: 50%;
+        }
+
+        .donationDesktop img {
+            width: 100%;
+            max-width: 780px;
+        }
+
+        .boxLogin {
+            width: 50%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .login {
+            max-width: 468px;
+            margin-left: 44px;
+            margin-bottom: 50px;
+            margin-top: 60px;
+        }
+
+        .span {
+            display: none;
+        }
+
+        .spanDesktop {
+            display: flex;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            justify-content: center;
+            color: #5690E7;
+        }
+
+        .box {
+            display: none;
+        }
+
+        .boxLogin {
+            padding: 0 50px;
+            align-items: flex-end;
+        }
+
+        footer {
+            height: 0;
+        }
+
+        a{
+            padding-left: 3px;
+        }
+
+        .textFooter {
+            display: none;
+        }
+
+        .textFooterDesktop {
+            display: flex;
+            justify-content: center;
+            background-color: #5690E7;
+            width: 100%;
+        }
+
+        .textFooterDesktop p {
+            font-weight: 500;
+            font-size: 11px;
+            text-align: center;
+            color: #FFFFFF;   
+            padding: 4px
+        }
+    }
+
+    
+
+
+`
