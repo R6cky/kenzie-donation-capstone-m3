@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { loginSchema } from "../../components/schemas/LoginSchemas";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContextLogin } from "../../contexts/UserContext";
 
 export const Login = () => {
   const {
@@ -23,7 +23,7 @@ export const Login = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const { login } = useContext(UserContext);
+  const { login } = useContext(UserContextLogin);
 
   return (
     <LoginStyled>

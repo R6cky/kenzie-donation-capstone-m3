@@ -5,10 +5,10 @@ import { toast } from 'react-toastify';
 import { createContext } from "react";
 import { iDefaultProviderProps, iUserContext, iUserLogin, iUserLoginResponse } from "./@types";
 
-export const UserContext = createContext({} as iUserContext);
+export const UserContextLogin = createContext({} as iUserContext);
 
 
-export const UserProvider = ({ children }: iDefaultProviderProps) => {
+export const UserProviderLogin = ({ children }: iDefaultProviderProps) => {
   const [ user, setUser ] = useState<any>([])
   const navigate = useNavigate();
 
@@ -31,8 +31,8 @@ export const UserProvider = ({ children }: iDefaultProviderProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ login }}>
+    <UserContextLogin.Provider value={{ login }}>
       {children}
-    </UserContext.Provider>
+    </UserContextLogin.Provider>
   );
 };
