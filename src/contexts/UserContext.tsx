@@ -1,65 +1,60 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { api } from "../services/api";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import { createContext } from "react";
-import { iDefaultProviderProps, iUserContext, iUserLogin, iUserLoginResponse } from "./@types";
+import {
+  iDefaultProviderProps,
+  iUserContext,
+  iUserLogin,
+  iUserLoginResponse,
+} from "./@types";
 
 export const UserContextLogin = createContext({} as iUserContext);
 
-
 export const UserProviderLogin = ({ children }: iDefaultProviderProps) => {
-  const [ user, setUser ] = useState<any>(null)
-  const [ loading, setLoading ] = useState<boolean>(true)
+  const [user, setUser] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const loadUser = async () => {
+      const token = localStorage.getItem("@USERTOKEN");
+      const userId = localStorage.getItem("@USERID");
 
-    useEffect(()=>{
+      if (!token) {
+        setLoading(false);
+        return;
+      }
 
-          const loadUser =  async () => {
-          
-              const token = localStorage.getItem('@USERTOKEN')
-              const userId = localStorage.getItem('@USERID')
+      try {
+        const data = await api.get(`users/${userId}`, {
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
+        });
 
-              if(!token){
-                setLoading(false)
-                return
-              }
+        setUser(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-            try {
-              
-              const data = await api.get(`users/${userId}`, {
-                headers:{
-                  authorization: `Bearer ${token}` 
-                }
-              })
-
-              
-              setUser(data)
-              
-
-            } catch (error) {
-                console.error(error)
-            }finally{
-                setLoading(false)
-            }
-    }
-
-    loadUser()
-    },[])
-
+    loadUser();
+  }, []);
 
   const login = async (data: iUserLogin) => {
     try {
-
       const response = await api.post<iUserLoginResponse>("login", data);
       const { accessToken, user: userResponse } = response.data;
 
       localStorage.setItem("@USERTOKEN", accessToken);
-      localStorage.setItem("@USERID", JSON.stringify(userResponse.id))
+      localStorage.setItem("@USERID", JSON.stringify(userResponse.id));
 
-      setUser(userResponse)
+      setUser(userResponse);
       toast.success("Logado com sucesso!");
       navigate("/dashboard");
     } catch (error) {

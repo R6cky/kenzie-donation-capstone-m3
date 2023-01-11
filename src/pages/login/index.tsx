@@ -24,7 +24,6 @@ export const Login = () => {
   });
 
   const { login, loading } = useContext(UserContextLogin);
-  
 
   return (
     <LoginStyled>
@@ -59,7 +58,9 @@ export const Login = () => {
               {errors.password?.message && (
                 <p className="error">{errors.password.message}</p>
               )}
-              <button type="submit">{loading ? "Entrando..." : "Entrar"}</button>
+              <button type="submit">
+                {loading ? "Entrando..." : "Entrar"}
+              </button>
               <span className="spanDesktop">
                 Não possui uma conta? cadastre-se
                 <Link to="/register">aqui</Link>!
