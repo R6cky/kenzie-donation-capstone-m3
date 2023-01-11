@@ -4,8 +4,22 @@ import { DashboardList } from '../../components/dashboardUl'
 import { FooterDashboard } from '../../components/footerDashboard'
 import ImageAfterHeader from '../../assets/image-top-before-donations.png'
 import ImageAfterHeaderLarge from '../../assets/image-top-before-donations-large.png'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 export const HomePage = () => {
+
+   const navigate = useNavigate()
+   const token = localStorage.getItem('@USERTOKEN')
+ 
+   useEffect(()=>{
+     if(token){
+     navigate('/dashboard')
+   }
+   },[])
+
+
    return (
       <>
          <HeaderHome />
