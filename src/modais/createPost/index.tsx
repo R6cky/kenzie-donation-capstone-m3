@@ -22,7 +22,7 @@ interface iCreatePosts{
 export const ModalCreatePost =  () => {
 
 
-     const userId = 3
+     const userId = localStorage.getItem('@USERID')
 
      const {createPost,createRequest, modalCreatepost, setModalCreatepost} = useContext(CreatePostContext)
      const { register, handleSubmit} = useForm()
