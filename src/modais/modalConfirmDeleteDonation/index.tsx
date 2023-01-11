@@ -4,7 +4,6 @@ import '../../modais/modalConfirmDeleteDonation/styles.css'
 import { StyledModalConfirmDeleteDonation } from './styled'
 import { DefaultModal } from '../../components/modalDafault'
 
-
 export const ModalConfirmDeleteDonation = () => {
    const {
       modalDeleteIsOpen,
@@ -13,10 +12,11 @@ export const ModalConfirmDeleteDonation = () => {
       setDeleteIsOpen,
    } = useContext(ModalContext)
 
+
    return (
       <div className='container-delete'>
          {modalDeleteIsOpen && (
-            <DefaultModal callback={() => setDeleteIsOpen(null)}>
+            <DefaultModal maxWidth={600} callback={() => setDeleteIsOpen(null)}>
                <StyledModalConfirmDeleteDonation>
                   <div className='modal-header-delete'>
                      <h2 className='title-modal-delete'>

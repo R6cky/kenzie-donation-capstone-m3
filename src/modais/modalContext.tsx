@@ -56,20 +56,6 @@ export const ModalProvider = ({ children }: iProviderProps) => {
       getAllDonations()
    }, [])
 
-   // useEffect(() => {
-      const deleteDonation = async (id: number) => {
-         console.log(id)
-         const token = ''
-         try {
-            const { data } = await api.delete(`/donation/${id}`, token as any)
-            console.log(data)
-         } catch (error) {
-            console.log(error)
-         }
-      }
-
-   // }, [])
-
    const modalEditPostHandle = (id: number) => {
       // abrir e fechar modal edit donation
       if (!editPostIsOpenModal) {
@@ -97,14 +83,23 @@ export const ModalProvider = ({ children }: iProviderProps) => {
       }
    }
 
-   const deletePostDonation = (id: number) => {
-      console.log(id)
-
+   const deletePostDonation = async (id: number) => {
       //modal deletar donation
-      const deletePostDonation = viewDonation.filter((elem) => elem.id !== id)
-      deleteDonation(id)
-      setViewDonation(deletePostDonation)
-      setDeleteIsOpen(null)
+      const token = localStorage.getItem('@USERTOKEN')
+      try {
+         await api.delete(`/donation/${id}`, {
+            headers: {
+               authorization: `Bearer ${token}`,
+            },
+         })
+         const deletePostDonation = viewDonation.filter(
+            (donation) => donation.id !== id
+         )
+         setViewDonation(deletePostDonation)
+         setDeleteIsOpen(null)
+      } catch (error) {
+         console.log(error)
+      }
    }
 
    return (

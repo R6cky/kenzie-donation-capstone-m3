@@ -4,6 +4,7 @@ import { DefaultModal } from "../../components/modalDafault";
 import { api } from "../../services/api";
 import { ModalContext } from "../modalContext";
 import { iDonationItem } from "./@types";
+import { StyleModalUl } from "./styled";
 
 
 export const ModalViewItems = () => {
@@ -17,7 +18,6 @@ export const ModalViewItems = () => {
         try {
             const request = await api.get(`/donation/${viewItemModal}`)
             setRequestItem(request.data)
-console.log(request.data)
         } catch (error) {
             console.error(error)
         }
@@ -28,13 +28,21 @@ console.log(request.data)
 
   
   return (
-    <div className="container-item">
+    <div className=".modal-content-edit-post">
       {viewItemModal && (
         <DefaultModal callback={() => setViewItemModal(null)}>
-          <div>
-            <img src={requestItem?.image} alt="" />
-          </div>
-          <button> Teste 2</button>
+          <StyleModalUl>
+          <picture>
+              <img src={requestItem?.image} alt="" />
+          </picture>
+            <section>
+              <span>{requestItem?.title}</span>
+              <h4>{requestItem?.category}</h4>
+          </section>
+          <section>
+              <p>{requestItem?.description}</p>
+          </section>
+          </StyleModalUl>
         </DefaultModal>
       )}
     </div>

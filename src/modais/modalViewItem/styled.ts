@@ -1,249 +1,63 @@
 import styled from 'styled-components';
 
-export const StyleModalYourItems = styled.div`
-  .modal-container-your-items {
-    width: 100%;
-    height: 100%;
-    max-width: 1140px;
-    max-height: 700px;
-  }
-
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-
-    padding: 35px 20px 0 20px;
-  }
-
-  .title-modal {
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--color-primary);
-  }
-
-  .title-card {
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--color-primary);
-
-    margin-top: 14px;
-  }
-
-  .btn-close {
-    width: 27px;
-    height: 27px;
-
-    color: var(--grey-0);
-    font-weight: 700;
-    font-size: 20px;
-
-    border: none;
-    border-radius: 5px;
-    background-color: var(--color-primary);
-
-    cursor: pointer;
-  }
-
-  .modal-body {
-    width: 97%;
-    height: 580px;
-
-    margin: 30px auto;
-    padding: 7px 0;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-
-    overflow-y: scroll;
-
-    border-radius: 10px;
-    background-color: var(--color-primary);
-  }
-
-  .box-container-ul {
-    width: 96%;
-    /* max-width: 270px; */
-    height: 170px;
-    margin: 10px 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    border-radius: 15px;
-    border: 1px solid var(--color-primary);
-    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
-    background-color: var(--grey-0);
-  }
-
-  .box-container-ul > ul {
-    width: 100%;
-    height: 170px;
-
-    padding: 0 10px;
-
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 10px;
-
-    border-radius: 10px;
-    overflow-x: scroll;
-  }
-
-  .scrollbar::-webkit-scrollbar {
-    width: 8px;
-    height: 10px;
-  }
-
-  .scrollbar::-webkit-scrollbar-track {
-    background-color: var(--color-primary);
-    border: 2px solid var(--color-primary);
-
-    border-radius: 20px;
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb {
-    background: var(--grey-0);
-    border: 2px solid var(--color-primary);
-
-    border-radius: 20px;
-  }
-
-  .box-card {
-    width: 100%;
-    min-width: 230px;
-    max-width: 220px;
-    height: 90px;
-
-    margin-left: 25px;
-
-    border-radius: 10px;
-    border: 1px solid var(--color-primary);
-    background: var(--grey-0);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .header-card {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .header-card-view {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--color-primary);
-  }
-
-  .header-card > p {
-    width: 151px;
-    height: 18px;
-
-    color: var(--grey-300);
-    font-weight: 400;
-    font-size: 16px;
-  }
-
-  .edit-icon {
-    color: var(--color-primary);
-  }
-
-  .box-btn-card {
-    margin-top: 10px;
-  }
-
-  .box-btn-card > button {
-    width: 100px;
-    height: 30px;
-
-    color: var(--grey-0);
-    font-size: 15px;
-    font-weight: 700;
-
-    border-radius: 5px;
-    margin: 5px;
-  }
-
-  .btn-edit {
-    border: var(--button-green);
-    background-color: var(--button-green);
-  }
-
-  .btn-delete {
-    border: var(--button-red);
-    background-color: var(--button-red);
-  }
-
-  .btn-view {
-    border: var(--color-primary);
-    background-color: var(--color-primary);
-  }
-
-  @media (min-width: 1140px) {
-    .btn-close {
-      width: 30px;
-      height: 30px;
-    }
-
-    .modal-body {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 10px;
-
-      padding: 5px;
-
-      overflow-y: hidden;
-
-      background-color: transparent;
-    }
-
-    .box-container-ul {
-      width: 24%;
-      height: 558px;
-
-      margin: 10px 0;
-
+export const StyleModalUl = styled.div`
+      
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-    }
+      margin: 2rem 0;
+      gap: 2rem;
 
-    .box-container-ul > ul {
-      height: 558px;
 
-      display: flex;
-      flex-direction: column;
+      picture {
+      width: 100%;
+      height: 300px;
+      max-width: 100%;
+      }
 
-      overflow-y: scroll;
-      overflow-x: hidden;
-    }
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+      }
 
-    .title-card {
-      margin-bottom: 17px;
-    }
+      section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-    .box-card {
-      min-width: 220px;
-      min-height: 90px;
+        span {
+          color: var(--grey-300);
+        }
 
-      margin-top: 17px;
-      margin: 0 10px;
-    }
+        h4 {
+          background-color: var(--grey-300);
+          color: var(--white);
+          font-weight: 500;
 
-    .box-btn-card > button {
-      margin: 2px;
-    }
-  }
+          padding: 0.5rem;
+          border-radius: 0.3rem;
+        }
+
+        p {
+          color: var(--color-primary);
+          font-weight: 500;
+        }
+
+        
+
+          @media (min-width: 1200px) {
+            
+          }
+
+
+
+          
+        }
+        
+      
+      
+      
+    
+
 `;

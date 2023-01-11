@@ -10,8 +10,8 @@ export const UlRequest = () => {
       useContext(ModalRequestContext)
    return (
       <>
-         <ul className='scrollbar'>
-            {viewRequest?.map((elem) => (
+         <ul className='scrollbar'> 
+         {!viewRequest?<p>Não tem nada aqui</p>: viewRequest?.map((elem) => (
                <li key={elem.id} className='card-donations-list box-card'>
                   <div className='header-card'>
                      <p>{elem.title}</p>
@@ -33,6 +33,7 @@ export const UlRequest = () => {
                   </div>
                </li>
             ))}
+            
          </ul>
       </>
    )
