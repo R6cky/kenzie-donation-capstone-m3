@@ -18,12 +18,15 @@ export const StyledModal = styled.div`
       position: relative;
       z-index: 1002;
 
-      width: 100%;
-      max-width: 1180px;
+      width: 90%;
+      max-width: 1140px;
+      max-height: 700px;
 
       padding: 20px;
 
       background-color: var(--grey-0);
+      border-radius: 15px;
+      border: 1px solid var(--color-primary);
    }
 
    .modal-close {

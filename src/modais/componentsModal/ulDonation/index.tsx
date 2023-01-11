@@ -1,6 +1,6 @@
-import { useContext } from "react"
-import { AiOutlineEye } from "react-icons/ai"
-import { ModalContext } from "../../modalContext"
+import { useContext } from 'react'
+import { AiOutlineEye } from 'react-icons/ai'
+import { ModalContext } from '../../modalContext'
 
 export const UlDonation = () => {
    const { handleModalDelete, modalEditPostHandle, viewDonation } =

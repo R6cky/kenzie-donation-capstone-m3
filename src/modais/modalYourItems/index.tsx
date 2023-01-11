@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { ModalContext } from '../modalContext'
-import './styles.css'
 import { StyleModalYourItems } from './styled'
 import ModalEditPost from '../modalEditPost'
 import { ModalConfirmDeleteDonation } from '../modalConfirmDeleteDonation'
@@ -17,13 +16,10 @@ export const ModalDash = () => {
 
    return (
       <div className='container'>
-         <DefaultModal callback={() => handleModal}>
+         <DefaultModal callback={() => handleModal()}>
             <StyleModalYourItems className='modal-container-your-items'>
                <div className='modal-header'>
                   <h2 className='title-modal'>Seus Itens</h2>
-                  {/* <button className='btn-close' onClick={() => handleModal()}>
-                     X
-                  </button> */}
                </div>
                <div className='modal-body scrollbar'>
                   <div className='box-container-ul'>

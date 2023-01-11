@@ -1,9 +1,7 @@
 import React, { useContext } from 'react'
 import { ModalContext } from '../modalContext'
-import '../../modais/modalEditPost/styles.css'
 import { StyledModalContentEditPost } from './styled'
 import { DefaultModal } from '../../components/modalDafault'
-
 
 const ModalEditPost = () => {
    const { modalEditPostHandle, editPostIsOpenModal, setEditPostIsOpenModal } =
@@ -14,13 +12,13 @@ const ModalEditPost = () => {
             <StyledModalContentEditPost>
                <div className='box-header'>
                   <h2>Editar Post</h2>
-                  {/* <button
+                  <button
                      onClick={() =>
                         modalEditPostHandle(editPostIsOpenModal as number)
                      }
                   >
                      X
-                  </button> */}
+                  </button>
                </div>
 
                <form className='create-post' action=''>

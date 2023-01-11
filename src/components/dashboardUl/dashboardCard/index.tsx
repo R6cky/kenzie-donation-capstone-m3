@@ -13,12 +13,12 @@ export const DashboardCard = () => {
             </div>
             <div className="product-category">
                 <span>Descrição</span>
-                <h4>categorias</h4>
+                <h4>Categorias</h4>
             </div>
                 <div className="product-description"></div>
                 <div className="product-buttons">
-                <button>ver</button>
-                <button>doar</button>
+                <button>Ver</button>
+                <button>Doar</button>
             </div>
         </StyledDashboardCard>
    )

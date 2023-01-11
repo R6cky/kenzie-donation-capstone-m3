@@ -3,7 +3,6 @@ import { DashboardCard } from "./dashboardCard"
 import { useContext } from "react"
 import { DashboardListContext } from "./contextList"
 import { CreatePostContext } from "../../modais/createPost/contextCreatePost"
-import { ModalCreatePost } from "../../modais/createPost"
 import  ImageNotFount  from "../../assets/image-not-found.jpg"
 
 
@@ -50,7 +49,7 @@ interface iDashboardListPosts{
                                                        <p>{element.description}</p>
                                                   </div>
                                                   <div className="product-buttons">
-                                                       <button>ver</button>
+                                                       <button>Ver</button>
                                                        <button>Pegar doação</button>
                                                   </div>
                                         </li>
@@ -84,8 +83,8 @@ interface iDashboardListPosts{
                                                        <p>{element.description}</p>
                                                   </div>
                                                   <div className="product-buttons">
-                                                       <button>ver</button>
-                                                       <button>doar</button>
+                                                       <button>Ver</button>
+                                                       <button>Doar</button>
                                                   </div>
                                         </li>
 

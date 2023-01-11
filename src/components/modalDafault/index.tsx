@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyledModal } from './styled'
 import { MdClose } from 'react-icons/md'
-import { useOutClick } from '../../hooks/useOutClick'
+// import { useOutClick } from '../../hooks/useOutClick'
 
 interface iModalProps {
    children: React.ReactNode
@@ -9,10 +9,10 @@ interface iModalProps {
 }
 
 export const DefaultModal = ({ children, callback }: iModalProps) => {
-    const ref = useOutClick<HTMLDivElement>(() => callback())
+   //  const ref = useOutClick<HTMLDivElement>(() => callback()) ref={ref}
    return (
       <StyledModal>
-         <div role='dialog' className='modal-box' ref={ref}>
+         <div role='dialog' className='modal-box' >
             <button className='modal-close' onClick={callback}>
                <MdClose size={21} />
             </button>
