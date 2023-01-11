@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const StyledModal = styled.div`
+interface iStyledModalProps {
+   maxWidth?: number
+}
+
+export const StyledModal = styled.div<iStyledModalProps>`
    width: 100%;
    height: 100vh;
 
@@ -21,6 +25,7 @@ export const StyledModal = styled.div`
       width: 90%;
       max-width: 1140px;
       max-height: 700px;
+      max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}px` : 'unset')};
 
       padding: 20px;
 

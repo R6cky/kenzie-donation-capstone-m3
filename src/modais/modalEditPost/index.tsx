@@ -9,16 +9,16 @@ const ModalEditPost = () => {
    return (
       <div className='container-modal-edit-post'>
          <DefaultModal callback={() => setEditPostIsOpenModal(null)}>
-            <StyledModalContentEditPost>
+            <StyledModalContentEditPost >
                <div className='box-header'>
                   <h2>Editar Post</h2>
-                  <button
+                  {/* <button
                      onClick={() =>
                         modalEditPostHandle(editPostIsOpenModal as number)
                      }
                   >
                      X
-                  </button>
+                  </button> */}
                </div>
 
                <form className='create-post' action=''>

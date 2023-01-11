@@ -58,10 +58,10 @@ export const ModalDash = () => {
                   </div>
                </div>
             </StyleModalYourItems>
+            {modalDeleteIsOpen && <ModalConfirmDeleteDonation />}
+            {modalDeleteRequestIsOpen && <ModalConfirmDeleteRequest />}
+            {editPostIsOpenModal && <ModalEditPost />}
          </DefaultModal>
-         {modalDeleteIsOpen && <ModalConfirmDeleteDonation />}
-         {modalDeleteRequestIsOpen && <ModalConfirmDeleteRequest />}
-         {editPostIsOpenModal && <ModalEditPost />}
       </div>
    )
 }
