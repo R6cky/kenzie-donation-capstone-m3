@@ -182,6 +182,8 @@ export const HeaderHome = () => {
             <button onClick={() => logout()} className="options-menu-button">
               Sair
             </button>
+            {modalIsOpen && <ModalDash />}
+
           </div>
         ) : (
           <div className="options-menu">

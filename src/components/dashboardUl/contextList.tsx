@@ -37,7 +37,6 @@ export const DashboardListProvider = ({ children }: iChildren) => {
       ? true
       : filterDonation === element.category
   );
-
   useEffect(() => {
     const getPost = async () => {
       try {
