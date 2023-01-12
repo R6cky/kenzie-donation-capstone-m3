@@ -41,8 +41,6 @@ export const HeaderHome = () => {
     navigate("/");
   };
 
-  console.log("aqui" + modalCreatePost);
-
   const [menu, setMenu] = useState(false);
 
   return (
