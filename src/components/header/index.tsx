@@ -16,9 +16,10 @@ import { ModalDash } from "../../modais/modalYourItems";
 import { UserContextLogin } from "../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import { DashboardListContext } from "../dashboardUl/contextList";
+import { ModalCreatePost } from "../../modais/createPost";
 
 export const HeaderHome = () => {
-  const { setModalCreatepost } = useContext(CreatePostContext);
+  const { setModalCreatepost, modalCreatePost } = useContext(CreatePostContext);
   const { setIsOpen } = useContext(ModalEditContext);
   const { modalIsOpen, handleModal } = useContext(ModalContext);
   const { user, setUser } = useContext(UserContextLogin);
@@ -76,8 +77,9 @@ export const HeaderHome = () => {
                   >
                     Novo post
                   </button>
+                  {modalCreatePost ? <ModalCreatePost /> : false}
                   <button
-                    onClick={() => handleModal()}
+                    onClick={() => setModalCreatepost(true)}
                     className="buttons-menu-dashboard"
                   >
                     Seus itens
