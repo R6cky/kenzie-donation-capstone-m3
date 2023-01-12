@@ -20,10 +20,12 @@ interface iModalContextProps {
    modalDeleteIsOpen: number | null
    editPostIsOpenModal: number | null
    viewDonation: iPosts[]
+   viewItemModal: number | null
 
    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
    setDeleteIsOpen: React.Dispatch<React.SetStateAction<number | null>>
    setEditPostIsOpenModal: React.Dispatch<React.SetStateAction<number | null>>
+   setViewItemModal: React.Dispatch<React.SetStateAction<number | null>>
 
    handleModal: () => void
    handleModalDelete: (id: number) => void
@@ -40,6 +42,7 @@ export const ModalProvider = ({ children }: iProviderProps) => {
       number | null
    >(null) //modal editar donation
    const [viewDonation, setViewDonation] = useState([] as iPosts[]) //array donation
+   const [viewItemModal, setViewItemModal] = useState<number | null>(null)
 
    useEffect(() => {
       const getAllDonations = async () => {
@@ -52,20 +55,6 @@ export const ModalProvider = ({ children }: iProviderProps) => {
       }
       getAllDonations()
    }, [])
-
-   // useEffect(() => {
-      const deleteDonation = async (id: number) => {
-         console.log(id)
-         const token = ''
-         try {
-            const { data } = await api.delete(`/donation/${id}`, token as any)
-            console.log(data)
-         } catch (error) {
-            console.log(error)
-         }
-      }
-
-   // }, [])
 
    const modalEditPostHandle = (id: number) => {
       // abrir e fechar modal edit donation
@@ -94,14 +83,23 @@ export const ModalProvider = ({ children }: iProviderProps) => {
       }
    }
 
-   const deletePostDonation = (id: number) => {
-      console.log(id)
-
+   const deletePostDonation = async (id: number) => {
       //modal deletar donation
-      const deletePostDonation = viewDonation.filter((elem) => elem.id !== id)
-      deleteDonation(id)
-      setViewDonation(deletePostDonation)
-      setDeleteIsOpen(null)
+      const token = localStorage.getItem('@USERTOKEN')
+      try {
+         await api.delete(`/donation/${id}`, {
+            headers: {
+               authorization: `Bearer ${token}`,
+            },
+         })
+         const deletePostDonation = viewDonation.filter(
+            (donation) => donation.id !== id
+         )
+         setViewDonation(deletePostDonation)
+         setDeleteIsOpen(null)
+      } catch (error) {
+         console.log(error)
+      }
    }
 
    return (
@@ -111,10 +109,12 @@ export const ModalProvider = ({ children }: iProviderProps) => {
             modalDeleteIsOpen,
             editPostIsOpenModal,
             viewDonation,
+            viewItemModal,
             handleModal,
             setIsOpen,
             setEditPostIsOpenModal,
             setDeleteIsOpen,
+            setViewItemModal,
             handleModalDelete,
             modalEditPostHandle,
             deletePostDonation,

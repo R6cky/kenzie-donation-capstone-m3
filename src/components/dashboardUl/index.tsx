@@ -1,3 +1,12 @@
+import { StyledDashboardList } from "./style"
+import { DashboardCard } from "./dashboardCard"
+import { useContext } from "react"
+import { DashboardListContext } from "./contextList"
+import { CreatePostContext } from "../../modais/createPost/contextCreatePost"
+import  ImageNotFount  from "../../assets/image-not-found.jpg"
+import { ModalContext } from "../../modais/modalContext"
+import { ModalViewItems } from "../../modais/modalViewItem"
+
 import { StyledDashboardList } from "./style";
 import { useContext } from "react";
 import { DashboardListContext } from "./contextList";
@@ -79,6 +88,16 @@ export const DashboardList = () => {
               </div>
             </li>
 
+                                   // <DashboardCard element={element} key={element.id}/>
+                                   
+                                   )
+                              })
+                         }
+               </ul>
+               {viewItemModal && <ModalViewItems />}
+        </StyledDashboardList>
+   )
+}
             // <DashboardCard element={element} key={element.id}/>
           );
         })}
