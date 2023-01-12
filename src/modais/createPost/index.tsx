@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import { StyledCreatePost } from "./style"
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { CreatePostContext } from "./contextCreatePost"
 import CloseModalCreatePost from '../../assets/closeModalCreatePost.png'
 
@@ -20,7 +20,7 @@ interface iCreatePosts{
 export const ModalCreatePost =  () => {
 
 
-     const userId = localStorage.getItem('@USERID')
+     const userId = Number(localStorage.getItem('@USERID'))
 
      const {createPost,createRequest, setModalCreatepost} = useContext(CreatePostContext)
      const { register, handleSubmit} = useForm()

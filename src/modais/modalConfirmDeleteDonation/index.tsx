@@ -12,7 +12,6 @@ export const ModalConfirmDeleteDonation = () => {
       setDeleteIsOpen,
    } = useContext(ModalContext)
 
-
    return (
       <div className='container-delete'>
          {modalDeleteIsOpen && (
