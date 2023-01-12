@@ -18,19 +18,19 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <CreatePostProvider>
-        <UserProviderLogin>
-          <ModalProvider>
-            <ModalRequestProvider>
-              <DashboardListProvider>
+      <DashboardListProvider>
+        <CreatePostProvider>
+          <UserProviderLogin>
+            <ModalProvider>
+              <ModalRequestProvider>
                 <GlobalStyles />
                 <App />
                 <ToastContainer />
-              </DashboardListProvider>
-            </ModalRequestProvider>
-          </ModalProvider>
-        </UserProviderLogin>
-      </CreatePostProvider>
+              </ModalRequestProvider>
+            </ModalProvider>
+          </UserProviderLogin>
+        </CreatePostProvider>
+      </DashboardListProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

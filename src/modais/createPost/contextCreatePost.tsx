@@ -38,7 +38,7 @@ export const CreatePostProvider = ({ children }: iChildren) => {
 
   const [modalCreatepost, setModalCreatepost] = useState(false);
 
-  const createPost = async (data: iCreatePosts) => {
+  const createPost = async (data: any) => {
     const token = localStorage.getItem("@USERTOKEN");
     try {
       const request = await api.post("/donation", data, {
@@ -47,7 +47,7 @@ export const CreatePostProvider = ({ children }: iChildren) => {
         },
       });
 
-      await setDashboardListPosts([...dashboardListPosts, request.data]);
+      setDashboardListPosts([...dashboardListPosts, request.data]);
 
       setModalCreatepost(false);
       toast.success("Criado com sucesso!");
@@ -68,7 +68,7 @@ export const CreatePostProvider = ({ children }: iChildren) => {
         },
       });
 
-      await setDashboardListRequests([...dashboardListRequests, request.data]);
+      setDashboardListRequests([...dashboardListRequests, request.data]);
       setModalCreatepost(false);
     } catch (error) {
       console.error(error);
