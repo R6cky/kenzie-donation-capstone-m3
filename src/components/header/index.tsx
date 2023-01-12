@@ -41,6 +41,8 @@ export const HeaderHome = () => {
     navigate("/");
   };
 
+  console.log("aqui" + modalCreatePost);
+
   const [menu, setMenu] = useState(false);
 
   return (
@@ -77,7 +79,7 @@ export const HeaderHome = () => {
                   >
                     Novo post
                   </button>
-                  {modalCreatePost ? <ModalCreatePost /> : false}
+
                   <button
                     onClick={() => setModalCreatepost(true)}
                     className="buttons-menu-dashboard"
