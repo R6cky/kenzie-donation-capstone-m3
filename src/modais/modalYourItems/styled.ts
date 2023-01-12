@@ -246,4 +246,6 @@ export const StyleModalYourItems = styled.div`
          margin: 2px;
       }
    }
+
+   
 `

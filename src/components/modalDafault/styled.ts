@@ -14,6 +14,7 @@ export const StyledModal = styled.div<iStyledModalProps>`
    position: fixed;
    inset: 0;
    z-index: 1001;
+
    .modal-box {
       position: relative;
       z-index: 1002;

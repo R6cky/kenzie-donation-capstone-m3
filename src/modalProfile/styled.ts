@@ -98,6 +98,8 @@ export const StyledModalWrapper = styled.div `
 
         height: 45px;
 
+        padding-left: 10px;
+
         background: #FFFFFF;
         border: 1px solid #5690E7;
         border-radius: 8px;
