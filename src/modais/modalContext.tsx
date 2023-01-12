@@ -35,6 +35,8 @@ interface iModalContextProps {
    viewDonationList: iPosts[]
    viewDonation: iPosts[]
    viewItemModal: number | null
+   viewMyDonationList: iPosts[]
+   viewMyRequestList: iPosts[]
 
    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
    setDeleteIsOpen: React.Dispatch<React.SetStateAction<number | null>>
@@ -45,6 +47,10 @@ interface iModalContextProps {
    handleModalDelete: (id: number) => void
    modalEditPostHandle: (id: number) => void
    deletePostDonation: (id: number) => void
+   getDonation: () => Promise<void>
+   getDonationAction: (body: any) => Promise<void>
+   getRequestAction:(body: any) => Promise<void>
+   getRequest: () => Promise<void>
 }
 
 export const ModalContext = createContext({} as iModalContextProps)
@@ -58,6 +64,8 @@ export const ModalProvider = ({ children }: iProviderProps) => {
    >(null) //modal editar donation
    const [viewDonationList, setViewDonationList] = useState([] as iPosts[]) //array donation
    const [viewDonation, setViewDonation] = useState([] as iPosts[]) //array donation
+   const [viewMyDonationList, setViewMyDonationList] = useState([] as iPosts[]) //array donation
+   const [viewMyRequestList, setViewMyRequestList] = useState([] as iPosts[]) //array donation
    const [viewItemModal, setViewItemModal] = useState<number | null>(null)
 
    useEffect(() => {
@@ -139,6 +147,74 @@ export const ModalProvider = ({ children }: iProviderProps) => {
       }
    }
 
+   const getDonation = async () => {
+      const token = localStorage.getItem('@USERTOKEN')
+
+      try {
+         const response = await api.get(`/getdonation`,{
+            headers: {
+               authorization: `Bearer ${token}`,
+            }
+         })
+         setViewMyDonationList(response.data) 
+         console.log(viewMyDonationList) 
+      } catch (error) {
+         console.log(error)
+      }
+   }
+
+   const getDonationAction = async (body: any) => {
+      const token = localStorage.getItem('@USERTOKEN')
+      const userIdVerify: number = Number(localStorage.getItem('@USERID'))
+      body.userId = userIdVerify
+
+      try {
+         const response = await api.post(`/getdonation`, body,{
+            headers:{
+               authorization: `Bearer ${token}`,
+            }
+         })
+         console.log(response)
+         getDonation()
+      } catch (error) {
+         console.log(error)
+      }
+   }
+
+   const getRequest = async () => {
+      const token = localStorage.getItem('@USERTOKEN')
+
+      try {
+         const response = await api.get(`/getrequest`,{
+            headers: {
+               authorization: `Bearer ${token}`,
+            }
+         })
+         setViewMyRequestList(response.data) 
+         console.log(viewMyRequestList) 
+      } catch (error) {
+         console.log(error)
+      }
+   }
+
+   const getRequestAction = async (body: any) => {
+      const token = localStorage.getItem('@USERTOKEN')
+      const userIdVerify: number = Number(localStorage.getItem('@USERID'))
+      body.userId = userIdVerify
+
+      try {
+         const response = await api.post(`/getrequest`, body,{
+            headers:{
+               authorization: `Bearer ${token}`,
+            }
+         })
+         console.log(response)
+         getRequest()
+      } catch (error) {
+         console.log(error)
+      }
+   }
+
    return (
       <ModalContext.Provider
          value={{
@@ -148,6 +224,8 @@ export const ModalProvider = ({ children }: iProviderProps) => {
             viewDonation,
             viewDonationList,
             viewItemModal,
+            viewMyDonationList,
+            viewMyRequestList,
             handleModal,
             setIsOpen,
             setEditPostIsOpenModal,
@@ -156,6 +234,10 @@ export const ModalProvider = ({ children }: iProviderProps) => {
             handleModalDelete,
             modalEditPostHandle,
             deletePostDonation,
+            getDonation,
+            getDonationAction,
+            getRequestAction,
+            getRequest
          }}
       >
          {children}

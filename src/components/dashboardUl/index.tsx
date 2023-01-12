@@ -2,11 +2,12 @@ import { StyledDashboardList } from "./style";
 import { useContext } from "react";
 import { DashboardListContext } from "./contextList";
 import ImageNotFount from "../../assets/image-not-found.jpg";
+import { ModalContext } from "../../modais/modalContext";
 
 export const DashboardList = () => {
   const { newListDonationFiltered, newListRequestFiltered }: any =
     useContext(DashboardListContext);
-  // const { viewItemModal } = useContext(ModalContext)
+  const { getDonationAction, getRequestAction } = useContext(ModalContext)
 
   interface iDashboardListPosts {
     title: string;
@@ -16,7 +17,7 @@ export const DashboardList = () => {
     image: string;
     userId: number | string;
     id: number | string;
-    data: [];
+    data?: [];
   }
   return (
     <StyledDashboardList>
@@ -40,7 +41,7 @@ export const DashboardList = () => {
               </div>
               <div className="product-buttons">
                 <button>Ver</button>
-                <button>Pegar doação</button>
+                <button onClick={() => getDonationAction(element)}>Pegar doação</button>
               </div>
             </li>
 
@@ -71,7 +72,7 @@ export const DashboardList = () => {
               </div>
               <div className="product-buttons">
                 <button>Ver</button>
-                <button>Doar</button>
+                <button onClick={() => getRequestAction(element)}>Doar</button>
               </div>
             </li>
 

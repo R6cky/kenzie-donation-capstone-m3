@@ -17,6 +17,8 @@ export const ModalDash = () => {
       editPostIsOpenModal,
       viewItemModal,
       setViewItemModal,
+      viewMyDonationList,
+      viewMyRequestList
    } = useContext(ModalContext)
    const { modalDeleteRequestIsOpen } = useContext(ModalRequestContext)
 
@@ -39,20 +41,33 @@ export const ModalDash = () => {
                   <div className='box-container-ul'>
                      <h2 className='title-card'>Doações Feitas</h2>
                      <ul className='scrollbar'>
-                        <li className='card-donations-list box-card'>
+                        {viewMyDonationList.map((elem) => (
+                           <li className='card-donations-list box-card'>
                            <div className='header-card'>
-                              <p>Title</p>
+                              <p>{elem.title}</p>
                            </div>
                            <div className='box-btn-card'>
                               <button className='btn-view'>Ver</button>
                            </div>
                         </li>
+                        ))}
                      </ul>
                   </div>
                   <div className='box-container-ul'>
                      <h2 className='title-card'>Solicitações Atendidas</h2>
                      <ul className='scrollbar'>
-                        <li className='card-donations-list box-card'>
+                     {viewMyRequestList.map((elem) => (
+                           <li className='card-donations-list box-card'>
+                           <div className='header-card'>
+                              <p>{elem.title}</p>
+                           </div>
+                           <div className='box-btn-card'>
+                              <button className='btn-view'>Ver</button>
+                           </div>
+                        </li>
+                        ))}
+                       
+                        {/* <li className='card-donations-list box-card'>
                            <div className='header-card'>
                               <p>Title</p>
                            </div>
@@ -64,7 +79,7 @@ export const ModalDash = () => {
                                  Ver
                               </button>
                            </div>
-                        </li>
+                        </li> */}
                      </ul>
                   </div>
                </div>
