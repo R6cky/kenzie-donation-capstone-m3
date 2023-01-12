@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 import { api } from '../services/api'
 import { iPosts, iProviderProps } from './modalContext'
 
@@ -10,6 +11,7 @@ interface iModalRequestContextProps {
    modalDeleteRequest: (id: number) => void
    deletePostRequest: (id: number) => void
    viewRequest: iPosts[]
+   viewRequestList: iPosts[]
 }
 
 export const ModalRequestContext = createContext(
@@ -21,6 +23,7 @@ export const ModalRequestProvider = ({ children }: iProviderProps) => {
       number | null
    >(null) //modal delete ul request
    const [viewRequest, setViewRequest] = useState([] as iPosts[]) //array request
+   const [viewRequestList, setViewRequestList] = useState([] as iPosts[]) //array donation
 
    useEffect(() => {
       const getAllRequests = async () => {
@@ -34,16 +37,26 @@ export const ModalRequestProvider = ({ children }: iProviderProps) => {
       getAllRequests()
    }, [])
 
-   const deleteRequest = async (id: number) => {
-      console.log(id)
-      const token = ''
-      try {
-         const { data } = await api.delete(`/request/${id}`, token as any)
-         console.log(data)
-      } catch (error) {
-         console.log(error)
+   useEffect(() => {
+      const userIdVerifyRequest: number = Number(
+         localStorage.getItem('@USERID')
+      )
+      const getAllRequestsUser = async (userId: number) => {
+         try {
+            const token = localStorage.getItem('@USERTOKEN')
+            const { data } = await api.get(`/users/${userId}?_embed=request`, {
+               headers: {
+                  authorization: `Bearer ${token}`,
+               },
+            })
+            console.log(data.request)
+            setViewRequestList(data.request)
+         } catch (error) {
+            console.log(error)
+         }
       }
-   }
+      getAllRequestsUser(userIdVerifyRequest)
+   }, [])
 
    const modalDeleteRequest = (id: number) => {
       //abrir e fechar modal delete request
@@ -54,13 +67,26 @@ export const ModalRequestProvider = ({ children }: iProviderProps) => {
       }
    }
 
-   const deletePostRequest = (id: number) => {
-      //modal deletar donation
+   const deletePostRequest = async (id: number) => {
+      //modal deletar request
       console.log(id)
-      const deletePostRequest = viewRequest.filter((elem) => elem.id !== id)
-      deleteRequest(id)
-      setViewRequest(deletePostRequest)
-      setModalDeleteRequestIsOpen(null)
+      const token = localStorage.getItem('@USERTOKEN')
+      try {
+         await api.delete(`/request/${id}`, {
+            headers: {
+               authorization: `Bearer ${token}`,
+            },
+         })
+         const deletePostRequest = viewRequestList.filter(
+            (request) => request.id !== id
+         )
+         setViewRequestList(deletePostRequest)
+         setModalDeleteRequestIsOpen(null)
+      } catch (error: any) {
+         if (error.response.status !== 201) {
+            toast.error('Houve um erro!')
+         }
+      }
    }
 
    return (
@@ -71,6 +97,7 @@ export const ModalRequestProvider = ({ children }: iProviderProps) => {
             modalDeleteRequest,
             deletePostRequest,
             viewRequest,
+            viewRequestList,
          }}
       >
          {children}

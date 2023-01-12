@@ -15,6 +15,7 @@ export interface iUser {
    state: string
    id: number
    donation?: iPosts[]
+   request?: iPosts[]
 }
 
 export interface iPosts {
@@ -81,7 +82,6 @@ export const ModalProvider = ({ children }: iProviderProps) => {
                   authorization: `Bearer ${token}`,
                }
             })
-            console.log(data.donation)
             setViewDonationList(data.donation)
          } catch (error) {
             console.log(error)
@@ -134,7 +134,7 @@ export const ModalProvider = ({ children }: iProviderProps) => {
          setDeleteIsOpen(null)
       } catch (error: any) {
          if (error.response.status !== 201) {
-            toast.error('Faça novamente seu cadastro!')
+            toast.error('Houve um erro!')
          }
       }
    }

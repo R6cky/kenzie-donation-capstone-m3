@@ -5,14 +5,14 @@ import { ModalRequestContext } from '../../modalContextRequest'
 
 export const UlRequest = () => {
    const { modalEditPostHandle } = useContext(ModalContext)
-   const { viewRequest, modalDeleteRequest } = useContext(ModalRequestContext)
+   const { viewRequestList, modalDeleteRequest } = useContext(ModalRequestContext)
    return (
       <>
          <ul className='scrollbar'>
-            {!viewRequest ? (
+            {!viewRequestList? (
                <p>Não tem nada aqui</p>
             ) : (
-               viewRequest?.map((elem) => (
+               viewRequestList.map((elem) => (
                   <li key={elem.id} className='card-donations-list box-card'>
                      <div className='header-card'>
                         <p>{elem.title}</p>

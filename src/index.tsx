@@ -18,13 +18,15 @@ root.render(
       <BrowserRouter>
          <UserProviderLogin>
             <ModalProvider>
-               <DashboardListProvider>
-                  <CreatePostProvider>
-                     <GlobalStyles />
-                     <App />
-                     <ToastContainer />
-                  </CreatePostProvider>
-               </DashboardListProvider>
+               <ModalRequestProvider>
+                  <DashboardListProvider>
+                     <CreatePostProvider>
+                        <GlobalStyles />
+                        <App />
+                        <ToastContainer />
+                     </CreatePostProvider>
+                  </DashboardListProvider>
+               </ModalRequestProvider>
             </ModalProvider>
          </UserProviderLogin>
       </BrowserRouter>
