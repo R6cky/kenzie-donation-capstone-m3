@@ -1,26 +1,28 @@
-import Logo from '../../assets/logo.svg'
-import Menu from '../../assets/menu.svg'
-import Clothes from '../../assets/clothes.svg'
-import Rocket from '../../assets/rocket.svg'
-import Poltrona from '../../assets/poltrona.svg'
-import Smartphone from '../../assets/smartphone.svg'
-import ExitBtn from '../../assets/btn-exit-dashboard.png'
-import Book from '../../assets/book.png'
-import { StyledHeader } from './style'
-import { Link } from 'react-router-dom'
-import { useContext, useState } from 'react'
-import { CreatePostContext } from '../../modais/createPost/contextCreatePost'
-import { ModalEditContext } from '../../modalProfile/contexts'
-import { ModalContext } from '../../modais/modalContext'
-import { ModalDash } from '../../modais/modalYourItems'
-import { UserContextLogin } from '../../contexts/UserContext'
-import { useNavigate } from 'react-router-dom'
+import Logo from "../../assets/logo.svg";
+import Menu from "../../assets/menu.svg";
+import Clothes from "../../assets/clothes.svg";
+import Rocket from "../../assets/rocket.svg";
+import Poltrona from "../../assets/poltrona.svg";
+import Smartphone from "../../assets/smartphone.svg";
+import ExitBtn from "../../assets/btn-exit-dashboard.png";
+import Book from "../../assets/book.png";
+import { StyledHeader } from "./style";
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { CreatePostContext } from "../../modais/createPost/contextCreatePost";
+import { ModalEditContext } from "../../modalProfile/contexts";
+import { ModalContext } from "../../modais/modalContext";
+import { ModalDash } from "../../modais/modalYourItems";
+import { UserContextLogin } from "../../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
+import { DashboardListContext } from "../dashboardUl/contextList";
 
 export const HeaderHome = () => {
-   const { setModalCreatepost } = useContext(CreatePostContext)
-   const { setIsOpen } = useContext(ModalEditContext)
-   const { modalIsOpen, handleModal } = useContext(ModalContext)
-   const { user, setUser } = useContext(UserContextLogin)
+  const { setModalCreatepost } = useContext(CreatePostContext);
+  const { setIsOpen } = useContext(ModalEditContext);
+  const { modalIsOpen, handleModal } = useContext(ModalContext);
+  const { user, setUser } = useContext(UserContextLogin);
+  const { setFilterdonation } = useContext(DashboardListContext);
 
    const navigate = useNavigate()
 

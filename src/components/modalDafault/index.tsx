@@ -10,10 +10,10 @@ interface iModalProps {
 }
 
 export const DefaultModal = ({ children, callback, maxWidth }: iModalProps) => {
-   const ref = useOutClick<HTMLDivElement>(() => callback())
+    const ref = useOutClick<HTMLDivElement>(() => callback())
    return (
       <StyledModal maxWidth={maxWidth}>
-         <div role='dialog' className='modal-box' ref={ref}>
+         <div role='dialog' className='modal-box' ref={ref} >
             <button className='modal-close' onClick={callback}>
                <MdClose size={21} />
             </button>

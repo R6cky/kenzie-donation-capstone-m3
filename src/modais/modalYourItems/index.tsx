@@ -8,10 +8,16 @@ import { UlRequest } from '../componentsModal/ulRequest'
 import { ModalConfirmDeleteRequest } from '../modalDeleteRequest'
 import { ModalRequestContext } from '../modalContextRequest'
 import { DefaultModal } from '../../components/modalDafault'
+import { ModalViewItems } from '../modalViewItem'
 
 export const ModalDash = () => {
-   const { handleModal, modalDeleteIsOpen, editPostIsOpenModal } =
-      useContext(ModalContext)
+   const {
+      handleModal,
+      modalDeleteIsOpen,
+      editPostIsOpenModal,
+      viewItemModal,
+      setViewItemModal,
+   } = useContext(ModalContext)
    const { modalDeleteRequestIsOpen } = useContext(ModalRequestContext)
 
    return (
@@ -51,16 +57,22 @@ export const ModalDash = () => {
                               <p>Title</p>
                            </div>
                            <div className='box-btn-card'>
-                              <button className='btn-view'>Ver</button>
+                              <button
+                                 onClick={() => setViewItemModal(null)}
+                                 className='btn-view'
+                              >
+                                 Ver
+                              </button>
                            </div>
                         </li>
                      </ul>
                   </div>
                </div>
+               {modalDeleteIsOpen && <ModalConfirmDeleteDonation />}
+               {modalDeleteRequestIsOpen && <ModalConfirmDeleteRequest />}
+               {editPostIsOpenModal && <ModalEditPost />}
+               {viewItemModal && <ModalViewItems />}
             </StyleModalYourItems>
-            {modalDeleteIsOpen && <ModalConfirmDeleteDonation />}
-            {modalDeleteRequestIsOpen && <ModalConfirmDeleteRequest />}
-            {editPostIsOpenModal && <ModalEditPost />}
          </DefaultModal>
       </div>
    )
