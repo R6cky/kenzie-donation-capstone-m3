@@ -10,22 +10,24 @@ import { ModalProvider } from './modais/modalContext'
 import { ModalRequestProvider } from './modais/modalContextRequest'
 import { UserProviderLogin } from './contexts/UserContext'
 import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
    <React.StrictMode>
       <BrowserRouter>
          <UserProviderLogin>
-         <ModalProvider>
-            <DashboardListProvider>
-               <CreatePostProvider>
-                  <GlobalStyles />
-                  <App />
-                  <ToastContainer />
-               </CreatePostProvider>
-            </DashboardListProvider>
-         </ModalProvider>
+            <ModalProvider>
+               <ModalRequestProvider>
+                  <DashboardListProvider>
+                     <CreatePostProvider>
+                        <GlobalStyles />
+                        <App />
+                        <ToastContainer />
+                     </CreatePostProvider>
+                  </DashboardListProvider>
+               </ModalRequestProvider>
+            </ModalProvider>
          </UserProviderLogin>
       </BrowserRouter>
    </React.StrictMode>

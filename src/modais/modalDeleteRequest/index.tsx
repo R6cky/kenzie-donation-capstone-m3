@@ -14,7 +14,7 @@ export const ModalConfirmDeleteRequest = () => {
    } = useContext(ModalRequestContext)
    return (
       <div className='container-delete-request'>
-         <DefaultModal callback={() => setModalDeleteRequestIsOpen(null)}>
+         <DefaultModal maxWidth={600} callback={() => setModalDeleteRequestIsOpen(null)}>
             <StyledModalConfirmDeleteRequest>
                <div className='modal-header-delete-request'>
                   <h2 className='title-modal-delete-request'>

@@ -1,8 +1,21 @@
 import { createContext, useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 import { api } from '../services/api'
 
 export interface iProviderProps {
    children: React.ReactNode
+}
+
+export interface iUser {
+   email: string
+   password: string
+   name: string
+   avatar: string
+   phone: string
+   state: string
+   id: number
+   donation?: iPosts[]
+   request?: iPosts[]
 }
 
 export interface iPosts {
@@ -19,6 +32,7 @@ interface iModalContextProps {
    modalIsOpen: boolean
    modalDeleteIsOpen: number | null
    editPostIsOpenModal: number | null
+   viewDonationList: iPosts[]
    viewDonation: iPosts[]
    viewItemModal: number | null
 
@@ -38,9 +52,11 @@ export const ModalContext = createContext({} as iModalContextProps)
 export const ModalProvider = ({ children }: iProviderProps) => {
    const [modalIsOpen, setIsOpen] = useState(false) //modal seus itens
    const [modalDeleteIsOpen, setDeleteIsOpen] = useState<number | null>(null) //modal delete ul donation
+
    const [editPostIsOpenModal, setEditPostIsOpenModal] = useState<
       number | null
    >(null) //modal editar donation
+   const [viewDonationList, setViewDonationList] = useState([] as iPosts[]) //array donation
    const [viewDonation, setViewDonation] = useState([] as iPosts[]) //array donation
    const [viewItemModal, setViewItemModal] = useState<number | null>(null)
 
@@ -54,6 +70,24 @@ export const ModalProvider = ({ children }: iProviderProps) => {
          }
       }
       getAllDonations()
+   }, [])
+
+   useEffect(() => {
+      const userIdVerify: number = Number(localStorage.getItem('@USERID'))
+      const getAllDonationsUser = async (userId: number) => {
+         try {
+            const token = localStorage.getItem('@USERTOKEN')
+            const { data } = await api.get(`/users/${userId}?_embed=donation`, {
+               headers: {
+                  authorization: `Bearer ${token}`,
+               }
+            })
+            setViewDonationList(data.donation)
+         } catch (error) {
+            console.log(error)
+         }
+      }
+      getAllDonationsUser(userIdVerify)
    }, [])
 
    const modalEditPostHandle = (id: number) => {
@@ -85,6 +119,7 @@ export const ModalProvider = ({ children }: iProviderProps) => {
 
    const deletePostDonation = async (id: number) => {
       //modal deletar donation
+
       const token = localStorage.getItem('@USERTOKEN')
       try {
          await api.delete(`/donation/${id}`, {
@@ -92,13 +127,15 @@ export const ModalProvider = ({ children }: iProviderProps) => {
                authorization: `Bearer ${token}`,
             },
          })
-         const deletePostDonation = viewDonation.filter(
+         const deletePostDonation = viewDonationList.filter(
             (donation) => donation.id !== id
          )
-         setViewDonation(deletePostDonation)
+         setViewDonationList(deletePostDonation)
          setDeleteIsOpen(null)
-      } catch (error) {
-         console.log(error)
+      } catch (error: any) {
+         if (error.response.status !== 201) {
+            toast.error('Houve um erro!')
+         }
       }
    }
 
@@ -109,6 +146,7 @@ export const ModalProvider = ({ children }: iProviderProps) => {
             modalDeleteIsOpen,
             editPostIsOpenModal,
             viewDonation,
+            viewDonationList,
             viewItemModal,
             handleModal,
             setIsOpen,

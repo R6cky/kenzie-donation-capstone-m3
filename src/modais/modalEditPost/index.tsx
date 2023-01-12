@@ -8,8 +8,11 @@ const ModalEditPost = () => {
       useContext(ModalContext)
    return (
       <div className='container-modal-edit-post'>
-         <DefaultModal callback={() => setEditPostIsOpenModal(null)}>
-            <StyledModalContentEditPost >
+         <DefaultModal
+            maxWidth={600}
+            callback={() => setEditPostIsOpenModal(null)}
+         >
+            <StyledModalContentEditPost>
                <div className='box-header'>
                   <h2>Editar Post</h2>
                   {/* <button

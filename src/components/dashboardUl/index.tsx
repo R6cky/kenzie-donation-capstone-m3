@@ -4,12 +4,9 @@ import { DashboardListContext } from "./contextList";
 import ImageNotFount from "../../assets/image-not-found.jpg";
 
 export const DashboardList = () => {
-  const {
-    dashboardListPosts,
-    dashboardListRequests,
-    newListDonationFiltered,
-    newListRequestFiltered,
-  }: any = useContext(DashboardListContext);
+  const { newListDonationFiltered, newListRequestFiltered }: any =
+    useContext(DashboardListContext);
+  // const { viewItemModal } = useContext(ModalContext)
 
   interface iDashboardListPosts {
     title: string;

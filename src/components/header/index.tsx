@@ -110,48 +110,36 @@ export const HeaderHome = () => {
         </div>
       </div>
       <div className="btn-filter">
-        <div
-          className="box-icon-filter"
-          onClick={() => setFilterdonation("Roupas")}
-        >
+        <div className="box-icon-filter">
           <div className="icon-filter">
             <img src={Clothes} alt="Roupas" />
           </div>
           <p className="icon-name">Roupas</p>
         </div>
-        <div
-          className="box-icon-filter"
-          onClick={() => setFilterdonation("Brinquedos")}
-        >
+        <div className="box-icon-filter">
           <div className="icon-filter">
             <img src={Rocket} alt="Brinquedos" />
           </div>
           <p className="icon-name">Brinquedos</p>
         </div>
-        <div
-          className="box-icon-filter"
-          onClick={() => setFilterdonation("Móveis")}
-        >
+        <div className="box-icon-filter">
           <div className="icon-filter">
             <img src={Poltrona} alt="Móveis" />
           </div>
           <p className="icon-name">Móveis</p>
         </div>
-        <div
-          className="box-icon-filter"
-          onClick={() => setFilterdonation("Eletrônicos")}
-        >
+        <div className="box-icon-filter">
           <div className="icon-filter">
             <img src={Smartphone} alt="Eletrônicos" />
           </div>
-          <p className="icon-name">Eletrônicos</p>
+          <p className="icon-name">Eletro</p>
         </div>
-        {/* <div className="box-icon-filter">
+        <div className="box-icon-filter">
           <div className="icon-filter">
             <img src={Book} alt="Livros" />
           </div>
           <p className="icon-name">Livros</p>
-        </div> */}
+        </div>
       </div>
 
       <div className="btn-filter-large">
@@ -183,7 +171,6 @@ export const HeaderHome = () => {
               Sair
             </button>
             {modalIsOpen && <ModalDash />}
-
           </div>
         ) : (
           <div className="options-menu">
