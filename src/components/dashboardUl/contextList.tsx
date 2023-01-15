@@ -19,11 +19,13 @@ interface iDashboardListPosts {
 export const DashboardListContext = createContext({} as any);
 
 export const DashboardListProvider = ({ children }: iChildren) => {
-  const [dashboardListPosts, setDashboardListPosts] = useState([]);
+  const [dashboardListPosts, setDashboardListPosts] = useState<any>(
+    [] as iDashboardListPosts[]
+  );
   const [dashboardListRequests, setDashboardListRequests] = useState(
     [] as iDashboardListPosts[]
   );
-
+  console.log(dashboardListPosts);
   const [filterDonation, setFilterdonation] = useState("Todas as doações");
 
   const newListDonationFiltered = dashboardListPosts.filter((element: any) =>

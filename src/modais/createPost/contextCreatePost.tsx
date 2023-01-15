@@ -28,6 +28,8 @@ export const CreatePostContext = createContext({} as iCreatePostContext | any);
 
 export const CreatePostProvider = ({ children }: iChildren) => {
   const {
+    newListRequestFiltered,
+    newListDonationFiltered,
     dashboardListPosts,
     setDashboardListPosts,
     dashboardListRequests,
@@ -36,16 +38,17 @@ export const CreatePostProvider = ({ children }: iChildren) => {
 
   const [modalCreatepost, setModalCreatepost] = useState(false);
 
-  const createPost = async (data: iCreatePosts) => {
+  const createPost = async (data: any) => {
     const token = localStorage.getItem("@USERTOKEN");
-
     try {
       const request = await api.post("/donation", data, {
         headers: {
           authorization: `Bearer ${token}`,
         },
       });
-      await setDashboardListPosts([...dashboardListPosts, request.data]);
+
+      setDashboardListPosts([...dashboardListPosts, request.data]);
+
       setModalCreatepost(false);
       toast.success("Criado com sucesso!");
     } catch (error) {
@@ -57,7 +60,7 @@ export const CreatePostProvider = ({ children }: iChildren) => {
 
   const createRequest = async (data: iCreatePosts) => {
     const token = localStorage.getItem("@USERTOKEN");
-
+    console.log(dashboardListPosts);
     try {
       const request = await api.post("/request", data, {
         headers: {
@@ -65,7 +68,7 @@ export const CreatePostProvider = ({ children }: iChildren) => {
         },
       });
 
-      await setDashboardListRequests([...dashboardListRequests, request.data]);
+      setDashboardListRequests([...dashboardListRequests, request.data]);
       setModalCreatepost(false);
     } catch (error) {
       console.error(error);
