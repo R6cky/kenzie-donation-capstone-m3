@@ -1,4 +1,3 @@
-import { request } from "http";
 import { useContext, useEffect, useState } from "react";
 import { DefaultModal } from "../../components/modalDafault";
 import { api } from "../../services/api";
@@ -6,42 +5,38 @@ import { ModalContext } from "../modalContext";
 import { iDonationItem } from "./@types";
 import { StyleModalUl } from "./styled";
 
-
 export const ModalViewItems = () => {
-  const { viewItemModal, setViewItemModal } = useContext(ModalContext)
-  const [ requestItem, setRequestItem ] = useState<iDonationItem>()
-  
-  useEffect(()=>{
+  const { viewItemModal, setViewItemModal } = useContext(ModalContext);
+  const [requestItem, setRequestItem] = useState<iDonationItem>();
 
-    const getItem =  async () => {
+  useEffect(() => {
+    const getItem = async () => {
+      try {
+        const request = await api.get(`/donation/${viewItemModal}`);
+        setRequestItem(request.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-        try {
-            const request = await api.get(`/donation/${viewItemModal}`)
-            setRequestItem(request.data)
-        } catch (error) {
-            console.error(error)
-        }
-    }
+    getItem();
+  }, []);
 
-    getItem()
-},[])
-
-  
   return (
     <div className=".modal-content-edit-post">
       {viewItemModal && (
         <DefaultModal callback={() => setViewItemModal(null)}>
           <StyleModalUl>
-          <picture>
+            <picture>
               <img src={requestItem?.image} alt="" />
-          </picture>
+            </picture>
             <section>
               <span>{requestItem?.title}</span>
               <h4>{requestItem?.category}</h4>
-          </section>
-          <section>
+            </section>
+            <section>
               <p>{requestItem?.description}</p>
-          </section>
+            </section>
           </StyleModalUl>
         </DefaultModal>
       )}

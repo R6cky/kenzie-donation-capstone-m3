@@ -29,7 +29,6 @@ export const Dashboard: () => JSX.Element = () => {
       {user.length !== 0 ? (
         <StyledDashboard>
           <HeaderHome />
-          {open ? <ModalEditProfile /> : false}
 
           <div className="image-after-header">
             <img src={ImageAfterHeader} alt="" />
@@ -62,7 +61,8 @@ export const Dashboard: () => JSX.Element = () => {
           <div className="list-post">
             <DashboardList />
           </div>
-          {modalCreatepost === true ? <ModalCreatePost /> : false}
+          {modalCreatepost && <ModalCreatePost />}
+          {open && <ModalEditProfile />}
           <FooterDashboard />
         </StyledDashboard>
       ) : (
