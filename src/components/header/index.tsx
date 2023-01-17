@@ -81,7 +81,7 @@ export const HeaderHome = () => {
                   </button>
 
                   <button
-                    onClick={() => setModalCreatepost(true)}
+                    onClick={() => handleModal()}
                     className="buttons-menu-dashboard"
                   >
                     Seus itens
