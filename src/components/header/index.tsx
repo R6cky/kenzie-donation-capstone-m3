@@ -5,7 +5,6 @@ import Rocket from "../../assets/rocket.svg";
 import Poltrona from "../../assets/poltrona.svg";
 import Smartphone from "../../assets/smartphone.svg";
 import ExitBtn from "../../assets/btn-exit-dashboard.png";
-import Book from "../../assets/book.png";
 import { StyledHeader } from "./style";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
@@ -16,7 +15,6 @@ import { ModalDash } from "../../modais/modalYourItems";
 import { UserContextLogin } from "../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import { DashboardListContext } from "../dashboardUl/contextList";
-import { ModalCreatePost } from "../../modais/createPost";
 
 export const HeaderHome = () => {
   const { setModalCreatepost, modalCreatePost } = useContext(CreatePostContext);
@@ -46,7 +44,11 @@ export const HeaderHome = () => {
   return (
     <StyledHeader>
       <div className="img-header">
-        <img src={Logo} alt="Logo" />
+        <img
+          src={Logo}
+          alt="Logo"
+          onClick={() => setFilterdonation("Todas as doações")}
+        />
         <div className="dropDown">
           {user ? (
             <>
@@ -113,35 +115,54 @@ export const HeaderHome = () => {
       </div>
       <div className="btn-filter">
         <div className="box-icon-filter">
-          <div className="icon-filter">
+          <div
+            className="icon-filter"
+            onClick={() => setFilterdonation("Roupas")}
+          >
             <img src={Clothes} alt="Roupas" />
           </div>
           <p className="icon-name">Roupas</p>
         </div>
-        <div className="box-icon-filter">
+
+        <div
+          className="box-icon-filter"
+          onClick={() => setFilterdonation("Brinquedos")}
+        >
           <div className="icon-filter">
             <img src={Rocket} alt="Brinquedos" />
           </div>
           <p className="icon-name">Brinquedos</p>
         </div>
+
         <div className="box-icon-filter">
-          <div className="icon-filter">
+          <div
+            className="icon-filter"
+            onClick={() => setFilterdonation("Móveis")}
+          >
             <img src={Poltrona} alt="Móveis" />
           </div>
           <p className="icon-name">Móveis</p>
         </div>
+
         <div className="box-icon-filter">
-          <div className="icon-filter">
+          <div
+            className="icon-filter"
+            onClick={() => setFilterdonation("Eletrônicos")}
+          >
             <img src={Smartphone} alt="Eletrônicos" />
           </div>
-          <p className="icon-name">Eletro</p>
+          <p className="icon-name">Eletrônicos</p>
         </div>
-        <div className="box-icon-filter">
-          <div className="icon-filter">
+
+        {/* <div className="box-icon-filter">
+          <div
+            className="icon-filter"
+            onClick={() => setFilterdonation("Livros")}
+          >
             <img src={Book} alt="Livros" />
           </div>
           <p className="icon-name">Livros</p>
-        </div>
+        </div> */}
       </div>
 
       <div className="btn-filter-large">
